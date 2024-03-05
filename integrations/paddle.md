@@ -34,8 +34,8 @@ Paddle.Setup({
     ....,
     eventCallback:function(data){
      if (data.event === &quot;Checkout.Complete&quot;) {
-       const email = eventData.data.customer.email;
-       const  uid = eventData.data.customer.id;
+       const email = data.eventData.user.email;
+       const  uid = data.eventData.user.id;
        fpr(&quot;referral&quot;,{email,uid});
      }
     }
