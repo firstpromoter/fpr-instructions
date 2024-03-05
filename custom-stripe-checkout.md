@@ -1,4 +1,4 @@
-![Stripe Checkout](/images/stripe-checkout-logo.png)
+![Stripe Checkout](/images/logos/stripe_checkout.png)
 
 # Tracking using Stripe Checkout
 

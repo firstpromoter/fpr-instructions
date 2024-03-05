@@ -1,9 +1,8 @@
-![ThriveCart](/images/thrivecart-logo.png)
+![ThriveCart](/images/logos/thrivecart.png)
 
 # Adding FirstPromoter to ThriveCart
 
 To get the best results for tracking on ThriveCart it is ideal to set this up on all the marketing pages even if you use ThriveCart only for checkout
-
 
 ## Main tracking script
 

@@ -1,9 +1,8 @@
-![Stripe Pricing Table](/images/stripe-pricing-table-logo.png)
+![Stripe Pricing Table](/images/logos/stripe_logo.png)
 
 # Adding FirstPromoter when using Stripe pricing table
 
 To get the best results for tracking on when using stripe pricing tables, add the scripts to all pages where stripe pricing tables are available.
-
 
 ## Tracking script
 

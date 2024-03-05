@@ -1,10 +1,9 @@
-![Django](/images/custom-django-logo.png)
+![Django](/images/logos/django.png)
 
 # Adding FirstPromoter to your Django Website
 
 To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages. Please note that this process mainly requires a developer.  Remember to always check your browser’s console for any errors or issues. Happy coding! 😊
 **Please note that this setup requires a developer.**
-
 
 ## Main tracking script
 
@@ -33,7 +32,7 @@ Similar to the main tracking script,
 
 1. Locate the template file where you want to add the script.
 2. Find the head tag.
-3. Based on how you capture your emails, use any of the scripts below 
+3. Based on how you capture your emails, use any of the scripts below
 
 ```html
 <!--if you store the user email on a session variable--> 

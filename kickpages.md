@@ -1,9 +1,8 @@
-![Kickpages](/images/kick-pages-logo.png)
+![Kickpages](/images/logos/kickpages.png)
 
 # Adding FirstPromoter to Kickpages
 
 To get the best results, make sure you add the following script globally on the HEAD section of every public or marketing page on your website.
-
 
 ## Main tracking script
 

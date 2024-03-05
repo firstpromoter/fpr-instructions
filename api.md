@@ -1,4 +1,4 @@
-![API](/images/api-logo.png)
+![API](/images/logos/api.png)
 
 # Integrating FirstPromoter with your website using our API
 

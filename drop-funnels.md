@@ -1,13 +1,10 @@
-![Drop Funnels](/images/drop-funnels-logo.png)
+![Drop Funnels](/images/logos/dropfunnels.png)
 
 # Adding FirstPromoter to your Drop Funnels website
 
 To ensure that tracking works as expected, make sure you add the scripts to every marketing page.
 
-
 ## Main tracking script
-
-### Adding the scripts to your Drop Funnels website.
 
 1. Click on SEO on the left side menu.
 2. Select Google Analytics > Tracking.

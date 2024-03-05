@@ -1,4 +1,4 @@
-![Click Funnels](/images/click-funnels-logo.png)
+![Click Funnels](/images/logos/clickfunnels.png)
 
 # Adding FirstPromoter to your Click Funnels website
 

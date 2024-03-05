@@ -1,9 +1,8 @@
-![Thinkific](/images/thinkific-logo.png)
+![Thinkific](/images/logos/thinkific.png)
 
 # Adding FirstPromoter to ThriveCart
 
 To get the best results for tracking on Thinkific it is ideal to set this up on all the marketing pages.
-
 
 ## Main tracking script
 

@@ -1,9 +1,8 @@
-![Kartra](/images/kartra-logo.png)
+![Kartra](/images/logos/kartra.png)
 
 # Adding FirstPromoter to your Kartra website
 
 To get the best results, make sure you add the following script globally on the HEAD section of every public or marketing page on your website.
-
 
 ## Main tracking script
 

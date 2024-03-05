@@ -1,9 +1,8 @@
-![Kajabi](/images/kajabi-logo.png)
+![Kajabi](/images/logos/kajabi.png)
 
 # Adding FirstPromoter to your Kajabi website
 
 To ensure that tracking works as expected this integration has to be done on the Kajabi pages directly. It doesn't work if Kajabi checkout / form is embedded into another website.
-
 
 ## Tracking script
 

@@ -1,4 +1,4 @@
-![ChargeBeeDropInScript](/images/chargebee-drop-in-script-logo.png)
+![ChargeBeeDropInScript](/images/logos/chargebee_dropin_script.png)
 
 # Integrating FirstPromoter with Chargebee drop in script
 

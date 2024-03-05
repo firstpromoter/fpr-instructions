@@ -1,9 +1,8 @@
-![Ghost](/images/ghost.png)
+![Ghost](/images/logos/ghost.png)
 
 # Adding FirstPromoter to your Ghost Website
 
 The integration between FirstPromoter is fully automated on Ghost. This does not require any scripts to be added.
-
 
 ## Setting things up
 

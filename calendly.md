@@ -1,4 +1,4 @@
-![Calendly](/images/click-funnels-logo.png)
+![Calendly](/images/logos/calendly.png)
 
 # Working with FirstPromoter and Calendly
 

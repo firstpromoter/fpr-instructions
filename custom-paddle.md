@@ -1,7 +1,6 @@
-![Paddle Checkout](/images/paddle-checkout-logo.png)
+![Paddle Checkout](/images/logos/paddle_logo.png)
 
 # Tracking using Paddle checkout
-
 
 ## Main tracking script
 

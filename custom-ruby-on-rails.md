@@ -1,10 +1,9 @@
-![RubyOnRails](/images/custom-ruby-on-rails-logo.png)
+![RubyOnRails](/images/logos/rails.png)
 
 # Adding FirstPromoter to your Rails website
 
 To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages. Please note that this process mainly requires a developer.  Remember to always check your browser’s console for any errors or issues. Happy coding! 😊
 **Please note that this setup requires a developer.**
-
 
 ## Main tracking script
 

@@ -1,10 +1,8 @@
-![SamCart](/images/samcart-logo.png)
+![SamCart](/images/logos/samcart.png)
 
 # Adding FirstPromoter to Samcart
 
 To get the best results for tracking on SamCart it is ideal to set this up on all the marketing pages even if you use SamCart only for checkout.
-
-&nbsp;
 
 ## Main tracking script
 

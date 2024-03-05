@@ -1,16 +1,15 @@
-![Stripe Buy Links](/images/stripe-buy-links-logo.png)
+![Stripe Buy Links](/images/logos/stripe_logo.png)
 
 # Adding FirstPromoter when using Stripe buy links
 
 To get the best results for tracking on when using stripe buy links, add the scripts to all pages where **stripe buy links** are available.
-
 
 ## Tracking script
 
 1. Find the section on your website where you can add scripts,  preferably in the head section of your website.
 2. Add the bellow code to the head section.
 
-***NB: If you are using your custom domain with stripe, you will need to change the link in the code from https://buy.stripe.com/ to what is used for your domain.***
+***NB: If you are using your custom domain with stripe, you will need to change the link in the code from <https://buy.stripe.com/> to what is used for your domain.***
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);

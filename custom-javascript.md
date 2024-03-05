@@ -1,4 +1,4 @@
-![CustomJavascript](/images/custom-js-logo.png)
+![CustomJavascript](/images/logos/javascript.png)
 
 # Adding FirstPromoter to your custom website using Javascript
 
