@@ -2,8 +2,6 @@
 
 # Integrating FirstPromoter with your website using our API
 
-&nbsp;
-
 ## Main tracking script
 
 For most websites and JavaScript frameworks, you can simply insert the script on the public `index.html` file so it will be available when the website or framework loads.
