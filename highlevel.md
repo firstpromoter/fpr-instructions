@@ -14,31 +14,57 @@ Integrating FirstPromoter with your HighLevel setup is a breeze. It requires one
 2. Click on Sites on the left sidebar
 3. Select the websites Tab if you want to add to the full website, or the funnels tab to add to a specific funnel.
 
-    ![image.png](images/screenshots/highlevel-menu.png "")
+![high level menu](/images/screenshots/highlevel-menu.png "")
   
 4. Click on the 3 dot menu icon on your preferred website or funnel and select Edit
 5. On the Panel, select the settings tab and find the head tracking code section.
 6. Copy and paste the below code into the head tracking code section
 
 ```html [g1:Default]
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js" integrity="sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw=" crossorigin="anonymous"></script>
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.highlevel.js" async></script>
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js&quot; integrity=&quot;sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.highlevel.js&quot; async&gt;&lt;/script&gt;
 ```
 
 ```html [g1:With Stripe Buy Links]
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js" integrity="sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw=" crossorigin="anonymous"></script>
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.highlevel.js" async></script>
-<script>
-function getFPTid(){return window.FPROM && window.FPROM.data.tid}function initializeFPRBuyLinks(){setTimeout(function(){document.querySelectorAll('a[href^="https://buy.stripe.com/"]').forEach(function(t){var e=t.getAttribute("href"),i=getFPTid();i&&((e=new URL(e)).searchParams.set("client_reference_id",i),t.setAttribute("href",e.toString()))})},800)}var stateCheck=setInterval(()=>{"complete"===document.readyState&&(clearInterval(stateCheck),initializeFPRBuyLinks())},100);
-</script>
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js&quot; integrity=&quot;sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.highlevel.js&quot; async&gt;&lt;/script&gt;
+&lt;script&gt;
+  function getFPTid() {
+    return window.FPROM &amp;&amp; window.FPROM.data.tid;
+  }
+  function initializeFPRBuyLinks() {
+    console.log(&quot;initialized fpr on buy links&quot;);
+    setTimeout(function () {
+      var buyStripeLinks = document.querySelectorAll(
+        &apos;a[href^=&quot;https://buy.stripe.com/&quot;]&apos;
+      );
+      buyStripeLinks.forEach(function (link) {
+        var oldBuyStripeUrl = link.getAttribute(&quot;href&quot;);
+        var tid = getFPTid();
+        if (tid) {
+    var url = new URL(oldBuyStripeUrl);
+            url.searchParams.set(&apos;client_reference_id&apos;, tid);
+            link.setAttribute(&quot;href&quot;, url.toString());
+        }
+      });
+    }, 1000);
+  }
+  var stateCheck = setInterval(() =&gt; {
+    if (document.readyState === &quot;complete&quot;) {
+      clearInterval(stateCheck);
+      initializeFPRBuyLinks();
+    }
+  }, 100);
+&lt;/script&gt;
+
 ```
 
 ### Test Click Tracking

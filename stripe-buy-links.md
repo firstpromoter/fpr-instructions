@@ -4,7 +4,6 @@
 
 To get the best results for tracking on when using stripe buy links, add the scripts to all pages where **stripe buy links** are available.
 
-&nbsp;
 
 ## Tracking script
 
@@ -14,40 +13,40 @@ To get the best results for tracking on when using stripe buy links, add the scr
 ***NB: If you are using your custom domain with stripe, you will need to change the link in the code from https://buy.stripe.com/ to what is used for your domain.***
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
-<script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+&lt;script&gt;
     function getFPTid() {
-      return window.FPROM && window.FPROM.data.tid;
+      return window.FPROM &amp;&amp; window.FPROM.data.tid;
     }
     function initializeFPRBuyLinks() {
-      console.log("initialized fpr on buy links");
+      console.log(&quot;initialized fpr on buy links&quot;);
       setTimeout(function () {
         var buyStripeLinks = document.querySelectorAll(
-          'a[href^="https://buy.stripe.com/"]'
+          &apos;a[href^=&quot;https://buy.stripe.com/&quot;]&apos;
         );
         buyStripeLinks.forEach(function (link) {
           // Get current url
-          var oldBuyStripeUrl = link.getAttribute("href"); 
+          var oldBuyStripeUrl = link.getAttribute(&quot;href&quot;); 
           // Get the tid
           var tid = getFPTid();
           if (tid) {
             var url = new URL(oldBuyStripeUrl);
-            url.searchParams.set('client_reference_id', tid);
-            link.setAttribute("href", url.toString());
+            url.searchParams.set(&apos;client_reference_id&apos;, tid);
+            link.setAttribute(&quot;href&quot;, url.toString());
           }
         });
       }, 800);
     }
     if (window.attachEvent) {
-      window.attachEvent("onload", initializeFPRBuyLinks);
+      window.attachEvent(&quot;onload&quot;, initializeFPRBuyLinks);
     } else {
-      window.addEventListener("load", initializeFPRBuyLinks, false);
+      window.addEventListener(&quot;load&quot;, initializeFPRBuyLinks, false);
     }
-  </script>
+  &lt;/script&gt;
 ```
 
 @[trackingtest]("click")

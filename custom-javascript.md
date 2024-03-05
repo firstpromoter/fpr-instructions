@@ -16,11 +16,11 @@ For most websites and JavaScript frameworks, you can simply insert the script on
 4. Save your changes and publish.
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 @[trackingtest]("click")
@@ -37,33 +37,33 @@ If you can't use the email for privacy reasons, there's another option using “
 Depending on your setup you may need to have a way of getting the email and passing it to the script.
 
 ```html
-<script>
-var email=<actual user email goes here>;
-window.fpr("referral",{email});
-</script>
+&lt;script&gt;
+  var email=&lt;actual user email goes here&gt;;
+  window.fpr(&quot;referral&quot;,{email});
+&lt;/script&gt;
 ```
 
 For JavaScript framework like React, Vue, Angular, Ember, Stimulus, etc... you can make the call on the success callback function or even on the onClick handler.
 
 ```html
-<script>
+&lt;script&gt;
 //... the success callback:
 (function(response){
   var email=response.data.email;
-  window.fpr("referral",{email: email})
+  window.fpr(&quot;referral&quot;,{email: email})
 }) 
-</script>
+&lt;/script&gt;
 ```
 
 If you're using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com` you can grab the email from the url and pass  it to the fpr function as shown below.
 
 ```html
-<script>
+&lt;script&gt;
 function getParam(param){
   return new URLSearchParams(window.location.search).get(param);
 }
-fpr("referral",{email: getParam("email")})
-</script>
+fpr(&quot;referral&quot;,{email: getParam(&quot;email&quot;)})
+&lt;/script&gt;
 ```
 
 ***NB: If you're performing a redirect after calling the function, please double-check it, as redirection blocks any ongoing requests in most browsers (in this case it might be better have a delay or put the script on the redirected page instead).***

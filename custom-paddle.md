@@ -13,11 +13,11 @@ For most websites, you can simply insert the script on the public `index.html` f
 4. Save your changes and publish.
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 @[trackingtest]("click")
@@ -30,18 +30,18 @@ If you have a sign-up page or opt in page it will be ideal to track the referral
 2. We will need to take advantage of Paddles event Callback function. You can have a function there that sends the payment details when the payment is successful. Below is what a sample request will look like.
 
 ```html
-<script>
+&lt;script&gt;
 Paddle.Setup({ 
     ....,
     eventCallback:function(data){
-     if (data.event === "Checkout.Complete") {
+     if (data.event === &quot;Checkout.Complete&quot;) {
        const email = eventData.data.customer.email;
        const  uid = eventData.data.customer.id;
-       fpr("referral",{email,uid});
+       fpr(&quot;referral&quot;,{email,uid});
      }
     }
 });
-</script>
+&lt;/script&gt;
 ```
 
 @[trackingtest]("referral")

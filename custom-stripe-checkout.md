@@ -14,11 +14,11 @@ For most websites, you can simply insert the script on the public `index.html` f
 4. Save your changes and publish.
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 @[trackingtest]("click")
@@ -41,7 +41,7 @@ For this setup we have two main ways of getting the integration to work
 
 Doing this may vary depending on your setup below is an example for node js
 
-```Javascript
+```js
 //server-side.js
  
 const cookieParser = require('cookie-parser'); 
@@ -68,50 +68,48 @@ app.post('/create-checkout-session', async (req, res) => {
 
 2. Your form should now look like this
 
-   ```html {noCopy}
-         <form action="/charge" method="post" id="payment-form">
-        ...
-        <input type="hidden" id="fp_tid" name="fp_tid">
-        <button class="btn-Stripe">Submit Payment</button>
-      </form>
-    ```
+```html {noCopy}
+<form action="/charge" method="post" id="payment-form">
+    ...
+    <input type="hidden" id="fp_tid" name="fp_tid">
+    <button class="btn-Stripe">Submit Payment</button>
+</form>
+```
 
 3. Add the below script to your head section of your website.
 
-   ```html
-   <script>
+```html
+   &lt;script&gt;
     window.onload = function () {
-        var tid = window.FPROM && window.FPROM.data.tid;
+        var tid = window.FPROM &amp;&amp; window.FPROM.data.tid;
         if (tid) {
             //get the element by the id and set the value
-            document.getElementById('fp_tid').value = tid;
+            document.getElementById(&apos;fp_tid&apos;).value = tid;
         }
     }
-    </script>
-   ```
+    &lt;/script&gt;
+```
 
 4. Get the fp_tid on the backend.
 
-   ```Javascript
-        //server-side.js
+```js
+    //server-side.js
+    ...
+    const bodyParser = require("body-parser");
+    app.use(bodyParser.json());
+
+    app.post('/create-checkout-session', async (req, res) => {
+    const tid = req.body.fp_tid;
+    const session = await stripe.checkout.sessions.create({
         ...
-        const bodyParser = require("body-parser");
-        app.use(bodyParser.json());
-
-        app.post('/create-checkout-session', async (req, res) => {
-        const tid = req.body.fp_tid;
-
-        const session = await stripe.checkout.sessions.create({
-            ...
-            success_url: '<https://example.com/success>',
-            cancel_url: '<https://example.com/cancel>',
-            metadata: {
-                fp_tid: tid
-            }
-        })
-
-        res.json({ id: session.id });
-        });
-   ```
+        success_url: '<https://example.com/success>',
+        cancel_url: '<https://example.com/cancel>',
+        metadata: {
+            fp_tid: tid
+        }
+    })
+    res.json({ id: session.id });
+    });
+```
 
 @[trackingtest]("referral")

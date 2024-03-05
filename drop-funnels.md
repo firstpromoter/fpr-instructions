@@ -4,7 +4,6 @@
 
 To ensure that tracking works as expected, make sure you add the scripts to every marketing page.
 
-&nbsp;
 
 ## Main tracking script
 
@@ -15,11 +14,11 @@ To ensure that tracking works as expected, make sure you add the scripts to ever
 3. Add the scripts inside the [HEAD] section.
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 @[trackingtest]("click")
@@ -32,18 +31,18 @@ fpr("click");
 4. Add the scripts inside the HEAD tag.
 
 ```html
-<script>
+&lt;script&gt;
 function set_fprom() {
-  jQuery(document).on('mousedown', 'a.fl-button,.fl-builder-submit-btn', function() {
-    fpr("referral", {email: jQuery('input[name="fl-subscribe-form-email"],input[name="fl_builder_email"]').val(),uid: ""})
+  jQuery(document).on(&apos;mousedown&apos;, &apos;a.fl-button,.fl-builder-submit-btn&apos;, function() {
+    fpr(&quot;referral&quot;, {email: jQuery(&apos;input[name=&quot;fl-subscribe-form-email&quot;],input[name=&quot;fl_builder_email&quot;]&apos;).val(),uid: &quot;&quot;})
   });
 }
 if (window.attachEvent) {
-  window.attachEvent('onload', set_fprom);
+  window.attachEvent(&apos;onload&apos;, set_fprom);
 } else {
-  window.addEventListener('load', set_fprom, false);
+  window.addEventListener(&apos;load&apos;, set_fprom, false);
 }
-</script>
+&lt;/script&gt;
 ```
 
 @[trackingtest]("referral")

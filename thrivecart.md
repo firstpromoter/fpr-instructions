@@ -4,7 +4,6 @@
 
 To get the best results for tracking on ThriveCart it is ideal to set this up on all the marketing pages even if you use ThriveCart only for checkout
 
-&nbsp;
 
 ## Main tracking script
 
@@ -16,11 +15,11 @@ To get the best results for tracking on ThriveCart it is ideal to set this up on
 ***If you use landing/marketing pages outside ThriveCart you will need to add the script to all the pages on your website.***
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 @[trackingtest]("click")
@@ -33,26 +32,26 @@ fpr("click");
 4. Add the script below in the second field: **“Checkout pages: Paste tracking code to add only to your checkout page”**
 
 ```html
-<script> 
+&lt;script&gt; 
 function set_fprom(){
-    $(document).on('mousedown touchstart','div[data-widget-id="internal-core_fields_buy_button"]', function(){
-      fpr("referral",{email: $('input[name="customer.email"]').val(), uid:""})
+    $(document).on(&apos;mousedown touchstart&apos;,&apos;div[data-widget-id=&quot;internal-core_fields_buy_button&quot;]&apos;, function(){
+      fpr(&quot;referral&quot;,{email: $(&apos;input[name=&quot;customer.email&quot;]&apos;).val(), uid:&quot;&quot;})
     });
  }
 if (window.attachEvent){
-  window.attachEvent('onload', set_fprom);
+  window.attachEvent(&apos;onload&apos;, set_fprom);
 }else{
-  window.addEventListener('load', set_fprom, false);
+  window.addEventListener(&apos;load&apos;, set_fprom, false);
 }
-</script>
+&lt;/script&gt;
 ```
 
 5. Add the script below into the 3rd field **"Main product: Paste tracking code to add if the customer purchases the main product".**
 
 ```html
-<script>
- fpr("referral",{email: _thrive_order.customer.email})
-</script> 
+&lt;script&gt;
+ fpr(&quot;referral&quot;,{email: _thrive_order.customer.email})
+&lt;/script&gt; 
 ```
 
 @[trackingtest]("referral")

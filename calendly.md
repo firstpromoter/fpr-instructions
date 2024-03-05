@@ -11,18 +11,18 @@ This integration is for users who have custom websites and have Calendly added. 
 1. On your website, add the below scripts to all your landing or marketing pages. Preferably in the head section of your entire website or on your landing pages.
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 2. Go to your Calendly home page
 3. Select the desired event.
 4. Expand the **Confirmation Page** section.
 5. In the “On confirmation” section, choose “**Redirect to an external site**”.
-   ![image.png](images/screenshots/calendly-setup.png "")
+![image.png](images/screenshots/calendly-setup.png "")
 
 6. Enter your “Thank You” page URL in the **Redirect URL** section.
 7. Check the option “**Pass event details to your redirected page**” to include the lead's email in the “Thank You” page URL.
@@ -37,28 +37,28 @@ fpr("click");
 Add the below script to your thank-you page preferably in the head section.
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
-<script>
-    function sendReferralToFirstPromoter() {
-        if (window.fpr) {
-            var urlString = decodeURI(window.location.href);
-            var emailFromUrl = new URLSearchParams(urlString).get("invitee_email");
-            if (emailFromUrl) {
-                fpr("referral", { email: emailFromUrl });
-            }
-        }
-    } 
-    if (window.attachEvent) {
-        window.attachEvent("onload", sendReferralToFirstPromoter);
-    } 
-    else {
-        window.addEventListener("load", sendReferralToFirstPromoter, false);
-    }
-</script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+&lt;script&gt;
+    function sendReferralToFirstPromoter() {
+      if (window.fpr) {
+          var urlString = decodeURI(window.location.href);
+          var emailFromUrl = new URLSearchParams(urlString).get(&quot;invitee_email&quot;);
+          if (emailFromUrl) {
+            fpr(&quot;referral&quot;, { email: emailFromUrl });
+          }
+      }
+    }&nbsp;
+    if (window.attachEvent) {
+      window.attachEvent(&quot;onload&quot;, sendReferralToFirstPromoter);
+    }&nbsp;
+    else {
+      window.addEventListener(&quot;load&quot;, sendReferralToFirstPromoter, false);
+    }
+&lt;/script&gt;
 ```
 
 ### Test Referral Tracking

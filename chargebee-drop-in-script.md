@@ -17,11 +17,11 @@ For most websites, you can simply insert the script on the public `index.html` f
 4. Save your changes and publish.
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 @[trackingtest]("click")
@@ -33,7 +33,7 @@ fpr("click");
 ***Make sure the Main tracking script from previous step is also on the page.***
 
 ```html
-<script>
+&lt;script&gt;
   var chargebeeTrackFunc=function(fprom) {
     var tid = fprom.tid;
     var chargebeeInstance;
@@ -41,16 +41,16 @@ fpr("click");
       chargebeeInstance = Chargebee.getInstance(); 
     }
     catch(err){};
-    if (tid && chargebeeInstance){ 
+    if (tid &amp;&amp; chargebeeInstance){ 
         var cart = chargebeeInstance.getCart();
         cart.setCustomer({cf_tid:tid}); 
     }else 
     if (tid){
-      document.addEventListener("DOMContentLoaded",function(){chargebeeTrackFunc(fprom)});
+      document.addEventListener(&quot;DOMContentLoaded&quot;,function(){chargebeeTrackFunc(fprom)});
     }
   };
-  fpr('onReady',chargebeeTrackFunc)
-</script>
+  fpr(&apos;onReady&apos;,chargebeeTrackFunc)
+&lt;/script&gt;
 ```
 
 @[trackingtest]("referral")

@@ -4,7 +4,6 @@
 
 To get the best results, make sure you add the following script globally on the HEAD section of every public or marketing page on your website.
 
-&nbsp;
 
 ## Main tracking script
 
@@ -14,11 +13,11 @@ To get the best results, make sure you add the following script globally on the 
 4. Add the below scripts to the first field and save
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 @[trackingtest]("click")
@@ -32,21 +31,21 @@ fpr("click");
 5. Add the script in Code for Head Tag.
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js" integrity="sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw=" crossorigin="anonymous">
-</script>
-<script>
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js&quot; integrity=&quot;sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw=&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;/script&gt;
+&lt;script&gt;
   function set_fprom(){
-    console.log('loaded');
-    $(document).on('click',' a[name="btnSubmit"]', function(){
-      fpr("referral",{email: $('input[name="orderFormEmail"]').val(), uid:""})
+    console.log(&apos;loaded&apos;);
+    $(document).on(&apos;click&apos;,&apos; a[name=&quot;btnSubmit&quot;]&apos;, function(){
+      fpr(&quot;referral&quot;,{email: $(&apos;input[name=&quot;orderFormEmail&quot;]&apos;).val(), uid:&quot;&quot;})
     });
   }
   if (window.attachEvent){
-    window.attachEvent('onload', set_fprom);
+    window.attachEvent(&apos;onload&apos;, set_fprom);
   }else{
-    window.addEventListener('load', set_fprom, false);
+    window.addEventListener(&apos;load&apos;, set_fprom, false);
   }
-</script>
+&lt;/script&gt;
 ```
 
 @[trackingtest]("referral")

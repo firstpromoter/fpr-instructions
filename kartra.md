@@ -4,7 +4,6 @@
 
 To get the best results, make sure you add the following script globally on the HEAD section of every public or marketing page on your website.
 
-&nbsp;
 
 ## Main tracking script
 
@@ -14,11 +13,11 @@ To get the best results, make sure you add the following script globally on the 
 4. Add the following script inside the HEAD TRACKING CODE container
 
 ```html
-<script>(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
-fpr("init", {cid:"==cid=here=="}); 
-fpr("click");
-</script>
-<script src="https://cdn.firstpromoter.com/fpr.js" async></script>
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 @[trackingtest]("click")
@@ -32,20 +31,20 @@ fpr("click");
 5. Add the below scripts and save.
 
 ```html
-<script>
+&lt;script&gt;
   function set_fprom(){
-    console.log('loaded');
-    jQuery(document).on('mousedown touchstart','.one_click_one_price_checkout,.js_next_step_button,.kartra_optin_submit_btn,.js_kartra_language_submit_payment', function(){
-      fpr("referral",{email: jQuery('input[name="email"]').val(), uid:""})
+    console.log(&apos;loaded&apos;);
+    jQuery(document).on(&apos;mousedown touchstart&apos;,&apos;.one_click_one_price_checkout,.js_next_step_button,.kartra_optin_submit_btn,.js_kartra_language_submit_payment&apos;, function(){
+      fpr(&quot;referral&quot;,{email: jQuery(&apos;input[name=&quot;email&quot;]&apos;).val(), uid:&quot;&quot;})
     });
   }
 
   if (window.attachEvent){
-    window.attachEvent('onload', set_fprom);
+    window.attachEvent(&apos;onload&apos;, set_fprom);
   } else{
-    window.addEventListener('load', set_fprom, false);
+    window.addEventListener(&apos;load&apos;, set_fprom, false);
   }
-</script>
+&lt;/script&gt;
 ```
 
 @[trackingtest]("referral")
