@@ -1,0 +1,27 @@
+![Recurly](/images/logos/chargebee.png)
+
+# Connecting FirstPromoter with Recurly
+
+FirstPromoter allows you to automatically track sales, refunds, upgrades and cancellations from Recurly.
+
+## Setting Up
+
+To get started, you need to follow the steps below:
+
+### Step 1: Set API credentials
+
+1. Open new browser tab, login to your Recurly dashboard than go to Developers > API credentials
+2. Click on 'Add Private API key'
+3. Add a key name like 'FirstPromoter' and check 'Read-only' checkbox
+4. Click 'Save changes'
+5. Copy the Private API key and paste it into FirstPromoter Recurly Setup > Private API key field
+6. On 'Subdomain' field, enter your Recurly subdomain(look at the URL bar, if your URL is <https://mycompany.recurly.com> your subdomain is 'mycompany')
+
+### Step 2: Set Webhooks
+
+1. Go back to Recurly dashboard, go to Developers > Webhooks and click on Configure button
+2. Click on New Endpoint
+3. Copy the Webhook Endpoint URL value from FirstPromoter Recurly Setup form and paste it into Endpoint URL field on Recurly
+4. Click 'Save Changes' after you fill the Endpoint Name field
+
+***Please make sure to select "successful payment", "successful refund", "void payment"  and "cancelled subscription" events***
