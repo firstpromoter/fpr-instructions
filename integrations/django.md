@@ -1,4 +1,4 @@
-![Django](/images/logos/django.png)
+![Django](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fdjango.png/raw?ref=main)
 
 # Adding FirstPromoter to your Django Website
 
@@ -8,8 +8,8 @@ To get the best results for tracking, It is ideal to set this up on all the mark
 ## Main tracking script
 
 1. Locate your base template. In most Django projects, there’s a base HTML file that serves as the foundation for all other templates in the project. This is usually located in your templates directory and is often named base.html.
-2. Locate the `<head>` tag. It is typically at the top of your template document, right after the opening `<html>` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `</head>`
+2. Locate the `&lt;head&gt;` tag. It is typically at the top of your template document, right after the opening `&lt;html&gt;` tag.
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
 4. Save your changes and check.
 
 ```html
@@ -35,14 +35,14 @@ Similar to the main tracking script,
 3. Based on how you capture your emails, use any of the scripts below
 
 ```html
-<!--if you store the user email on a session variable--> 
+&lt;!--if you store the user email on a session variable--&gt; 
 &lt;script&gt;
-fpr(&quot;referral&quot;,{email:&quot;{{ user.email }}&quot;})
+fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; user.email &#125;&#125;&quot;})
 &lt;/script&gt;
 
-<!--if current_user is available you can render the email like this: -->
+&lt;!--if current_user is available you can render the email like this: --&gt;
 &lt;script&gt;
-fpr(&quot;referral&quot;,{email:&quot;{{ request.session[&apos;email&apos;] }}&quot;})
+fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; request.session[&apos;email&apos;] &#125;&#125;&quot;})
 &lt;/script&gt;
 ```
 

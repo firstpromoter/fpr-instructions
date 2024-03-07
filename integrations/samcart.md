@@ -1,13 +1,13 @@
-![SamCart](/images/logos/samcart.png)
+![SamCart](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fsamcart.png/raw?ref=main)
 
-# Adding FirstPromoter to Samcart
+# Adding FirstPromoter to SamCart
 
 To get the best results for tracking on SamCart it is ideal to set this up on all the marketing pages even if you use SamCart only for checkout.
 
 ## Main tracking script
 
 1. On your SamCart dashboard, go to the advanced settings tab of your product.
-2. Add the below script to the first "Embed HTML / Scripts in Header"
+2. Add the below script to the first "Embed HTML / Scripts in Header" section.
 3. Save your changes.
 
 ```html

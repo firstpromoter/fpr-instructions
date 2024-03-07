@@ -1,4 +1,4 @@
-![Click Funnels](/images/logos/clickfunnels.png)
+![Click Funnels](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fclickfunnels.png/raw?ref=main)
 
 # Adding FirstPromoter to your Click Funnels website
 
@@ -13,7 +13,7 @@ Setting up FirstPromoter with Click Funnels mainly requires you to add a predesi
 1. Go to your Click Funnels Dashboard.
 2. Select sites > Overview > Customize > Select Settings in the top bar > show code.
 
-![click funnels menu screenshot](/images/screenshots/click-funnels-settings.png "")
+![click funnels menu screenshot](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fclick-funnels-settings.png/raw?ref=main "")
 
 **For specific funnels pages**
 

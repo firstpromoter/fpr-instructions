@@ -1,4 +1,4 @@
-![HighLevel](/images/logos/highlevel.png)
+![HighLevel](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fhighlevel.png/raw?ref=main)
 
 # Adding FirstPromoter to your Highlevel website
 
@@ -8,15 +8,15 @@ Integrating FirstPromoter with your HighLevel setup is a breeze. It requires one
 
 ### Adding the scripts to your HighLevel website
 
-1. Go to the Dashboard
-2. Click on Sites on the left sidebar
-3. Select the websites Tab if you want to add to the full website, or the funnels tab to add to a specific funnel.
+1. Go to the Dashboard.
+2. Click on "Sites" in the left sidebar.
+3. Select the "Websites" tab if you want to add to the full website, or the "Funnels" tab to add to a specific funnel.
 
-![high level menu](/images/screenshots/highlevel-menu.png "")
+![high level menu](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fhighlevel-menu.png/raw?ref=main "")
   
-4. Click on the 3 dot menu icon on your preferred website or funnel and select Edit
-5. On the Panel, select the settings tab and find the head tracking code section.
-6. Copy and paste the below code into the head tracking code section
+4. Click on the three-dot menu icon on your preferred website or funnel, and select "Edit."
+5. In the top panel, select the "Settings" tab and find the "Head Tracking Code" section.
+6. Copy and paste the code below into the "Head Tracking Code" section.
 
 ```html [g1:Default]
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js&quot; integrity=&quot;sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;

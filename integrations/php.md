@@ -1,4 +1,4 @@
-![PHP](/images/logos/php.png)
+![PHP](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fphp.png/raw?ref=main)
 
 # Adding FirstPromoter to your custom PHP website
 
@@ -11,8 +11,8 @@ For most PHP websites, you can simply insert the script on the public index.php 
 ### Vanilla PHP
 
 1. Locate the PHP file where you want to add the script. This could be the index.php or any other .php file depending on your project structure
-2. Locate the `<head>` tag. It is typically at the top of your PHP document, right after the opening `<html>` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `</head>`
+2. Locate the `&lt;head&gt;` tag. It is typically at the top of your PHP document, right after the opening `&lt;html&gt;` tag.
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
 4. Save your changes.
 
 ### Laravel
@@ -20,8 +20,8 @@ For most PHP websites, you can simply insert the script on the public index.php 
 In Laravel, you typically add scripts in your blade template files.
 
 1. Locate the Blade file where you want to add the script. This could be a main layout file like app.blade.php or any other .blade.php  file depending on your project structure.
-2. Locate the `<head>` tag. It is typically at the top of your PHP document, right after the opening `<html>` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `</head>`
+2. Locate the `&lt;head&gt;` tag. It is typically at the top of your PHP document, right after the opening `&lt;html&gt;` tag.
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
 4. Save your changes.
 
 ```html
@@ -36,8 +36,8 @@ fpr(&quot;click&quot;);
 
 ## Referral tracking script
 
-Tracking referrals can be easily done by adding this JavaScript code snippet `fpr("referral",{email: "user-email"}` on the view/template rendered after user signs up or makes the purchase and passing the user email to it.
-**Make sure it is NOT placed on confirmation or thank you pages where old users can visit again.**
+Tracking referrals can be easily done by adding this JavaScript code snippet `fpr("referral",{email: "user-email"})` on the view/template rendered after the user signs up or makes the purchase and passing the user's email to it.
+*Make sure it is NOT placed on confirmation or thank you pages where old users can visit again.*
 
 ### Vanilla PHP
 
@@ -45,7 +45,7 @@ Similar to the main tracking script.
 
 1. Locate the PHP file where you want to add the script.
 2. Find the head tag.
-3. Use a script similar to the below to send the lead details to FirstPromoter. This mainly needs you to capture your email and pass that to the script as a variable  `<script>fpr("referral",{email: "<?php echo $email ?>"})</script>`
+3. Use a script similar to the below to send the lead details to FirstPromoter. This mainly needs you to capture your email and pass that to the script as a variable  `&lt;script&gt;fpr(&quot;referral&quot;,{email: &quot;&lt;?php echo $email ?&gt;&quot;})&lt;/script&gt;`
 
 ### Laravel
 
@@ -56,22 +56,20 @@ Similar to the main tracking script
 3. Based on how you capture your emails use any of the scripts below
 
 ```html
-<!-- // if authenticated user is available you can render the email like this: -->
+&lt;!-- // if authenticated user is available you can render the email like this: --&gt;
 &lt;script&gt;
-fpr(&quot;referral&quot;,{email:&quot;{{ Auth::user()-&gt;email }}&quot;})
+fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; Auth::user()-&gt;email &#125;&#125;&quot;})
 &lt;/script&gt;
 
-
-<!--  if you store the user email on a session variable -->
+&lt;!--  if you store the user email on a session variable --&gt;
 &lt;script&gt;
-fpr(&quot;referral&quot;,{email:&quot;{{ session(&apos;email&apos;) }}&quot;})
+fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; session(&apos;email&apos;) &#125;&#125;&quot;})
 &lt;/script&gt;
 
-<!-- if you use the "uid" and don't want to provide the email, you can skip it entirely: -->
+&lt;!-- if you use the &quot;uid&quot; and don&apos;t want to provide the email, you can skip it entirely: --&gt;
 &lt;script&gt;
-fpr(&quot;referral&quot;,{uid:&quot;{{ $user-&gt;id }}&quot;})
+fpr(&quot;referral&quot;,{uid:&quot;&#123;&#123; $user-&gt;id &#125;&#125;&quot;})
 &lt;/script&gt;
-
 ```
 
 The tracking of the actual sale will be handled automatically by the billing provider integration or our API (in case you'll use that for sales tracking).

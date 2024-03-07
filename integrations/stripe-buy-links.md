@@ -1,13 +1,13 @@
-![Stripe Buy Links](/images/logos/stripe_logo.png)
+![Stripe Buy Links](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fstripe_logo.png/raw?ref=main)
 
 # Adding FirstPromoter when using Stripe buy links
 
-To get the best results for tracking on when using stripe buy links, add the scripts to all pages where **stripe buy links** are available.
+To get the best results for tracking when using Stripe buy links, add the script to all pages where **Stripe buy links** are available.
 
 ## Tracking script
 
-1. Find the section on your website where you can add scripts,  preferably in the head section of your website.
-2. Add the bellow code to the head section.
+1. Find the section on your website where you can add scripts, preferably in the head section of your website.
+2. Add the code below to the head section.
 
 ***NB: If you are using your custom domain with stripe, you will need to change the link in the code from <https://buy.stripe.com/> to what is used for your domain.***
 

@@ -1,4 +1,4 @@
-![API](/images/logos/api.png)
+![API](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fapi.png/raw?ref=main)
 
 # Integrating FirstPromoter with your website using our API
 
@@ -7,8 +7,8 @@
 For most websites and JavaScript frameworks, you can simply insert the script on the public `index.html` file so it will be available when the website or framework loads.
 
 1. Find your main index file (index.html, index.php).
-2. Locate the `<head>` tag: The `<head>` tag is typically at the top of your  document, right after the opening `<html>` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `</head>`
+2. Locate the `&lt;head&gt;` tag: The `&lt;head&gt;` tag is typically at the top of your  document, right after the opening `&lt;html&gt;` tag.
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
 4. Save your changes and publish.
 
 ```html
@@ -61,30 +61,28 @@ const axios = require('axios');
 //this code can go into your sign up flow
 // to make this cleaner you can extract it into a function
 
-let email = '<example@example.com>'; //replace with actual email
-let tid = req.cookies['_fprom_tid'];
+const email = '<example@example.com>'; //replace with actual email
+const tid = req.cookies['_fprom_tid'];
 
-let data = `email=${email}&tid=${tid}`;
+const params = new URLSearchParams();
+params.append("email", email);
+params.append("tid", tid);
 
-let config = {
-    method: 'post',
-    url: '<https://firstpromoter.com/api/v1/track/signup>',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'x-api-key': 'YOUR API KEY HERE',
-    },
-    data : data
-};
-
-axios(config)
+axios
+    .post("https://firstpromoter.com/api/v1/track/signup", params, {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "x-api-key": "ae686284ba57be4acf2bed3ef94516d9",
+      },
+    })
     .then(function (response) {
-    //any action if the request is successful
-    console.log(JSON.stringify(response.data));
+      //any action if the request is successful
+      console.log(JSON.stringify(response.data));
     })
     .catch(function (error) {
-    //any action if the request fails
-    console.log(error);
-});
+      //any action if the request fails
+      console.log(error);
+    });
 ```
 
 @[trackingtest]("referral")

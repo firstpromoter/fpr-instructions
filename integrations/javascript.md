@@ -1,4 +1,4 @@
-![CustomJavascript](/images/logos/javascript.png)
+![CustomJavascript](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fjavascript.png/raw?ref=main)
 
 # Adding FirstPromoter to your custom website using Javascript
 
@@ -11,8 +11,8 @@ To get the best results for tracking, It is ideal to set this up on all the mark
 For most websites and JavaScript frameworks, you can simply insert the script on the public `index.html` file so it will be available when the website or framework loads.
 
 1. Find your main index file (index.html, index.php).
-2. Locate the `<head>` tag: The `<head>` tag is typically at the top of your  document, right after the opening `<html>` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `</head>`
+2. Locate the `&lt;head&gt;` tag: The `&lt;head&gt;` tag is typically at the top of your  document, right after the opening `&lt;html&gt;` tag.
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
 4. Save your changes and publish.
 
 ```html
@@ -27,9 +27,9 @@ fpr(&quot;click&quot;);
 
 ## Referral tracking script
 
-To track the referrals, you'll need to make a request FirstPromoter to capture the lead. This can mainly be done by calling the “fpr” JavaScript function defined by the main tracking script and insert the email of the user/lead/customer: `fpr(“referral”,{email:"user-email”})`
+To track referrals, you'll need to make a request to FirstPromoter to capture the lead. This can mainly be done by calling the "fpr" JavaScript function defined in the main tracking script and inserting the email of the user/lead/customer: `fpr("referral", {email: "user-email"})`
 
-If you can't use the email for privacy reasons, there's another option using “uid”,
+If you can't use the email for privacy reasons, there's another option using "uid",
 `fpr(“referral”,{uid:"user-id-in-database”})`
 
 ***NB: You need to have the Main tracking script from above available / accessible on this page as well. The below scripts should be placed or called underneath the main tracking script***

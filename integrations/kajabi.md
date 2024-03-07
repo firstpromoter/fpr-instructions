@@ -1,4 +1,4 @@
-![Kajabi](/images/logos/kajabi.png)
+![Kajabi](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fkajabi.png/raw?ref=main)
 
 # Adding FirstPromoter to your Kajabi website
 

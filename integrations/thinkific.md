@@ -1,14 +1,14 @@
-![Thinkific](/images/logos/thinkific.png)
+![Thinkific](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fthinkific.png/raw?ref=main)
 
 # Adding FirstPromoter to ThriveCart
 
-To get the best results for tracking on Thinkific it is ideal to set this up on all the marketing pages.
+To get the best results for tracking on Thinkific, it is ideal to set this up on all the marketing pages.
 
 ## Main tracking script
 
 1. Go to "Settings".
 2. Select Code & Analytics.
-3. Add the script below in "Site footer code" section.
+3. Add the script below in the "Site footer code" section.
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
@@ -22,38 +22,38 @@ fpr(&quot;click&quot;);
 
 ## Referral tracking script
 
-Thinkific provides two ways with which you can set things up.
+Thinkific provides two ways to set things up.
 
 ### Tracking Referrals from orders
 
-If you want to track orders kindly follow the below steps.
+If you want to track orders, kindly follow the steps below:
 
 1. Go to Settings.
-2. Select Code & analytics.
-3. Find the  Order tracking code section.
-4. Add the below scripts.
+2. Select Code & Analytics.
+3. Find the Order tracking code section.
+4. Add the scripts below.
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
 fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
-fpr(&quot;referral&quot;,{email:&quot;{{billing_email}}&quot;});
+fpr(&quot;referral&quot;,{email:&quot;&#123;&#123;billing_email&#125;&#125;&quot;});
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
 ### Tracking Referrals on Signup
 
-If you want to track sign-ups kindly follow the below steps.
+If you want to track sign-ups, kindly follow the steps below:
 
 1. Go to Settings.
-2. Select Code & analytics.
+2. Select Code & Analytics.
 3. Find the Signup tracking code section.
-4. Add the below scripts.
+4. Add the scripts below.
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
 fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
-fpr(&quot;referral&quot;,{email:&quot;{{email}}&quot;});
+fpr(&quot;referral&quot;,{email:&quot;&#123;&#123;email&#125;&#125;&quot;});
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```

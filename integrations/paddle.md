@@ -1,4 +1,4 @@
-![Paddle Checkout](/images/logos/paddle_logo.png)
+![Paddle Checkout](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fpaddle_logo.png/raw?ref=main)
 
 # Tracking using Paddle checkout
 
@@ -7,8 +7,8 @@
 For most websites, you can simply insert the script on the public `index.html` file so it will be available to all your pages.
 
 1. Find your main index file (index.html, index.php).
-2. Locate the `<head>` tag: The `<head>` tag is typically at the top of your  document, right after the opening `<html>` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `</head>`
+2. Locate the `&lt;head&gt;` tag: The `&lt;head&gt;` tag is typically at the top of your  document, right after the opening `&lt;html&gt;` tag.
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
 4. Save your changes and publish.
 
 ```html
