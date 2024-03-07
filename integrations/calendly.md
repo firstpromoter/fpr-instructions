@@ -1,4 +1,4 @@
-![Calendly](/images/logos/calendly.png)
+![Calendly](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fcalendly.png/raw?ref=main)
 
 # Working with FirstPromoter and Calendly
 
@@ -22,7 +22,7 @@ fpr(&quot;click&quot;);
 3. Select the desired event.
 4. Expand the **Confirmation Page** section.
 5. In the “On confirmation” section, choose “**Redirect to an external site**”.
-![image.png](images/screenshots/calendly-setup.png "")
+![image.png/raw?ref=main](images/screenshots/calendly-setup.png/raw?ref=main "")
 
 6. Enter your “Thank You” page URL in the **Redirect URL** section.
 7. Check the option “**Pass event details to your redirected page**” to include the lead's email in the “Thank You” page URL.

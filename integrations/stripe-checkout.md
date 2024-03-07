@@ -1,16 +1,16 @@
-![Stripe Checkout](/images/logos/stripe_checkout.png)
+![Stripe Checkout](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fstripe_checkout.png/raw?ref=main)
 
 # Tracking using Stripe Checkout
 
-This guide is for users using [Stripe Checkout feature](https://stripe.com/en-ro/payments/checkout), you should have a checkout page similar to [this](https://b.stripecdn.com/docs-statics-srv/assets/overview.6a4ea4b380bea93a5be8a820f3eb7c35.gif). Otherwise, select our JavaScript option.
+This guide is for users using [Stripe Checkout feature](https://stripe.com/en-ro/payments/checkout). You should have a checkout page similar to [this](https://b.stripecdn.com/docs-statics-srv/assets/overview.6a4ea4b380bea93a5be8a820f3eb7c35.gif). Otherwise, select our JavaScript option.
 
 ## Main tracking script
 
 For most websites, you can simply insert the script on the public `index.html` file so it will be available to all your pages.
 
 1. Find your main index file (index.html, index.php).
-2. Locate the `<head>` tag: The `<head>` tag is typically at the top of your  document, right after the opening `<html>` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `</head>`
+2. Locate the **<head>** tag: The **<head>** tag is typically at the top of your document, right after the opening **<html>** tag.
+3. Add the code below into the head section of your website, preferably before the closing head tag **</head>**.
 4. Save your changes and publish.
 
 ```html
@@ -25,21 +25,21 @@ fpr(&quot;click&quot;);
 
 ## Referral tracking script
 
-After setting up the main tracking script on your website we set two cookies `_fprom_ref` and `_fprom_tid`. The value of the `_fprom_tid` is a unique identifier created that links the current user session to an affiliate.
+After setting up the main tracking script on your website, we set two cookies: `_fprom_ref` and `_fprom_tid`. The value of the `_fprom_tid` is a unique identifier created that links the current user session to an affiliate.
 
-To track referrals from Stripe Checkout you'll need to pass the visitor id (tid) to Stripe checkout session using fp_tid parameter set in the metadata in the stripe checkout session.
+To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid) to the Stripe checkout session using the `fp_tid` parameter set in the metadata in the Stripe checkout session.
 
-For this setup we have two main ways of getting the integration to work
+For this setup, we have two main ways of getting the integration to work:
 
 1. By using cookies on the server side.
 2. By using a hidden field to pass the data from the frontend.
 
-### Option 1 Using cookies directly
+### Option 1: Using cookies directly
 
 1. Grab the `_fprom_tid` cookie on the server side.
-2. In your backend code for stripe set the fp_tid in the metadata.
+2. In your backend code for Stripe, set the `fp_tid` in the metadata.
 
-Doing this may vary depending on your setup below is an example for node js
+Doing this may vary depending on your setup. Below is an example for Node.js:
 
 ```js
 //server-side.js
@@ -64,7 +64,7 @@ app.post('/create-checkout-session', async (req, res) => {
 
 ### Option 2 Using a hidden input on your form on the frontend
 
-1. On your Stripe checkout form  add this hidden input field `<input type="hidden" id="fp_tid" name="fp_tid">`.
+1. On your Stripe checkout form  add this hidden input field **<input type="hidden" id="fp_tid" name="fp_tid">**.
 
 2. Your form should now look like this
 

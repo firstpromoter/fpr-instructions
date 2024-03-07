@@ -1,8 +1,8 @@
-![Recurly](/images/logos/chargebee.png)
+![Recurly](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fchargebee.png/raw?ref=main)
 
 # Connecting FirstPromoter with Recurly
 
-FirstPromoter allows you to automatically track sales, refunds, upgrades and cancellations from Recurly.
+FirstPromoter allows you to automatically track sales, refunds, upgrades, and cancellations from Recurly.
 
 ## Setting Up
 
@@ -10,18 +10,18 @@ To get started, you need to follow the steps below:
 
 ### Step 1: Set API credentials
 
-1. Open new browser tab, login to your Recurly dashboard than go to Developers > API credentials
+1. Open a new browser tab, login to your Recurly dashboard, then go to Developers > API credentials
 2. Click on 'Add Private API key'
-3. Add a key name like 'FirstPromoter' and check 'Read-only' checkbox
+3. Add a key name like 'FirstPromoter' and check the 'Read-only' checkbox
 4. Click 'Save changes'
-5. Copy the Private API key and paste it into FirstPromoter Recurly Setup > Private API key field
-6. On 'Subdomain' field, enter your Recurly subdomain(look at the URL bar, if your URL is <https://mycompany.recurly.com> your subdomain is 'mycompany')
+5. Copy the Private API key and paste it into the 'Private API key' field in the FirstPromoter Recurly Setup
+6. In the 'Subdomain' field, enter your Recurly subdomain (look at the URL bar, if your URL is <https://mycompany.recurly.com>, your subdomain is 'mycompany')
 
 ### Step 2: Set Webhooks
 
-1. Go back to Recurly dashboard, go to Developers > Webhooks and click on Configure button
+1. Go back to the Recurly dashboard, go to Developers > Webhooks, and click on the Configure button
 2. Click on New Endpoint
-3. Copy the Webhook Endpoint URL value from FirstPromoter Recurly Setup form and paste it into Endpoint URL field on Recurly
+3. Copy the Webhook Endpoint URL value from the FirstPromoter Recurly Setup form and paste it into the Endpoint URL field on Recurly
 4. Click 'Save Changes' after you fill the Endpoint Name field
 
-***Please make sure to select "successful payment", "successful refund", "void payment"  and "cancelled subscription" events***
+***Please make sure to select "successful payment", "successful refund", "void payment", and "cancelled subscription" events***

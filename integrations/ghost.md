@@ -1,8 +1,8 @@
-![Ghost](/images/logos/ghost.png)
+![Ghost](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fghost.png/raw?ref=main)
 
 # Adding FirstPromoter to your Ghost Website
 
-The integration between FirstPromoter is fully automated on Ghost. This does not require any scripts to be added.
+The integration between FirstPromoter and Ghost is fully automated and does not require any additional scripts to be added.
 
 ## Setting things up
 

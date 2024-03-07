@@ -1,4 +1,4 @@
-![Click Funnels](/images/click-funnels-logo.png)
+![Click Funnels](/images/click-funnels-logo.png/raw?ref=main)
 
 # Add Click Funnels to your website
 
@@ -38,7 +38,7 @@ window.analytics.identify("USER_ID", {
   email: "test@example.com",
   // Optional
   name: "Joe Bloggs",
-  avatar: "https://avatar.com/asd809sdhoif9as10nc29.png",
+  avatar: "https://avatar.com/asd809sdhoif9as10nc29.png/raw?ref=main",
   // Add anything else about the user here
 });
 ```

@@ -1,17 +1,17 @@
-![ThriveCart](/images/logos/thrivecart.png)
+![ThriveCart](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fthrivecart.png/raw?ref=main)
 
 # Adding FirstPromoter to ThriveCart
 
-To get the best results for tracking on ThriveCart it is ideal to set this up on all the marketing pages even if you use ThriveCart only for checkout
+To get the best results for tracking on ThriveCart, it is ideal to set this up on all the marketing pages, even if you use ThriveCart only for checkout.
 
 ## Main tracking script
 
 1. On your ThriveCart dashboard, go to product settings.
-2. Select checkout tab.
-3. Select tracking tab.
-4. On the first field: "All pages: Paste tracking code to add to all of this product's pages" add the code below and save.
+2. Select the checkout tab.
+3. Select the tracking tab.
+4. In the first field "All pages: Paste tracking code to add to all of this product's pages", add the code below and save.
 
-***If you use landing/marketing pages outside ThriveCart you will need to add the script to all the pages on your website.***
+***If you use landing/marketing pages outside ThriveCart, you will need to add the script to all the pages on your website.***
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
@@ -26,9 +26,9 @@ fpr(&quot;click&quot;);
 ## Referral tracking script
 
 1. Go to Settings.
-2. Select  Checkout tab.
+2. Select the Checkout tab.
 3. Enable the “Do you want to add tracking code to your checkout pages” option if it is not enabled already.
-4. Add the script below in the second field: **“Checkout pages: Paste tracking code to add only to your checkout page”**
+4. Add the script below in the second field: "Checkout pages: Paste tracking code to add only to your checkout page"
 
 ```html
 &lt;script&gt; 
@@ -45,7 +45,7 @@ if (window.attachEvent){
 &lt;/script&gt;
 ```
 
-5. Add the script below into the 3rd field **"Main product: Paste tracking code to add if the customer purchases the main product".**
+5. Add the script below into the 3rd field: "Main product: Paste tracking code to add if the customer purchases the main product".
 
 ```html
 &lt;script&gt;
