@@ -1,4 +1,4 @@
-![Stripe](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fstripe.png/raw?ref=main)
+![Stripe](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fstripe_logo.png/raw?ref=main)
 
 # Connecting FirstPromoter with Stripe
 

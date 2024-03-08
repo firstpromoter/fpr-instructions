@@ -1,4 +1,4 @@
-![BrainTree](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fbraintree.png/raw?ref=main)
+![BrainTree](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fbraintree_logo.png/raw?ref=main)
 
 # Connecting FirstPromoter with Braintree
 
