@@ -1,4 +1,4 @@
-![Chargebee](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fchargebee.png/raw?ref=main)
+![Chargebee](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fchargebee_logo.png/raw?ref=main)
 
 # Connecting FirstPromoter with Chargebee
 
