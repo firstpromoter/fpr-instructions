@@ -1,5 +1,3 @@
-![Paddle Checkout](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fpaddle_logo.png/raw?ref=main)
-
 # Tracking using Paddle checkout
 
 ## Main tracking script

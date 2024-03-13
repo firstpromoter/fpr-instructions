@@ -1,5 +1,3 @@
-![PHP](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fphp.png/raw?ref=main)
-
 # Adding FirstPromoter to your custom PHP website
 
 To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages. Please note that this process mainly requires a developer.  Remember to always check your browser’s console for any errors or issues. Happy coding! 😊

@@ -1,5 +1,3 @@
-![Stripe Buy Links](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fstripe_logo.png/raw?ref=main)
-
 # Adding FirstPromoter when using Stripe buy links
 
 To get the best results for tracking when using Stripe buy links, add the script to all pages where **Stripe buy links** are available.

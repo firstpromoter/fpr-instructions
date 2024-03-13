@@ -1,5 +1,3 @@
-![Stripe Checkout](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fstripe_checkout.png/raw?ref=main)
-
 # Tracking using Stripe Checkout
 
 This guide is for users using [Stripe Checkout feature](https://stripe.com/en-ro/payments/checkout). You should have a checkout page similar to [this](https://b.stripecdn.com/docs-statics-srv/assets/overview.6a4ea4b380bea93a5be8a820f3eb7c35.gif). Otherwise, select our JavaScript option.

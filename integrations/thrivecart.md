@@ -1,5 +1,3 @@
-![ThriveCart](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fthrivecart.png/raw?ref=main)
-
 # Adding FirstPromoter to ThriveCart
 
 To get the best results for tracking on ThriveCart, it is ideal to set this up on all the marketing pages, even if you use ThriveCart only for checkout.

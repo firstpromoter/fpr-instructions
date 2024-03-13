@@ -1,5 +1,3 @@
-![Kajabi](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fkajabi.png/raw?ref=main)
-
 # Adding FirstPromoter to your Kajabi website
 
 To ensure that tracking works as expected this integration has to be done on the Kajabi pages directly. It doesn't work if Kajabi checkout / form is embedded into another website.

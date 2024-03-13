@@ -1,5 +1,3 @@
-![ChargeBeeDropInScript](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fchargebee_dropin_script.png/raw?ref=main)
-
 # Integrating FirstPromoter with Chargebee drop in script
 
 To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages.

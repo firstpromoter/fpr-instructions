@@ -1,5 +1,3 @@
-![Kickpages](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fkickpages.png/raw?ref=main)
-
 # Adding FirstPromoter to Kickpages
 
 To get the best results, make sure you add the following script globally on the HEAD section of every public or marketing page on your website.

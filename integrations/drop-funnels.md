@@ -1,5 +1,3 @@
-![Drop Funnels](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fdropfunnels.png/raw?ref=main)
-
 # Adding FirstPromoter to your Drop Funnels website
 
 To ensure that tracking works as expected, make sure you add the scripts to every marketing page.
