@@ -1,5 +1,3 @@
-![Stripe Pricing Table](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fstripe_logo.png/raw?ref=main)
-
 # Adding FirstPromoter when using Stripe pricing table
 
 To get the best results for tracking when using Stripe pricing tables, add the scripts to all pages where Stripe pricing tables are available.

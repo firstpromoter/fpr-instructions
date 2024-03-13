@@ -1,5 +1,3 @@
-![RubyOnRails](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Frails.png/raw?ref=main)
-
 # Adding FirstPromoter to your Rails website
 
 To get the best results for tracking, it is ideal to set this up on all the marketing or landing pages. **Please note that this setup requires a developer.** Remember to always check your browser’s console for any errors or issues. Happy coding! 😊

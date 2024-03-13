@@ -1,5 +1,3 @@
-![SamCart](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fsamcart.png/raw?ref=main)
-
 # Adding FirstPromoter to SamCart
 
 To get the best results for tracking on SamCart it is ideal to set this up on all the marketing pages even if you use SamCart only for checkout.

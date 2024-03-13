@@ -1,5 +1,3 @@
-![API](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fapi.png/raw?ref=main)
-
 # Integrating FirstPromoter with your website using our API
 
 ## Main tracking script

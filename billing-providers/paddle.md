@@ -1,5 +1,3 @@
-![PaddleClassic](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fpaddle_logo.png/raw?ref=main)
-
 # Connecting FirstPromoter with Paddle
 
 FirstPromoter allows you to automatically track sales, refunds, upgrades, and cancellations from Paddle.

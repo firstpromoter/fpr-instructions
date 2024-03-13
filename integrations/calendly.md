@@ -1,5 +1,3 @@
-![Calendly](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fcalendly.png/raw?ref=main)
-
 # Working with FirstPromoter and Calendly
 
 This integration is for users who have custom websites and have Calendly added. **You must be on the Calendly Professional Plan. It also requires you to have a thank-you page, which you will redirect to after a user books an appointment.**

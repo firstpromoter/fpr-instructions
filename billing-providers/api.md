@@ -1,5 +1,3 @@
-![Stripe](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Flogos%2Fstripe.png/raw?ref=main)
-
 # Tracking Sales via our API
 
 FirstPromoter allows you to track sales, refunds, upgrades, and cancellations through our API.
