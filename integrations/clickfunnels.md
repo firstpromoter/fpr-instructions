@@ -15,7 +15,7 @@ Setting up FirstPromoter with Click Funnels mainly requires you to add a predesi
 
 **For specific funnels pages**
 
-Select Sites > Pages > Funnel Pages > click on the page you want to add the scripts to >Select Settings in the top bar > show code
+Select Sites > Pages > Funnel Pages > click on the page you want to add the scripts to > Select Settings in the top bar > show code
 
 1. Copy and paste the below code into the head tracking code section
 

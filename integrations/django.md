@@ -50,4 +50,5 @@ fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; request.session[&apos;email&a
 - If you don't have the user logged in, you can store the email on a session variable and render it on the next page where user gets redirected to.
 - If you're creating the customer on the billing provider via a library/API, on the rendered view/template you can also pass the billing provider customer id (Stripe customer id for ex.) as 'uid' and even skip the email altogether `fpr("referral",{uid:"cus_43gGBdr5hEkh571Hg"})`.
 
+
 @[trackingtest]("referral")

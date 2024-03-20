@@ -17,6 +17,7 @@ fpr(&quot;click&quot;);
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
+
 @[trackingtest]("click")
 
 ## Referral tracking script
@@ -28,15 +29,15 @@ To track referrals using the API you'll need to have access to the browser cooki
 
 ```js {noCopy}
 //backend.js
-const cookieParser = require('cookie-parser'); 
+const cookieParser = require(&apos;cookie-parser&apos;); 
 ...
 app.use(cookieParser());
-const tid = req.cookies['_fprom_tid'];
+const tid = req.cookies[&apos;_fprom_tid&apos;];
 ```
 
 3. With the cookie retrieved, make a POST request to the API endpoint `https://firstpromoter.com/api/v1/track/signup`  together with the following parameters.
 
-```txt
+```plaintext {noCopy}
 Parameter     Required                  Description
 
 email         yes if uid is null        email of the lead/sign-up
@@ -51,7 +52,7 @@ ip            no                        IP of the visitor
 
 4. The full code will look like this.
 
-```Javascript {noCopy}
+```js {noCopy}
 
 //backend.js
 const axios = require('axios');
@@ -59,18 +60,18 @@ const axios = require('axios');
 //this code can go into your sign up flow
 // to make this cleaner you can extract it into a function
 
-const email = '<example@example.com>'; //replace with actual email
-const tid = req.cookies['_fprom_tid'];
+const email = &apos;example@example.com&apos;; //replace with actual email
+const tid = req.cookies[&apos;_fprom_tid&apos;];
 
 const params = new URLSearchParams();
-params.append("email", email);
-params.append("tid", tid);
+params.append(&quot;email&quot;, email);
+params.append(&quot;tid&quot;, tid);
 
 axios
-    .post("https://firstpromoter.com/api/v1/track/signup", params, {
+    .post(&quot;https://firstpromoter.com/api/v1/track/signup&quot;, params, {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "x-api-key": "ae686284ba57be4acf2bed3ef94516d9",
+        &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;,
+        &quot;x-api-key&quot;: &quot;ae686284ba57be4acf2bed3ef94516d9&quot;,
       },
     })
     .then(function (response) {
@@ -81,6 +82,8 @@ axios
       //any action if the request fails
       console.log(error);
     });
+
 ```
+
 
 @[trackingtest]("referral")

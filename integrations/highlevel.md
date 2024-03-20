@@ -1,4 +1,4 @@
-# Adding FirstPromoter to your Highlevel website
+# Adding FirstPromoter to your HighLevel website
 
 Integrating FirstPromoter with your HighLevel setup is a breeze. It requires one set of predefined scripts which should be added to the head section of your website or funnels.
 
@@ -25,7 +25,7 @@ fpr(&quot;click&quot;);
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.highlevel.js&quot; async&gt;&lt;/script&gt;
 ```
 
-```html [g1:With Stripe Buy Links]
+```html [g1:With Stripe payment links]
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js&quot; integrity=&quot;sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
 fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
@@ -46,9 +46,9 @@ fpr(&quot;click&quot;);
         var oldBuyStripeUrl = link.getAttribute(&quot;href&quot;);
         var tid = getFPTid();
         if (tid) {
-    var url = new URL(oldBuyStripeUrl);
-            url.searchParams.set(&apos;client_reference_id&apos;, tid);
-            link.setAttribute(&quot;href&quot;, url.toString());
+          var url = new URL(oldBuyStripeUrl);
+          url.searchParams.set(&apos;client_reference_id&apos;, tid);
+          link.setAttribute(&quot;href&quot;, url.toString());
         }
       });
     }, 1000);
