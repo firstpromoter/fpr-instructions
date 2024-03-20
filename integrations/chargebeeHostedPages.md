@@ -1,4 +1,4 @@
-# Integrating FirstPromoter with Chargebee drop in script
+# Integrating FirstPromoter with Chargebee Hosted pages
 
 To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages.
 **Please note that this setup is only used when using the Drop-In Chargebee script (the popup not hosted page)**
@@ -24,6 +24,7 @@ fpr(&quot;click&quot;);
 
 @[trackingtest]("click")
 
+
 ## Referral tracking script
 
 1. Find the pages where you have set up the drop-in script from Chargebee.
@@ -31,23 +32,20 @@ fpr(&quot;click&quot;);
 ***Make sure the Main tracking script from previous step is also on the page.***
 
 ```html
-&lt;script&gt;
-  var chargebeeTrackFunc=function(fprom) {
-    var tid = fprom.tid;
-    var chargebeeInstance;
-    try{
-      chargebeeInstance = Chargebee.getInstance(); 
-    }
-    catch(err){};
-    if (tid &amp;&amp; chargebeeInstance){ 
-        var cart = chargebeeInstance.getCart();
-        cart.setCustomer({cf_tid:tid}); 
-    }else 
-    if (tid){
-      document.addEventListener(&quot;DOMContentLoaded&quot;,function(){chargebeeTrackFunc(fprom)});
-    }
-  };
-  fpr(&apos;onReady&apos;,chargebeeTrackFunc)
+&lt;script type=&quot;text/javascript&quot;&gt;
+     function applyReferralLinks(fprom){
+        var tid = fprom.tid;
+        var domain=&apos;website.chargebee.com&apos;;
+        var l = document.links;
+        for(var i=0; i&lt;l.length; i++) {
+            if (l[i].href &amp;&amp; l[i].href.indexOf(domain)&gt;-1){
+                var url= new URL(l[i].href);
+                url.searchParams.set(&apos;customer[cf_tid]&apos;,tid);
+                l[i].href=url
+            }
+          }
+       }
+    fpr(&apos;onReady&apos;,applyReferralLinks)
 &lt;/script&gt;
 ```
 

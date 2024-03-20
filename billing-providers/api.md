@@ -9,7 +9,7 @@ To get started, you will need to first set up an endpoint from which you will re
 1. Get your API key from your Settings > Integrations tab.
 2. On your backend, you will need to make a POST request to the `https://firstpromoter.com/api/v1/track/sale` endpoint we provide, together with the following parameters.
 
-```plaintext
+```plaintext {noCopy}
 Parameter     Required                  Description
 
 email         yes if uid is null        email of the lead/sign-up
@@ -25,28 +25,28 @@ ref_id        no                        default referral id of the promoter.
 
 3. The full code will look like this.
 
-```Javascript
+```js {noCopy}
 
 //backend.js
-const axios = require('axios');
+const axios = require(&apos;axios&apos;);
 ...
 //this code can go into your payment flow
 // to make this cleaner you can extract it into a function
 
-const email = '<example@example.com>'; //replace with actual email
+const email = &apos;example@example.com&apos;; //replace with actual email
 const amount = 1000 //actual amount from payment $10 *100 to convert it to cents;
-const event_id = "43eb-83e9-374ea4600556"// actual event id from payment;
+const event_id = &quot;43eb-83e9-374ea4600556&quot;// actual event id from payment;
 
 const params = new URLSearchParams();
-params.append("email", email);
-params.append("amount", amount);
-params.append("event_id", event_id)
+params.append(&quot;email&quot;, email);
+params.append(&quot;amount&quot;, amount);
+params.append(&quot;event_id&quot;, event_id)
 
 axios
-    .post("https://firstpromoter.com/api/v1/track/sale", params, {
+    .post(&quot;https://firstpromoter.com/api/v1/track/sale&quot;, params, {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "x-api-key": "YOUR API KEY HERE",
+        &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;,
+        &quot;x-api-key&quot;: &quot;YOUR API KEY HERE&quot;,
       },
     })
     .then(function (response) {
@@ -57,4 +57,5 @@ axios
       //any action if the request fails
       console.log(error);
     });
+
 ```

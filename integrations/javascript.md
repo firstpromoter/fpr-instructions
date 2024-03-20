@@ -13,6 +13,12 @@ For most websites and JavaScript frameworks, you can simply insert the script on
 3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
 4. Save your changes and publish.
 
+### Vue / React
+
+1. Find your main index.html file in your public folder
+2. Locate the `&lt;head&gt;` tag: The `&lt;head&gt;` tag is typically at the top of your  document, right after the opening `&lt;html&gt;` tag.
+3. Add the below code into the head section of your website before. Preferably before the closing head tag </head>  and save
+
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
 fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
@@ -21,7 +27,72 @@ fpr(&quot;click&quot;);
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
+### Nuxt 3
+
+For Nuxt 3 you need to use the useHead composable
+
+1. Create an external file in your public folder with the name `fprmain.js`
+2. copy and paste the contents below into `fprmain.js`
+
+```js
+// /public/fprmain.js
+(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+```
+
+3. On your landing pages or marketing pages you will need to add the script using the useHead composable
+
+```html
+&lt;script setup&gt;
+useHead({
+  script: [
+   { src: &quot;fprmain.js&quot; }
+ { async: true,
+      src: 'https://cdn.firstpromoter.com/fpr.js',
+    }, 
+  ],
+});
+&lt;/script&gt;
+```
+
+### NextJS
+
+For NextJS you need to add the script to the `_document.tsx` file.
+
+1. Create an external file in your public folder with the name `fprmain.js`
+2. Copy and paste the contents below into `fprmain.js`
+
+```js
+// /public/fprmain.js
+(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+```
+
+3. Add fprmain.js as a `&lt;script&gt;` tag inside the Head tag in _document.tsx and then add `&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; /&gt;` as well.
+
+```js
+import { Html, Head, Main, NextScript } from &apos;next/document&apos;
+
+export default function Document() {
+  return (
+    &lt;Html&gt;
+      &lt;Head&gt;
+        &lt;script src=&quot;fprmain.js&quot;/&gt;
+        &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; /&gt;
+      &lt;/Head&gt;
+      &lt;body&gt;
+        &lt;Main /&gt;
+        &lt;NextScript /&gt;
+      &lt;/body&gt;
+    &lt;/Html&gt;
+  )
+}
+```
+
 @[trackingtest]("click")
+
 
 ## Referral tracking script
 

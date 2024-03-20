@@ -1,6 +1,6 @@
-# Adding FirstPromoter when using Stripe buy links
+# Adding FirstPromoter when using Stripe payment links
 
-To get the best results for tracking when using Stripe buy links, add the script to all pages where **Stripe buy links** are available.
+To get the best results for tracking when using Stripe payment links, add the script to all pages where **Stripe payment links** are available.
 
 ## Tracking script
 
@@ -19,19 +19,19 @@ fpr(&quot;click&quot;);
     function getFPTid() {
       return window.FPROM &amp;&amp; window.FPROM.data.tid;
     }
-    function initializeFPRBuyLinks() {
-      console.log(&quot;initialized fpr on buy links&quot;);
+    function initializeFPRPaymentLinks() {
+      console.log(&quot;initialized fpr on payment links&quot;);
       setTimeout(function () {
-        var buyStripeLinks = document.querySelectorAll(
+        var stripePaymentLinks = document.querySelectorAll(
           &apos;a[href^=&quot;https://buy.stripe.com/&quot;]&apos;
         );
-        buyStripeLinks.forEach(function (link) {
+        stripePaymentLinks.forEach(function (link) {
           // Get current url
-          var oldBuyStripeUrl = link.getAttribute(&quot;href&quot;); 
+          var oldStripePaymentUrl = link.getAttribute(&quot;href&quot;); 
           // Get the tid
           var tid = getFPTid();
           if (tid) {
-            var url = new URL(oldBuyStripeUrl);
+            var url = new URL(oldStripePaymentUrl);
             url.searchParams.set(&apos;client_reference_id&apos;, tid);
             link.setAttribute(&quot;href&quot;, url.toString());
           }
@@ -39,9 +39,9 @@ fpr(&quot;click&quot;);
       }, 800);
     }
     if (window.attachEvent) {
-      window.attachEvent(&quot;onload&quot;, initializeFPRBuyLinks);
+      window.attachEvent(&quot;onload&quot;, initializeFPRPaymentLinks);
     } else {
-      window.addEventListener(&quot;load&quot;, initializeFPRBuyLinks, false);
+      window.addEventListener(&quot;load&quot;, initializeFPRPaymentLinks, false);
     }
   &lt;/script&gt;
 ```
