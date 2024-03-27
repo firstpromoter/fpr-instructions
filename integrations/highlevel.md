@@ -12,7 +12,7 @@ Integrating FirstPromoter with your HighLevel setup is a breeze. It requires one
 
 ![high level menu](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fhighlevel-menu.png/raw?ref=main "")
   
-4. Click on the three-dot menu icon on your preferred website or funnel, and select "Edit."
+4. Click on the three-dot menu icon on your preferred website or funnel and select "Edit."
 5. In the top panel, select the "Settings" tab and find the "Head Tracking Code" section.
 6. Copy and paste the code below into the "Head Tracking Code" section.
 

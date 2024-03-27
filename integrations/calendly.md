@@ -20,11 +20,11 @@ fpr(&quot;click&quot;);
 3. Select the desired event.
 4. Expand the **Confirmation Page** section.
 5. In the “On confirmation” section, choose “**Redirect to an external site**”.
-![calendly screenshot](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fimages/screenshots/calendly-setup.png/raw?ref=main "")
+![calendly screenshot](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fcalendly-setup.png/raw?ref=main "")
 
-6. Enter your “Thank You” page URL in the **Redirect URL** section.
-7. Check the option “**Pass event details to your redirected page**” to include the lead's email in the “Thank You” page URL.
-8. Click Save & Close.
+1. Enter your “Thank You” page URL in the **Redirect URL** section.
+2. Check the option “**Pass event details to your redirected page**” to include the lead's email in the “Thank You” page URL.
+3. Click Save & Close.
 
 
 @[trackingtest]("click")

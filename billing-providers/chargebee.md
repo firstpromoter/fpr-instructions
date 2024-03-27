@@ -1,6 +1,6 @@
 # Connecting FirstPromoter with Chargebee
 
-FirstPromoter allows you to automatically track sales, refunds, upgrades, and cancellations from Chargebee.
+FirstPromoter allows you to automatically track sales, refunds, upgrades and cancellations from Chargebee.
 
 ## Setting Up
 

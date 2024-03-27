@@ -1,6 +1,6 @@
 # Tracking Sales via our API
 
-FirstPromoter allows you to track sales, refunds, upgrades, and cancellations through our API.
+FirstPromoter allows you to track sales, refunds, upgrades and cancellations through our API.
 
 ## Setting Up
 

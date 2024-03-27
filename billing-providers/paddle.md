@@ -1,6 +1,6 @@
 # Connecting FirstPromoter with Paddle
 
-FirstPromoter allows you to automatically track sales, refunds, upgrades, and cancellations from Paddle.
+FirstPromoter allows you to automatically track sales, refunds, upgrades and cancellations from Paddle.
 
 ## Setting Up Paddle Classic
 
@@ -13,7 +13,7 @@ To set the Webhooks, you will have to:
 1. Login to Paddle > Developer tools in the sidebar > Events > click on "+ Add new endpoint"
 2. Add the new field named "Webhook Endpoint URL" from FirstPromoter.
 
-The events required by FirstPromoter are **payment_succeeded**, **payment_refunded**, **subscription_payment_succeeded**, **subscription_payment_refunded**, and **subscription_cancelled**, so please make sure these webhook events are enabled.
+The events required by FirstPromoter are **payment_succeeded**, **payment_refunded**, **subscription_payment_succeeded**, **subscription_payment_refunded** and **subscription_cancelled**, so please make sure these webhook events are enabled.
 
 ### Set up Public Key
 
@@ -35,4 +35,4 @@ To set the Webhooks, you will have to:
 2. Click on New Destination
 3. In the popup that comes up, set your description and add in the URL provided from FirstPromoter.
 
-The events required by FirstPromoter are **​transaction.completed**, **transaction.cancelled**, **subscription.cancelled**, **subscription.created**, and **adjustment.updated**, so please make sure these webhook events are enabled.
+The events required by FirstPromoter are **​transaction.completed**, **transaction.cancelled**, **subscription.cancelled**, **subscription.created** and **adjustment.updated**, so please make sure these webhook events are enabled.

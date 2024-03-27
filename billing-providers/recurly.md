@@ -1,6 +1,6 @@
 # Connecting FirstPromoter with Recurly
 
-FirstPromoter allows you to seamlessly track sales, refunds, upgrades, and cancellations from Recurly.
+FirstPromoter allows you to seamlessly track sales, refunds, upgrades and cancellations from Recurly.
 
 ## Setting Up
 
@@ -17,9 +17,9 @@ To get started, please follow the below steps:
 
 ### Step 2: Set Webhooks
 
-1. Return to the Recurly dashboard, go to Developers > Webhooks, and click on the Configure button
+1. Return to the Recurly dashboard, go to Developers > Webhooks and click on the Configure button
 2. Click on "New Endpoint".
-3. Copy the Webhook Endpoint URL from the setup form here on yor right, and paste it into the Endpoint URL field on Recurly.
+3. Copy the Webhook Endpoint URL from the setup form here on yor right and paste it into the Endpoint URL field on Recurly.
 4. Click "Save Changes" after you fill the Endpoint Name field
 
-***Please make sure to select "successful payment", "successful refund", "void payment", and "cancelled subscription" events***
+***Please make sure to select "successful payment", "successful refund", "void payment" and "cancelled subscription" events***
