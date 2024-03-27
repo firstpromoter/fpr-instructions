@@ -4,10 +4,10 @@ To get the best results, make sure you add the following script globally on the 
 
 ## Main tracking script
 
-1. On your Kartra dashboard, go to all funnels page
-2. Click on your funnel
-3. Go to settings on the top right of your funnel page
-4. Add the following script inside the HEAD TRACKING CODE container
+1. On your Kartra dashboard, go to all funnels page.
+2. Click on your funnel.
+3. Go to settings on the top right of your funnel page.
+4. Add the following script inside the HEAD TRACKING CODE container.
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);

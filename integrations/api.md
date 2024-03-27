@@ -1,5 +1,7 @@
 # Integrating FirstPromoter with your website using our API
 
+To get the best results for tracking, it is ideal to set this up on all the marketing or landing pages. **Please note that this setup requires a developer.** Remember to  check your browser’s console for any errors. Happy coding! 😊
+
 ## Main tracking script
 
 For most websites and JavaScript frameworks, you can simply insert the script on the public `index.html` file so it will be available when the website or framework loads.

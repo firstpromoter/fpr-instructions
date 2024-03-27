@@ -1,6 +1,6 @@
 # Adding FirstPromoter to your HighLevel website
 
-Integrating FirstPromoter with your HighLevel setup is a breeze. It requires one set of predefined scripts which should be added to the head section of your website or funnels.
+Integrating FirstPromoter with your HighLevel setup is a breeze. It requires one predefined set of scripts which should be added to the head section of your website or funnels.
 
 ## Tracking script
 

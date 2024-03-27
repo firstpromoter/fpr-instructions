@@ -16,7 +16,7 @@ fpr(&quot;click&quot;);
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 
-2. Go to your Calendly home page
+2. Go to your Calendly home page.
 3. Select the desired event.
 4. Expand the **Confirmation Page** section.
 5. In the “On confirmation” section, choose “**Redirect to an external site**”.

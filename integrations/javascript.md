@@ -1,8 +1,6 @@
 # Adding FirstPromoter to your custom website using Javascript
 
-To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages. **Please note that this setup requires a developer.**
-
-&nbsp;
+To get the best results for tracking, it is ideal to set this up on all the marketing or landing pages. **Please note that this setup requires a developer.** Remember to  check your browser’s console for any errors. Happy coding! 😊
 
 ## Main tracking script
 

@@ -4,10 +4,10 @@ To get the best results, make sure you add the following script globally on the 
 
 ## Main tracking script
 
-1. On your Kickpages dashboard, go to the  projects page
-2. Hover on the settings icon under the profile picture
-3. Select Includes  
-4. Add the below scripts to the first field and save
+1. On your Kickpages dashboard, go to the  projects page.
+2. Hover on the settings icon under the profile picture.
+3. Select Includes.  
+4. Add the below scripts to the first field and save.
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
@@ -21,7 +21,7 @@ fpr(&quot;click&quot;);
 
 ## Referral tracking script
 
-1. Go back to the Projects page.
+1. Return to the Projects page.
 2. Click on your project.
 3. Click Edit Page and select Settings on top right.
 4. Click on Custom Includes.
