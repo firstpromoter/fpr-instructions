@@ -1,17 +1,17 @@
-# Adding FirstPromoter to your Click Funnels website
+# Adding FirstPromoter to your ClickFunnels website
 
-Setting up FirstPromoter with Click Funnels mainly requires you to add a predesigned script to get started
+Setting up FirstPromoter with ClickFunnels mainly requires you to add a predesigned script to get started
 
 &nbsp;
 
 ## Tracking script
 
-### Adding the scripts to your Click Funnels website
+### Adding the scripts to your ClickFunnels website
 
-1. Go to your Click Funnels Dashboard.
+1. Go to your ClickFunnels Dashboard.
 2. Select sites > Overview > Customize > Select Settings in the top bar > show code.
 
-![click funnels menu screenshot](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fclick-funnels-settings.png/raw?ref=main "")
+![clickfunnels menu screenshot](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fclickfunnels-settings.png/raw?ref=main "")
 
 **For specific funnels pages**
 
