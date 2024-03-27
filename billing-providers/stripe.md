@@ -7,7 +7,7 @@ FirstPromoter allows you to automatically track sales, refunds, upgrades and can
 To get started, you need to follow the below steps:
 
 1. Click on the "Connect Stripe" Button. this will take you to the stripe marketplace, requesting you to install FirstPromoter
-2. Select your stripe account and install the app in Live mode
-3. once done you will be redirected back here to complete the setup.
+2. Select your stripe account and install the app in live mode if you are ready for production or in test mode if you are testing.
+3. After the installation is completed, you will be redirected back to this page to complete the setup.
 
-***Please make sure to connect to setup the app in live mode. Once done you can click on the test mode toggle to switch between stripe test and live modes***
+***Please note that to switch between test mode and live mode on stripe you will need to disconnect, and reconnect again to the desired mode.***
