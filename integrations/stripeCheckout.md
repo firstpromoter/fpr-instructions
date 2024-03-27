@@ -67,11 +67,11 @@ app.post('/create-checkout-session', async (req, res) => {
 2. Your form should now look like this
 
 ```html {noCopy}
-<form action="/charge" method="post" id="payment-form">
+&lt;form action=&quot;/charge&quot; method=&quot;post&quot; id=&quot;payment-form&quot;&gt;
     ...
-    <input type="hidden" id="fp_tid" name="fp_tid">
-    <button class="btn-Stripe">Submit Payment</button>
-</form>
+    &lt;input type=&quot;hidden&quot; id=&quot;fp_tid&quot; name=&quot;fp_tid&quot;&gt;
+    &lt;button class=&quot;btn-Stripe&quot;&gt;Submit Payment&lt;/button&gt;
+&lt;/form&gt;
 ```
 
 3. Add the below script to your head section of your website.
@@ -100,8 +100,8 @@ app.post('/create-checkout-session', async (req, res) => {
     const tid = req.body.fp_tid;
     const session = await stripe.checkout.sessions.create({
         ...
-        success_url: '<https://example.com/success>',
-        cancel_url: '<https://example.com/cancel>',
+        success_url: 'https://example.com/success',
+        cancel_url: 'https://example.com/cancel',
         metadata: {
             fp_tid: tid
         }
