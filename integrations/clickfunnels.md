@@ -2,8 +2,6 @@
 
 Setting up FirstPromoter with ClickFunnels mainly requires you to add a predesigned script to get started
 
-&nbsp;
-
 ## Tracking script
 
 ### Adding the scripts to your ClickFunnels website

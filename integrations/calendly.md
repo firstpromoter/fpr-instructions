@@ -2,7 +2,6 @@
 
 This integration is for users who have custom websites and have Calendly added. **You must be on the Calendly Professional Plan. It also requires you to have a thank-you page, which you will redirect to after a user books an appointment.**
 
-&nbsp;
 
 ## Main tracking script
 
@@ -48,10 +47,10 @@ fpr(&quot;click&quot;);
             fpr(&quot;referral&quot;, { email: emailFromUrl });
           }
       }
-    }&nbsp;
+    }
     if (window.attachEvent) {
       window.attachEvent(&quot;onload&quot;, sendReferralToFirstPromoter);
-    }&nbsp;
+    }
     else {
       window.addEventListener(&quot;load&quot;, sendReferralToFirstPromoter, false);
     }

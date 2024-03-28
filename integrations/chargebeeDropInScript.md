@@ -3,7 +3,6 @@
 To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages.
 **Please note that this setup is only used when using the Drop-In Chargebee script (the popup not hosted page)**
 
-&nbsp;
 
 ## Main tracking script
 
