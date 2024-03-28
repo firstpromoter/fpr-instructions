@@ -11,7 +11,7 @@ For most websites and JavaScript frameworks, you can simply insert the script on
 3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
 4. Save your changes and publish.
 
-### Vue / React
+### Vanilla JS, Vue & React
 
 1. Find your main index.html file in your public folder
 2. Locate the `&lt;head&gt;` tag: The `&lt;head&gt;` tag is typically at the top of your  document, right after the opening `&lt;html&gt;` tag.
