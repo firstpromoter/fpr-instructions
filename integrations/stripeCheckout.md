@@ -25,7 +25,7 @@ fpr(&quot;click&quot;);
 
 After setting up the main tracking script on your website, we set two cookies: `_fprom_ref` and `_fprom_tid`. The value of the `_fprom_tid` is a unique identifier created that links the current user session to an affiliate.
 
-To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid) to the Stripe checkout session using the `fp_tid` parameter set in the metadata in the Stripe checkout session.
+To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid) to the Stripe checkout session by setting the `fp_tid` parameter in the metadata.
 
 For this setup, we have two main ways of getting the integration to work:
 
@@ -60,10 +60,10 @@ app.post('/create-checkout-session', async (req, res) => {
 });
 ```
 
-### Option 2 Using a hidden input on your form on the frontend
+### Option 2: Using a hidden input in your form on the frontend
 
-1. On your Stripe checkout form  add this hidden input field **<input type="hidden" id="fp_tid" name="fp_tid">**.
-2. Your form should now look like this
+1. On your Stripe checkout form add this hidden input field **<input type="hidden" id="fp_tid" name="fp_tid">**.
+2. The code for your form should now look like this.
 
 ```html {noCopy}
 &lt;form action=&quot;/charge&quot; method=&quot;post&quot; id=&quot;payment-form&quot;&gt;
@@ -87,9 +87,9 @@ app.post('/create-checkout-session', async (req, res) => {
     &lt;/script&gt;
 ```
 
-4. Get the fp_tid on the backend.
+4. Get the `fp_tid` on the backend of your application.
 
-```js
+```js {noCopy}
     //server-side.js
     ...
     const bodyParser = require("body-parser");

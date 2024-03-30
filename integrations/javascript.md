@@ -30,7 +30,7 @@ fpr(&quot;click&quot;);
 For Nuxt 3 you need to use the useHead composable.
 
 1. Create an external file in your public folder with the name `fprmain.js`.
-2. copy and paste the contents below into `fprmain.js`.
+2. Copy and paste the contents below into `fprmain.js`.
 
 ```js
 // /public/fprmain.js
@@ -99,7 +99,7 @@ To track referrals, you'll need to make a request to FirstPromoter to capture th
 If you can't use the email for privacy reasons, there's another option using "uid",
 `fpr(“referral”,{uid:"user-id-in-database”})`
 
-***NB: You need to have the Main tracking script from above available / accessible on this page as well. The below scripts should be placed or called underneath the main tracking script***
+***NB: You need to have the Main tracking script from above available / accessible on this page as well. The below scripts should be placed or called underneath the main tracking script.***
 
 Depending on your setup you may need to have a way of getting the email and passing it to the script.
 
