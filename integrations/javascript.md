@@ -101,7 +101,7 @@ If you can't use the email for privacy reasons, there's another option using "ui
 
 ***NB: You need to have the Main tracking script from above available / accessible on this page as well. The below scripts should be placed or called underneath the main tracking script.***
 
-Depending on your setup you may need to have a way of getting the email and passing it to the script.
+Depending on your setup, you may need to have a way of getting the email and passing it to the script.
 
 ```html
 &lt;script&gt;
@@ -122,7 +122,7 @@ For JavaScript framework like React, Vue, Angular, Ember, Stimulus, etc... you c
 &lt;/script&gt;
 ```
 
-If you're using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com` you can grab the email from the url and pass  it to the fpr function as shown below.
+If you're using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com`, you can grab the email from the url and pass it to the fpr function as shown below.
 
 ```html
 &lt;script&gt;
