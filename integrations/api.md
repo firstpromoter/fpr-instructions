@@ -24,7 +24,7 @@ fpr(&quot;click&quot;);
 
 ## Referral tracking script
 
-To track referrals using the API you'll need to have access to the browser cookies. With the main tracking script in place there are 2 cookies we set when you visit the referral link. _fprom_tid and _fprom_ref booth cookies can bee used in making your API request however to prevent multiple tracking always use the _fprom_tid which has a check to see if a browser session has already been tracked.
+To track referrals using the API you'll need to have access to the browser cookies. Once the main tracking script is implemented, two cookies, namely `_fprom_tid` and `_fprom_ref`, are set upon visiting the referral link. Both cookies can be used in making your API requests; however, to prevent multiple tracking, it is recommended to use the `_fprom_tid`. This include a check to determine if a browser session has already been tracked, ensuring that tracking occurs only once.
 
 1. Get your API key from your Settings > Integrations tab.
 2. On your backend, retrieve the _fprom_tid cookie.
