@@ -6,7 +6,7 @@ To get the best results for tracking, it is ideal to set this up on all the mark
 
 1. Locate your base template. In most Django projects, there’s a base HTML file that serves as the foundation for all other templates in the project. This is usually located in your templates directory and is often named base.html.
 2. Locate the `&lt;head&gt;` tag. It is typically at the top of your template document, right after the opening `&lt;html&gt;` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`.
 4. Save your changes and check.
 
 ```html
@@ -29,7 +29,7 @@ Similar to the main tracking script,
 
 1. Locate the template file where you want to add the script.
 2. Find the head tag.
-3. Based on how you capture your emails, use any of the scripts below
+3. Based on how you capture your emails, use any of the scripts below.
 
 ```html
 &lt;!--if you store the user email on a session variable--&gt; 

@@ -10,7 +10,7 @@ For most PHP websites, you can simply insert the script on the public index.php 
 
 1. Locate the PHP file where you want to add the script. This could be the index.php or any other .php file depending on your project structure
 2. Locate the `&lt;head&gt;` tag. It is typically at the top of your PHP document, right after the opening `&lt;html&gt;` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`.
 4. Save your changes.
 
 ### Laravel
@@ -19,7 +19,7 @@ In Laravel, you typically add scripts in your blade template files.
 
 1. Locate the Blade file where you want to add the script. This could be a main layout file like app.blade.php or any other .blade.php  file depending on your project structure.
 2. Locate the `&lt;head&gt;` tag. It is typically at the top of your PHP document, right after the opening `&lt;html&gt;` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`.
 4. Save your changes.
 
 ```html

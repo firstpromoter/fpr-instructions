@@ -15,8 +15,8 @@ For most websites, you can simply insert the script on the public `index.html` f
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
-fpr(&quot;click&quot;);
+  fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+  fpr(&quot;click&quot;);
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```

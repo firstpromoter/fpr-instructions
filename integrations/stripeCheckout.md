@@ -63,7 +63,6 @@ app.post('/create-checkout-session', async (req, res) => {
 ### Option 2 Using a hidden input on your form on the frontend
 
 1. On your Stripe checkout form  add this hidden input field **<input type="hidden" id="fp_tid" name="fp_tid">**.
-
 2. Your form should now look like this
 
 ```html {noCopy}

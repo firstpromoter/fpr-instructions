@@ -13,9 +13,9 @@ For most websites and JavaScript frameworks, you can simply insert the script on
 
 ### Vanilla JS, Vue & React
 
-1. Find your main index.html file in your public folder
+1. Find your main index.html file in your public folder.
 2. Locate the `&lt;head&gt;` tag: The `&lt;head&gt;` tag is typically at the top of your  document, right after the opening `&lt;html&gt;` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag </head>  and save
+3. Add the below code into the head section of your website before. Preferably before the closing head tag </head>  and save.
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
@@ -27,10 +27,10 @@ fpr(&quot;click&quot;);
 
 ### Nuxt 3
 
-For Nuxt 3 you need to use the useHead composable
+For Nuxt 3 you need to use the useHead composable.
 
-1. Create an external file in your public folder with the name `fprmain.js`
-2. copy and paste the contents below into `fprmain.js`
+1. Create an external file in your public folder with the name `fprmain.js`.
+2. copy and paste the contents below into `fprmain.js`.
 
 ```js
 // /public/fprmain.js
@@ -39,7 +39,7 @@ fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;});
 fpr(&quot;click&quot;);
 ```
 
-3. On your landing pages or marketing pages you will need to add the script using the useHead composable
+3. On your landing pages or marketing pages you will need to add the script using the useHead composable.
 
 ```html
 &lt;script setup&gt;
@@ -58,8 +58,8 @@ useHead({
 
 For NextJS you need to add the script to the `_document.tsx` file.
 
-1. Create an external file in your public folder with the name `fprmain.js`
-2. Copy and paste the contents below into `fprmain.js`
+1. Create an external file in your public folder with the name `fprmain.js`.
+2. Copy and paste the contents below into `fprmain.js`.
 
 ```js
 // /public/fprmain.js

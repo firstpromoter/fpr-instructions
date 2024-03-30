@@ -27,7 +27,7 @@ fpr(&quot;click&quot;);
 To track referrals using the API, you'll need to have access to the browser cookies. Once the main tracking script is implemented, two cookies, namely `_fprom_tid` and `_fprom_ref`, are set upon visiting the referral link. Both cookies can be used in making your API requests; however, to prevent multiple tracking, it is recommended to use the `_fprom_tid`. This include a check to determine if a browser session has already been tracked, ensuring that tracking occurs only once.
 
 1. Get your API key from your Settings > Integrations tab.
-2. On your backend, retrieve the _fprom_tid cookie.
+2. On your backend, retrieve the `_fprom_tid` cookie.
 
 ```js {noCopy}
 //backend.js
@@ -50,7 +50,7 @@ ip            no                        IP of the visitor
 
 ```
 
-**Note:** the request content type for our API is not JSON, it's `application/x-www-form-urlencoded`
+**Note:** the request content type for our API is not JSON, it's `application/x-www-form-urlencoded`.
 
 4. The full code will look like this.
 
@@ -62,7 +62,7 @@ const axios = require('axios');
 //this code can go into your sign up flow
 // to make this cleaner you can extract it into a function
 
-const email = &apos;example@example.com&apos;; //replace with actual email
+const email = &apos;example@example.com&apos; //replace with actual email
 const tid = req.cookies[&apos;_fprom_tid&apos;];
 
 const params = new URLSearchParams();
