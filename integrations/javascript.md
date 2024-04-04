@@ -91,7 +91,6 @@ export default function Document() {
 
 @[trackingtest]("click")
 
-
 ## Referral tracking script
 
 To track referrals, you'll need to make a request to FirstPromoter to capture the lead. This can mainly be done by calling the "fpr" JavaScript function defined in the main tracking script and inserting the email of the user/lead/customer: `fpr("referral", {email: "user-email"})`
@@ -99,18 +98,22 @@ To track referrals, you'll need to make a request to FirstPromoter to capture th
 If you can't use the email for privacy reasons, there's another option using "uid",
 `fpr(“referral”,{uid:"user-id-in-database”})`
 
-***NB: You need to have the Main tracking script from above available / accessible on this page as well. The below scripts should be placed or called underneath the main tracking script.***
+***NB: You need to have the Main tracking script from above available / accessible on this page as well. The below scripts should be placed or called underneath the main tracking script. Also, the placement of this code may vary depending on your website. For some basic use cases where vanilla JavaScript or jQuery is used, it can be placed in the `<head>` section of your website and triggered after an event on the page. However for more complex use cases or JavaScript frame works  it is best called /added inside your code after an event is successful. ***
 
-Depending on your setup, you may need to have a way of getting the email and passing it to the script.
+Depending on your setup, you will need to:
+
+1. Find the section in your code where you can get access to the email/uid of the current user. Preferably the sign up page, opt-in form or checkout page.
+2. Capture the email and pass it to the `fpr` function like this:  `fpr("referral", {email: <user-email-goes-here>})`.
+3. Below is an example of how the code may look like.
 
 ```html
 &lt;script&gt;
-  var email=&lt;actual user email goes here&gt;;
+  var email=&lt;actual@email.com&gt;;
   window.fpr(&quot;referral&quot;,{email});
 &lt;/script&gt;
 ```
 
-For JavaScript framework like React, Vue, Angular, Ember, Stimulus, etc... you can make the call on the success callback function or even on the onClick handler.
+For JavaScript frameworks like React, Vue, Angular, Ember, Stimulus, etc... you can make the call on the success callback function or even on the onClick handler.
 
 ```html
 &lt;script&gt;
@@ -121,6 +124,23 @@ For JavaScript framework like React, Vue, Angular, Ember, Stimulus, etc... you c
 }) 
 &lt;/script&gt;
 ```
+
+If you are having a simple form on your website you can capture the email from the input field and make the request when the submit button is pressed. Below is an example.
+
+&lt;script&gt;
+  const emailInput = document.querySelector(&apos;input[name=&quot;email&quot;]&apos;)
+  const submitButton = parentForm.querySelector(&quot;button[type=&apos;submit&apos;]&quot;);
+  //we don&apos;t use the click event since you may be using that for something else
+  [&quot;mousedown&quot;, &quot;touchstart&quot;].forEach(function (event) {
+    submitButton.addEventListener(event, function () {
+      if (validateEmail(emailInput.value)) {
+        fpr(&quot;referral&quot;, {
+          email: emailInput.value,
+        });
+      }
+    });
+  });
+&lt;/script&gt;
 
 If you're using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com`, you can grab the email from the url and pass it to the fpr function as shown below.
 
