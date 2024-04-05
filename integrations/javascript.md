@@ -98,39 +98,43 @@ To track referrals, you'll need to make a request to FirstPromoter to capture th
 If you can't use the email for privacy reasons, there's another option using "uid",
 `fpr(“referral”,{uid:"user-id-in-database”})`
 
-***NB: You need to have the Main tracking script from above available / accessible on this page as well. The below scripts should be placed or called underneath the main tracking script.*** 
+***NB: You need to have the Main tracking script from above accessible in the code on this page as well. The below scripts should be placed or called underneath the main tracking script.***
 
-***The placement of this code may vary depending on your website. For basic use cases where vanilla JavaScript or jQuery is used, it can be placed in the `<head>` section of your website and triggered by an event such as a button click. However for more complex scenarios or when using JavaScript frameworks it is best incorporated within your code base and invoked after an event is successful, such as a success callback for sign up.***
+***The placement of this code may vary depending on your website. For basic use cases where vanilla JavaScript or jQuery is used, it can be placed in the `<head>` section of your website and triggered by an event such as a button click. However for more complex scenarios or when using JavaScript frameworks, it is best embedded within your code and invoked after an event is successful, such as a success callback for sign up.***
 
 Depending on your setup, you will need to:
 
 1. Find the section in your code where you can get access to the email/uid of the current user. Preferably the sign up page, opt-in form or checkout page.
-2. Capture the email and pass it to the `fpr` function like this:  `fpr("referral", {email: <user-email-goes-here>})`.
-3. Below is an example of how the code may look like.
+2. Capture the email and pass it to the `fpr` function like this:  `fpr("referral", {email: "actual@email.com"})`.
+3. Below are some examples of what the code may look like.
+
+If you are having a simple form on your website, you can capture the email from the input field and make the request when the submit button is pressed. This code can be put in the `<head>` section of your website.
 
 ```html
 &lt;script&gt;
-  var email=&lt;actual@email.com&gt;;
-  window.fpr(&quot;referral&quot;,{email});
-&lt;/script&gt;
-```
+function sendLeadToFP(){
+    const emailInput = document.querySelector(&apos;input[name=&quot;email&quot;]&apos;)
+    const submitButton = parentForm.querySelector(&quot;button[type=&apos;submit&apos;]&quot;);
 
-If you are having a simple form on your website, you can capture the email from the input field and make the request when the submit button is pressed. Below is an example.
+    //we don&apos;t use the click event since you may be using that for something else.
 
-```html
-&lt;script&gt;
-  const emailInput = document.querySelector(&apos;input[name=&quot;email&quot;]&apos;)
-  const submitButton = parentForm.querySelector(&quot;button[type=&apos;submit&apos;]&quot;);
-  //we don&apos;t use the click event since you may be using that for something else
-  [&quot;mousedown&quot;, &quot;touchstart&quot;].forEach(function (event) {
-    submitButton.addEventListener(event, function () {
-      if (validateEmail(emailInput.value)) {
-        fpr(&quot;referral&quot;, {
-          email: emailInput.value,
-        });
-      }
+    [&quot;mousedown&quot;, &quot;touchstart&quot;].forEach(function (event) {
+      submitButton.addEventListener(event, function () {
+        if (validateEmail(emailInput.value)) {
+          fpr(&quot;referral&quot;, {
+            email: emailInput.value,
+          });
+        }
+      });
     });
-  });
+}
+
+if (window.attachEvent) {
+    window.attachEvent(&quot;onload&quot;, sendLeadToFP);
+} else {
+    window.addEventListener(&quot;load&quot;, sendLeadToFP, false);
+}
+
 &lt;/script&gt;
 ```
 
@@ -146,7 +150,7 @@ For JavaScript frameworks like React, Vue, Angular, Ember, Stimulus, etc... you 
 &lt;/script&gt;
 ```
 
-If you're using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com`, you can grab the email from the url and pass it to the fpr function as shown below.
+If you're using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com`, you can grab the email from the url and pass it to the `fpr` function as shown below. This can be added directly into the `<head>` section of your website.
 
 ```html
 &lt;script&gt;
