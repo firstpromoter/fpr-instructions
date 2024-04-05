@@ -20,7 +20,7 @@ To get started, you need to:
 
 ### Create a custom field in Chargebee
 
-If you are using Chargebee drop-in scripts or hosted pages, you will need to create a hidden custom field named `tid`.
+If you are using **Chargebee drop-in scripts** or **Chargebee hosted pages**, you will need to create a hidden custom field named `tid`.
 The following video is a guide showing you how to set it up.
 
 @[video]({"src":"https://fast.wistia.net/embed/iframe/ufkibyq84z", "title":"Set Chargebee custom fields."})
