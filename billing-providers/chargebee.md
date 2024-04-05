@@ -18,10 +18,11 @@ To get started, you need to:
 10. In the 'Site' field, enter your Chargebee subdomain **(look at the URL bar, if your URL is <https://mycompany.chargebee.com>, your site is 'mycompany')**.
 11. Click 'Confirm webhook connection'.
 
-
 ### Create a custom field in Chargebee
 
 The below steps are required if you are using the Chargebee drop-in scripts or hosted pages.
+
+ <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/ufkibyq84z?seo=true&videoFoam=true" title="Chargebee Custom Fields Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe></div></div>
 
 1. Head to Settings > Configure Chargebee.
 2. Scroll down till you get to the "Custom fields" section.
