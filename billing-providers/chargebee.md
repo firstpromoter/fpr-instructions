@@ -21,7 +21,8 @@ To get started, you need to:
 ### Create a custom field in Chargebee
 
 The below steps are required if you are using the Chargebee drop-in scripts or hosted pages.
-@[video](https://fast.wistia.net/embed/iframe/ufkibyq84z)
+
+@[video]("https://fast.wistia.net/embed/iframe/ufkibyq84z")
 
 1. Head to Settings > Configure Chargebee.
 2. Scroll down till you get to the "Custom fields" section.
