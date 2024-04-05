@@ -5,6 +5,7 @@ To get the best results for tracking, It is ideal to set this up on all the mark
 
 This integration requires you to create a hidden custom field named `tid`.
 The following video is a guide on how to set it up if you don't have it already.
+
 @[video]({"src":"https://fast.wistia.net/embed/iframe/ufkibyq84z", "title":"Set Chargebee custom fields."})
 
 ## Main tracking script
