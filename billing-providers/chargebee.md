@@ -22,21 +22,21 @@ To get started, you need to:
 
 The below steps are required if you are using the Chargebee drop-in scripts or hosted pages.
 
- <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/ufkibyq84z?seo=true&videoFoam=true" title="Chargebee Custom Fields Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe></div></div>
+Click [here to view the video guide](https://fast.wistia.net/embed/iframe/ufkibyq84z?seo=true&videoFoam=true)
 
 1. Head to Settings > Configure Chargebee.
 2. Scroll down till you get to the "Custom fields" section.
 3. Ensure you have the Customers tab selected.
 4. Select Single line text as shown in the screenshot below.
 ![chargebee custom fields customers tab](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-customers-tab.png/raw?ref=main "")
-5. This opens a modal with a form.
-6. In the field label section put in "tid" as shown in the screenshot below.
+1. This opens a modal with a form.
+2. In the field label section put in "tid" as shown in the screenshot below.
 ![chargebee custom fields modal](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-custom-fields-modal.png/raw?ref=main "")
-7. Click on "Create & Save".
+1. Click on "Create & Save".
 ![chargebee custom field after save](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-custom-field-after-save.png/raw?ref=main "")
-8. Return to Settings > Configure Chargebee and select the Self-Service Portal.
-9. Select the Fields tab
-10. Click on the edit icon next to the tid field we just created.
+1. Return to Settings > Configure Chargebee and select the Self-Service Portal.
+2. Select the Fields tab
+3. Click on the edit icon next to the tid field we just created.
 ![chargebee checkout edit](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-checkout-edit.png/raw?ref=main "")
-11. Hide the field so it doesn't show in your checkout and click Apply to save the changes.
+1. Hide the field so it doesn't show in your checkout and click Apply to save the changes.
 ![chargebee-hide-field](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-hide-field.png/raw?ref=main "")
