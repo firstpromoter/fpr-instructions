@@ -3,6 +3,9 @@
 To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages.
 **Please note that this setup is only used when using the Drop-In Chargebee script (the popup not hosted page)**
 
+This Integration requires you to create a hidden custom field named `tid`.
+The following video is a guide showing you how to set it up if you don't have it set already.
+@[video]({"src":"https://fast.wistia.net/embed/iframe/ufkibyq84z", "title":"Set Chargebee custom fields."})
 
 ## Main tracking script
 

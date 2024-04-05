@@ -20,23 +20,9 @@ To get started, you need to:
 
 ### Create a custom field in Chargebee
 
-The below steps are required if you are using the Chargebee drop-in scripts or hosted pages.
+If you are using Chargebee drop-in scripts or hosted pages, you will need to create a hidden custom field named `tid`.
+The following video is a guide showing you how to set it up.
 
 @[video]({"src":"https://fast.wistia.net/embed/iframe/ufkibyq84z", "title":"Set Chargebee custom fields."})
 
-1. Head to Settings > Configure Chargebee.
-2. Scroll down till you get to the "Custom fields" section.
-3. Ensure you have the Customers tab selected.
-4. Select Single line text as shown in the screenshot below.
-![chargebee custom fields customers tab](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-customers-tab.png/raw?ref=main "")
-1. This opens a modal with a form.
-2. In the field label section put in "tid" as shown in the screenshot below.
-![chargebee custom fields modal](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-custom-fields-modal.png/raw?ref=main "")
-1. Click on "Create & Save".
-![chargebee custom field after save](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-custom-field-after-save.png/raw?ref=main "")
-1. Return to Settings > Configure Chargebee and select the Self-Service Portal.
-2. Select the Fields tab
-3. Click on the edit icon next to the tid field we just created.
-![chargebee checkout edit](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-checkout-edit.png/raw?ref=main "")
-1. Hide the field so it doesn't show in your checkout and click Apply to save the changes.
-![chargebee-hide-field](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fchargebee-hide-field.png/raw?ref=main "")
+This field is mainly used in sending the `tid (tracking id)` to Chargebee, allowing us to track both the lead and sales directly from Chargbee.
