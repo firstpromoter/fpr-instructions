@@ -15,7 +15,7 @@ For most websites and JavaScript frameworks, you can simply insert the script on
 
 1. Find your main index.html file in your public folder.
 2. Locate the `&lt;head&gt;` tag: The `&lt;head&gt;` tag is typically at the top of your  document, right after the opening `&lt;html&gt;` tag.
-3. Add the below code into the head section of your website before. Preferably before the closing head tag </head>  and save.
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`  and save.
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
@@ -100,7 +100,7 @@ If you can't use the email for privacy reasons, there's another option using "ui
 
 ***NB: You need to have the Main tracking script from above accessible in the code on this page as well. The below scripts should be placed or called underneath the main tracking script.***
 
-***The placement of this code may vary depending on your website. For basic use cases where vanilla JavaScript or jQuery is used, it can be placed in the `<head>` section of your website and triggered by an event such as a button click. However for more complex scenarios or when using JavaScript frameworks, it is best embedded within your code and invoked after an event is successful, such as a success callback for sign up.***
+***The placement of this code may vary depending on your website. For basic use cases where vanilla JavaScript or jQuery is used, it can be placed in the `&lt;head&gt;` section of your website and triggered by an event such as a button click. However for more complex scenarios or when using JavaScript frameworks, it is best embedded within your code and invoked after an event is successful, such as a success callback for sign up.***
 
 Depending on your setup, you will need to:
 
@@ -108,7 +108,7 @@ Depending on your setup, you will need to:
 2. Capture the email and pass it to the `fpr` function like this:  `fpr("referral", {email: "actual@email.com"})`.
 3. Below are some examples of what the code may look like.
 
-If you are having a simple form on your website, you can capture the email from the input field and make the request when the submit button is pressed. This code can be put in the `<head>` section of your website.
+If you are having a simple form on your website, you can capture the email from the input field and make the request when the submit button is pressed. This code can be put in the `&lt;head&gt;` section of your website.
 
 ```html
 &lt;script&gt;
@@ -150,7 +150,7 @@ For JavaScript frameworks like React, Vue, Angular, Ember, Stimulus, etc... you 
 &lt;/script&gt;
 ```
 
-If you're using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com`, you can grab the email from the url and pass it to the `fpr` function as shown below. This can be added directly into the `<head>` section of your website.
+If you're using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com`, you can grab the email from the url and pass it to the `fpr` function as shown below. This can be added directly into the `&lt;head&gt;` section of your website.
 
 ```html
 &lt;script&gt;
