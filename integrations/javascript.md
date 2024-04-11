@@ -119,6 +119,23 @@ export default function Document() {
 ```
 ~~~
 
+
+~~~markdown [g1:Angular]
+1. Find your main index.html file in your src folder.
+2. Locate the `&lt;head&gt;` tag: The `&lt;head&gt;` tag is typically at the top of your  document, right after the opening `&lt;html&gt;` tag.
+3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;` and save.
+
+
+  ```html
+  &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+  fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+  fpr(&quot;click&quot;);
+  &lt;/script&gt;
+  &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+  ```
+
+~~~
+
 @[trackingtest]("click")
 
 ## Referral tracking script
@@ -243,7 +260,7 @@ In React you can make the call on a success callback function or even on a click
 2. Capture the email and pass it to the `fpr` function like this:  `fpr("referral", {email: "actual@email.com"})`.
 3. Below is an example of what the code may look like. 
 
-```js
+```js {noCopy}
 import React, { useState } from &apos;react&apos;;
 import axios from &apos;axios&apos;;
 
@@ -319,6 +336,76 @@ function RegistrationForm() {
 export default RegistrationForm;
 ```
 
+~~~
+
+~~~markdown [g2:Angular]
+In Angular you can make the call on a success callback function or even on a click handler.
+
+1. Find the section in your code where you can get access to the email/uid of the current user. Preferably the sign up page, opt-in form or checkout page.
+2. Capture the email and pass it to the `fpr` function like this:  `fpr("referral", {email: "actual@email.com"})`.
+3. Below is an example of what the code might look like assuming you have a component representing a sign-up form (SignUpComponent).
+
+### Template File
+```html {noCopy}
+<form (ngSubmit)="onSubmit()">
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName" [(ngModel)]="formData.firstName" required>
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" [(ngModel)]="formData.lastName" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="formData.password" required>
+
+  <button type="submit">Register</button>
+</form>
+
+```
+
+### Component
+
+```js {noCopy}
+
+import { Component } from '@angular/core';
+import axios from 'axios'; // Import Axios for HTTP requests (if using)
+
+@Component({
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
+})
+export class SignUpComponent {
+  formData = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: ''
+  };
+
+  constructor() {}
+
+  onSubmit(): void {
+    axios.post('/backend-service/register', this.formData)
+      .then(response => {
+        console.log('Registration successful:', response.data);
+        const userEmail = this.formData.email;
+        this.sendReferralEmail(userEmail);
+      })
+      .catch(error => {
+        console.error('Registration failed:', error);
+      });
+  }
+
+  sendReferralEmail(email: string): void {
+    //here we call the fpr function
+    window.fpr('referral', { email });
+  }
+}
+
+```
 ~~~
 
 @[trackingtest]("referral")
