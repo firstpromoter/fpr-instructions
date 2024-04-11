@@ -27,7 +27,7 @@ After setting up the main tracking script on your website, there are two cookies
 
 To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid) to the Stripe checkout session by setting the `fp_tid` parameter in the metadata.
 
-There are several ways of doing this, however, as examples we will cover 2 main/popular ways of setting this up:
+**There are several ways of doing this, however, as examples we will cover 2 main/popular ways of setting this up:**
 
 1. By using cookies on the server side.
 2. By using a hidden field to pass the cookie data to the backend.
