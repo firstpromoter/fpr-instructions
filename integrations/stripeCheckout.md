@@ -7,8 +7,8 @@ This guide is for users using [Stripe Checkout feature](https://stripe.com/en-ro
 For most websites, you can simply insert the script on the public `index.html` file so it will be available to all your pages.
 
 1. Find your main index file (index.html, index.php).
-2. Locate the `<head>` tag: The `<head>` tag is typically at the top of your document, right after the opening `<html>` tag.
-3. Add the code below into the head section of your website, preferably before the closing head tag `</head>`.
+2. Locate the `&lt;head&gt;` tag: The `&lt;head&gt;` tag is typically at the top of your document, right after the opening `&lt;html&gt;` tag.
+3. Add the code below into the head section of your website, preferably before the closing head tag `&lt;/head&gt;`.
 4. Save your changes and publish.
 
 ```html
@@ -64,7 +64,7 @@ app.post('/create-checkout-session', async (req, res) => {
 
 For this approach we will:
 
-1. Create a hidden input field like `<input type="hidden" id="fp_tid" name="fp_tid">` and add it to the checkout form.
+1. Create a hidden input field like `&lt;input type=&quot;hidden&quot; id=&quot;fp_tid&quot; name=&quot;fp_tid&quot;&gt;` and add it to the checkout form.
 2. The code for the form should now look like this:
 
 ```html {noCopy}
