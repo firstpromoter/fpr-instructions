@@ -76,7 +76,7 @@ For this approach we will:
 ```
 
 3. Use the `window.FPROM.data.tid` to get the tid value and append the value to the input field.
-4. The code for assigning the tid to the input field will look like this:
+4. The code for assigning the tid to the input field can/might look like this:
 
 ```html {noCopy}
 &lt;script&gt;
