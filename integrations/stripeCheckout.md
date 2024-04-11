@@ -7,8 +7,8 @@ This guide is for users using [Stripe Checkout feature](https://stripe.com/en-ro
 For most websites, you can simply insert the script on the public `index.html` file so it will be available to all your pages.
 
 1. Find your main index file (index.html, index.php).
-2. Locate the **<head>** tag: The **<head>** tag is typically at the top of your document, right after the opening **<html>** tag.
-3. Add the code below into the head section of your website, preferably before the closing head tag **</head>**.
+2. Locate the `<head>` tag: The `<head>` tag is typically at the top of your document, right after the opening `<html>` tag.
+3. Add the code below into the head section of your website, preferably before the closing head tag `</head>`.
 4. Save your changes and publish.
 
 ```html
@@ -23,30 +23,31 @@ fpr(&quot;click&quot;);
 
 ## Referral tracking script
 
-After setting up the main tracking script on your website, we set two cookies: `_fprom_ref` and `_fprom_tid`. The value of the `_fprom_tid` is a unique identifier created that links the current user session to an affiliate.
+After setting up the main tracking script on your website, there are two cookies that are created in browser when a user visits the website using a referral link. These are `_fprom_ref` and `_fprom_tid`. The value of the `_fprom_tid` is a unique identifier created that links the current user session to an affiliate.
 
 To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid) to the Stripe checkout session by setting the `fp_tid` parameter in the metadata.
 
-For this setup, we have two main ways of getting the integration to work:
+There are several ways of doing this, however, as examples we will cover 2 main/popular ways of setting this up:
 
 1. By using cookies on the server side.
-2. By using a hidden field to pass the data from the frontend.
+2. By using a hidden field to pass the cookie data to the backend.
 
-### Option 1: Using cookies directly
+### Option 1: Using cookies on the server side.
+
+For this approach we will:
 
 1. Grab the `_fprom_tid` cookie on the server side.
-2. In your backend code for Stripe, set the `fp_tid` in the metadata.
+2. Set the `fp_tid` in the metadata on the backend code for Stripe.
 
-Doing this may vary depending on your setup. Below is an example for Node.js:
+*Doing this may vary depending on your setup.* Below is an example for Node.js:
 
-```js
+```js {noCopy}
 //server-side.js
  
 const cookieParser = require('cookie-parser'); 
 app.use(cookieParser());
 app.post('/create-checkout-session', async (req, res) => {
    const tid = req.cookies['_fprom_tid'];
-
    const session = await stripe.checkout.sessions.create({   
       ...
       success_url: 'https://example.com/success',
@@ -55,15 +56,16 @@ app.post('/create-checkout-session', async (req, res) => {
         fp_tid: tid
       }
    })
-
    res.json({ id: session.id });
 });
 ```
 
-### Option 2: Using a hidden input in your form on the frontend
+### Option 2: Using a hidden input in your form
 
-1. On your Stripe checkout form add this hidden input field **<input type="hidden" id="fp_tid" name="fp_tid">**.
-2. The code for your form should now look like this.
+For this approach we will:
+
+1. Create a hidden input field like `<input type="hidden" id="fp_tid" name="fp_tid">` and add it to the checkout form.
+2. The code for the form should now look like this:
 
 ```html {noCopy}
 &lt;form action=&quot;/charge&quot; method=&quot;post&quot; id=&quot;payment-form&quot;&gt;
@@ -73,10 +75,11 @@ app.post('/create-checkout-session', async (req, res) => {
 &lt;/form&gt;
 ```
 
-3. Add the below script to your head section of your website.
+3. Use the `window.FPROM.data.tid` to get the tid value and append the value to the input field.
+4. The code for assigning the tid to the input field will look like this:
 
-```html
-   &lt;script&gt;
+```html {noCopy}
+&lt;script&gt;
     window.onload = function () {
         var tid = window.FPROM &amp;&amp; window.FPROM.data.tid;
         if (tid) {
@@ -84,10 +87,10 @@ app.post('/create-checkout-session', async (req, res) => {
             document.getElementById(&apos;fp_tid&apos;).value = tid;
         }
     }
-    &lt;/script&gt;
+&lt;/script&gt;
 ```
 
-4. Get the `fp_tid` on the backend of your application.
+5. Get the `fp_tid` on the backend of your application.
 
 ```js {noCopy}
     //server-side.js
