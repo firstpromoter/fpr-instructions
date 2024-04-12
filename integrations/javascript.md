@@ -347,21 +347,21 @@ In Angular you can make the call on a success callback function or even on a cli
 
 ### Template File
 ```html {noCopy}
-<form (ngSubmit)="onSubmit()">
-  <label for="firstName">First Name:</label>
-  <input type="text" id="firstName" name="firstName" [(ngModel)]="formData.firstName" required>
+&lt;form (ngSubmit)="onSubmit()"&gt;
+  &lt;label for="firstName"&gt;First Name:&lt;/label&gt;
+  &lt;input type="text" id="firstName" name="firstName" [(ngModel)]="formData.firstName" required&gt;
 
-  <label for="lastName">Last Name:</label>
-  <input type="text" id="lastName" name="lastName" [(ngModel)]="formData.lastName" required>
+  &lt;label for="lastName"&gt;Last Name:&lt;/label&gt;
+  &lt;input type="text" id="lastName" name="lastName" [(ngModel)]="formData.lastName" required&gt;
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" [(ngModel)]="formData.email" required&gt;
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" [(ngModel)]="formData.password" required>
+  &lt;label for="password"&gt;Password:&lt;/label&gt;
+  &lt;input type="password" id="password" name="password" [(ngModel)]="formData.password" required&gt;
 
-  <button type="submit">Register</button>
-</form>
+  &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;
 
 ```
 
@@ -389,12 +389,12 @@ export class SignUpComponent {
 
   onSubmit(): void {
     axios.post('/backend-service/register', this.formData)
-      .then(response => {
+      .then(response =&gt; {
         console.log('Registration successful:', response.data);
         const userEmail = this.formData.email;
         this.sendReferralEmail(userEmail);
       })
-      .catch(error => {
+      .catch(error =&gt; {
         console.error('Registration failed:', error);
       });
   }
