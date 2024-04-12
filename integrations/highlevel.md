@@ -15,6 +15,7 @@ Integrating FirstPromoter with your HighLevel setup is a breeze. It requires one
 4. Click on the three-dot menu icon on your preferred website or funnel and select "Edit."
 5. In the top panel, select the "Settings" tab and find the "Head Tracking Code" section.
 6. Copy and paste the code below into the "Head Tracking Code" section.
+7. If you use stripe payment links where you have links like `https://buy.stripe.com/` on your website, select the `With Stripe payment links` tab
 
 ```html [g1:Default]
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js&quot; integrity=&quot;sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
