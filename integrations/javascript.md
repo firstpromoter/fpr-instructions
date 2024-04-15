@@ -367,42 +367,42 @@ In Angular you can make the call on a success callback function or even on a cli
 ### Component
 
 ```js {noCopy}
-import { Component } from &#39;@angular/core&#39;;
-import axios from &#39;axios&#39;; // Import Axios for HTTP requests (if using)
+
+import { Component } from &apos;@angular/core&apos;;
+import axios from &apos;axios&apos;; // Import Axios for HTTP requests (if using)
 
 @Component({
-  selector: &#39;app-sign-up&#39;,
-  templateUrl: &#39;./sign-up.component.html&#39;,
-  styleUrls: [&#39;./sign-up.component.css&#39;]
+  selector: &apos;app-sign-up&apos;,
+  templateUrl: &apos;./sign-up.component.html&apos;,
+  styleUrls: [&apos;./sign-up.component.css&apos;]
 })
 export class SignUpComponent {
   formData = {
-    firstName: &#39;&#39;,
-    lastName: &#39;&#39;,
-    email: &#39;&#39;,
-    password: &#39;&#39;
+    firstName: &apos;&apos;,
+    lastName: &apos;&apos;,
+    email: &apos;&apos;,
+    password: &apos;&apos;
   };
 
   constructor() {}
 
   onSubmit(): void {
-    axios.post(&#39;/backend-service/register&#39;, this.formData)
+    axios.post(&apos;/backend-service/register&apos;, this.formData)
       .then(response =&gt; {
-        console.log(&#39;Registration successful:&#39;, response.data);
+        console.log(&apos;Registration successful:&apos;, response.data);
         const userEmail = this.formData.email;
         this.sendReferralEmail(userEmail);
       })
       .catch(error =&gt; {
-        console.error(&#39;Registration failed:&#39;, error);
+        console.error(&apos;Registration failed:&apos;, error);
       });
   }
 
   sendReferralEmail(email: string): void {
     //here we call the fpr function
-    window.fpr(&#39;referral&#39;, { email });
+    window.fpr(&apos;referral&apos;, { email });
   }
 }
-
 ```
 ~~~
 
