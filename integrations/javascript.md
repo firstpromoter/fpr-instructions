@@ -156,6 +156,13 @@ If you are having a simple form on your website, you can capture the email from 
 
 ```html
 &lt;script&gt;
+
+  function validateEmail(email) {
+    const emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    if (email) return emailReg.test(email);
+    return false;
+  }
+
   function sendLeadToFP(){
       const emailInput = document.querySelector(&apos;input[type=&quot;email&quot;]&apos;)
       const submitButton = document.querySelector(&quot;button[type=&apos;submit&apos;]&quot;);
