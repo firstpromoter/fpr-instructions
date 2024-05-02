@@ -23,8 +23,25 @@ fpr(&quot;click&quot;);
 
 If you have a sign-up page or opt in page it will be ideal to track the referral from that section when the sign up process is successful. For that flow we suggest you use our JavaScript option. This process is for the use case where you want to track referrals after payment is successful or completed.
 
-1. Find your Paddle.Setup() Function.
-2. We will need to take advantage of Paddles event Callback function. You can have a function there that sends the payment details when the payment is successful. Below is what a sample request will look like.
+1. Find the `Paddle.Setup()` function.
+2. For the best results we suggest setting the `tid` value and the email on the customData object in the `Paddle.Setup()` function. Below is what your code will look like.
+  
+```html
+&lt;script&gt;
+function getFPTid() {     
+    return window.FPROM && window.FPROM.data.tid;   
+}
+Paddle.Setup({
+    seller: XXXXXX,
+    customData: {
+        "fp_tid": getFPTid(),
+        "email":"user email goes here"
+    }
+});
+&lt;/script&gt;
+```
+
+Alteratively you can use Paddles event Callback function to send the referral details when the payment is successful. Below is what your code will look like.
 
 ```html
 &lt;script&gt;

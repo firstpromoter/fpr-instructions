@@ -30,19 +30,19 @@ To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid
 **There are several ways of doing this, however, as an example we will cover 2 ways of setting this up:**
 
 1. By using cookies on the server side.
-2. By using a hidden field to pass the cookie data to the backend.
+2. By passing the data from your frontend in a request.
 
 ### Option 1: Using cookies on the server side
 
 For this approach we will:
 
-1. Grab the `_fprom_tid` cookie on the server side.
+1. Grab the `fprom_tid` cookie on the server side.
 2. Set the `fp_tid` in the metadata on the backend code for Stripe.
 
 *Doing this may vary depending on your setup.* Below is an example for Node.js:
 
 ```js {noCopy}
-//server-side.js
+//express js server-side.js
  
 const cookieParser = require('cookie-parser'); 
 app.use(cookieParser());
@@ -60,40 +60,32 @@ app.post('/create-checkout-session', async (req, res) => {
 });
 ```
 
-### Option 2: Using a hidden input in your form
+### Option 2: Passing the data from your frontend in a request
 
 For this approach we will:
 
-1. Create a hidden input field like `&lt;input type=&quot;hidden&quot; id=&quot;fp_tid&quot; name=&quot;fp_tid&quot;&gt;` and add it to the checkout form.
-2. The code for the form should now look like this:
-
-```html {noCopy}
-&lt;form action=&quot;/charge&quot; method=&quot;post&quot; id=&quot;payment-form&quot;&gt;
-    ...
-    &lt;input type=&quot;hidden&quot; id=&quot;fp_tid&quot; name=&quot;fp_tid&quot;&gt;
-    &lt;button class=&quot;btn-Stripe&quot;&gt;Submit Payment&lt;/button&gt;
-&lt;/form&gt;
-```
-
-3. Use the `window.FPROM.data.tid` to get the tid value and append the value to the input field.
-4. The code for assigning the tid to the input field can/might look like this:
-
-```html {noCopy}
-&lt;script&gt;
-    window.onload = function () {
-        var tid = window.FPROM &amp;&amp; window.FPROM.data.tid;
-        if (tid) {
-            //get the element by the id and set the value
-            document.getElementById(&apos;fp_tid&apos;).value = tid;
-        }
-    }
-&lt;/script&gt;
-```
-
-5. Get the `fp_tid` on the backend of your application.
+1. Get the `tid` value and send it as part of a request to the backend.
 
 ```js {noCopy}
-    //server-side.js
+import axios from axios;
+...
+
+function getFPTid() {     
+    return window.FPROM && window.FPROM.data.tid;   
+}
+function submitForm(){
+    axios.post("request to backend",{
+        ...
+        fp_tid: getFPTid(),
+    })
+}
+
+```
+
+2. On the backend we will retrieve `fp_tid` the tid and make our request to stripe checkout session.
+
+```js {noCopy}
+    //express js server-side.js
     ...
     const bodyParser = require("body-parser");
     app.use(bodyParser.json());
@@ -111,5 +103,7 @@ For this approach we will:
     res.json({ id: session.id });
     });
 ```
+
+
 
 @[trackingtest]("referral")
