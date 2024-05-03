@@ -73,7 +73,7 @@ axios
     .post(&quot;https://firstpromoter.com/api/v1/track/signup&quot;, params, {
       headers: {
         &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;,
-        &quot;x-api-key&quot;: &quot;ae686284ba57be4acf2bed3ef94516d9&quot;,
+        &quot;x-api-key&quot;: &quot;your api key here&quot;,
       },
     })
     .then(function (response) {
