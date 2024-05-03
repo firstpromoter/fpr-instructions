@@ -29,38 +29,11 @@ To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid
 
 **There are several ways of doing this, however, as an example we will cover 2 ways of setting this up:**
 
-1. By using cookies on the server side.
-2. By passing the data from your frontend in a request.
+1. By passing the data from your frontend in a request.
+2. By using cookies on the server side.
 
-### Option 1: Using cookies on the server side
 
-For this approach we will:
-
-1. Grab the `fprom_tid` cookie on the server side.
-2. Set the `fp_tid` in the metadata on the backend code for Stripe.
-
-*Doing this may vary depending on your setup.* Below is an example for Node.js:
-
-```js {noCopy}
-//express js server-side.js
- 
-const cookieParser = require('cookie-parser'); 
-app.use(cookieParser());
-app.post('/create-checkout-session', async (req, res) => {
-   const tid = req.cookies['_fprom_tid'];
-   const session = await stripe.checkout.sessions.create({   
-      ...
-      success_url: 'https://example.com/success',
-      cancel_url: 'https://example.com/cancel',
-      metadata: {
-        fp_tid: tid
-      }
-   })
-   res.json({ id: session.id });
-});
-```
-
-### Option 2: Passing the data from your frontend in a request
+### Option 1: Passing the data from your frontend in a request
 
 For this approach we will:
 
@@ -104,6 +77,34 @@ function submitForm(){
     });
 ```
 
+
+### Option 2: Using cookies on the server side
+
+For this approach we will:
+
+1. Grab the `fprom_tid` cookie on the server side.
+2. Set the `fp_tid` in the metadata on the backend code for Stripe.
+
+*Doing this may vary depending on your setup.* Below is an example for Node.js:
+
+```js {noCopy}
+//express js server-side.js
+ 
+const cookieParser = require('cookie-parser'); 
+app.use(cookieParser());
+app.post('/create-checkout-session', async (req, res) => {
+   const tid = req.cookies['_fprom_tid'];
+   const session = await stripe.checkout.sessions.create({   
+      ...
+      success_url: 'https://example.com/success',
+      cancel_url: 'https://example.com/cancel',
+      metadata: {
+        fp_tid: tid
+      }
+   })
+   res.json({ id: session.id });
+});
+```
 
 
 @[trackingtest]("referral")
