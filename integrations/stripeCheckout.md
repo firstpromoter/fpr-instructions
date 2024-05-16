@@ -25,7 +25,7 @@ fpr(&quot;click&quot;);
 
 After setting up the main tracking script on your website, there are two cookies that are created in browser when a user visits the website using a referral link. These are `_fprom_ref` and `_fprom_tid`. The value of the `_fprom_tid` is a unique identifier created that links the current user session to an affiliate.
 
-To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid) to the Stripe checkout session by setting the `fp_tid` parameter in the metadata.
+To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid) to the Stripe checkout session in you app by setting the `fp_tid` parameter in the metadata.
 
 **There are several ways of doing this, however, as an example we will cover 2 ways of setting this up:**
 
