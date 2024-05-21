@@ -35,11 +35,12 @@ For most websites, you can simply insert the script on the public `index.html` f
 &lt;script&gt;
 
   function getFPTid() {
-        return window.FPROM &amp;&amp; window.FPROM.data.tid || (&apos;fp_&apos;+(new Date).getTime());
+    return window.FPROM &amp;&amp; window.FPROM.data.tid;
   }
 
   var chargebeeTrackFunc=function(fprom) {
     var tid = getFPTid();
+    if(!tid) return;
     var chargebeeInstance;
     try{
       chargebeeInstance = Chargebee.getInstance(); 
