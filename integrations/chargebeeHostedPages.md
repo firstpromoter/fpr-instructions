@@ -33,8 +33,12 @@ For most websites, you can simply insert the script on the public `index.html` f
 
 ```html
 &lt;script type=&quot;text/javascript&quot;&gt;
+
+    function getFPTid() {
+            return window.FPROM &amp;&amp; window.FPROM.data.tid || (&apos;fp_&apos;+(new Date).getTime());
+    }
      function applyReferralLinks(fprom){
-        var tid = fprom.tid;
+        var tid = getFPTid();
         var domain=&apos;website.chargebee.com&apos;;
         var l = document.links;
         for(var i=0; i&lt;l.length; i++) {
