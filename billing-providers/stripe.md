@@ -14,4 +14,4 @@ To get started, you need to follow the below steps:
 
 To switch between test mode and live mode on Stripe you will need to **disconnect and reconnect** to the desired mode.
 
-![stripe environment switch guide](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fstripe-environment-switch-guide.gif/raw?ref=stripe-environment-switch-guide)
+![stripe environment switch guide](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fstripe-environment-switch-guide.gif/raw?ref=main)
