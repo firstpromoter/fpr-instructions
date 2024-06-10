@@ -23,10 +23,51 @@ fpr(&quot;click&quot;);
 
 If you have a sign-up page or opt in page it will be ideal to track the referral from that section when the sign up process is successful. For that flow we suggest you use our JavaScript option. This process is for the use case where you want to track referrals after payment is successful or completed.
 
+
+~~~markdown [g1:Paddle Billing]
+1. Find the `Paddle.Checkout.open()` function.
+2. For the best results we suggest setting the `tid` value and the email on the customData object in the `Paddle.Checkout.open()` function. Below is what your code will look like.
+
+
+```html 
+&lt;script&gt;
+function getFPTid() {     
+    return window.FPROM && window.FPROM.data.tid;   
+}
+
+Paddle.Checkout.open({
+    ...
+    customData: {
+        &quot;fp_tid&quot;: getFPTid(),
+        &quot;email&quot;:&quot;user email goes here&quot;
+    }
+})
+&lt;/script&gt;
+```
+
+Alteratively you can use Paddles eventCallback function to send the referral details when the payment is successful. Below is what your code will look like.
+
+```html 
+&lt;script&gt;
+Paddle.Initialize({
+    ...
+    eventCallback: function (eventData) {
+        if (eventData.name === &quot;checkout.completed&quot;) {
+            var email = eventData.data.customer.email;
+            var uid = eventData.data.customer.id;
+            fpr(&quot;referral&quot;, { email, uid })
+        }
+    }
+})
+&lt;/script&gt;
+```
+~~~
+
+~~~markdown [g1:Paddle Classic]
 1. Find the `Paddle.Setup()` function.
 2. For the best results we suggest setting the `tid` value and the email on the customData object in the `Paddle.Setup()` function. Below is what your code will look like.
-  
-```html
+
+```html 
 &lt;script&gt;
 function getFPTid() {     
     return window.FPROM && window.FPROM.data.tid;   
@@ -41,25 +82,9 @@ Paddle.Setup({
 &lt;/script&gt;
 ```
 
-Alteratively you can use Paddles event Callback function to send the referral details when the payment is successful. Below is what your code will look like.
+Alteratively you can use Paddles eventCallback function to send the referral details when the payment is successful. Below is what your code will look like.
 
-
-```html [g1:Paddle Billing]
-&lt;script&gt;
-Paddle.Initialize({
-    ...
-    eventCallback: function (eventData) {
-        if (eventData.name === &quot;checkout.completed&quot;) {
-            var email = eventData.data.customer.email;
-            var uid = eventData.data.customer.id;
-            fpr(&quot;referral&quot;, { email, uid })
-        }
-    }
-})
-&lt;/script&gt;
-```
-
-```html [g1:Paddle Classic]
+```html
 &lt;script&gt;
 Paddle.Setup({ 
     ....,
@@ -73,5 +98,7 @@ Paddle.Setup({
 });
 &lt;/script&gt;
 ```
+~~~
+
 
 @[trackingtest]("referral")
