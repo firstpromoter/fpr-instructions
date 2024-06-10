@@ -43,7 +43,8 @@ Paddle.Setup({
 
 Alteratively you can use Paddles event Callback function to send the referral details when the payment is successful. Below is what your code will look like.
 
-```html
+
+```html [g1:Paddle Classic]
 &lt;script&gt;
 Paddle.Setup({ 
     ....,
@@ -55,6 +56,21 @@ Paddle.Setup({
      }
     }
 });
+&lt;/script&gt;
+```
+
+```html [g1:Paddle Billing]
+&lt;script&gt;
+Paddle.Initialize({
+    ...
+    eventCallback: function (eventData) {
+        if (eventData.name === &quot;checkout.completed&quot;) {
+            var email = eventData.data.customer.email;
+            var uid = eventData.data.customer.id;
+            fpr(&quot;referral&quot;, { email, uid })
+        }
+    }
+})
 &lt;/script&gt;
 ```
 
