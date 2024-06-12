@@ -154,7 +154,7 @@ If you can't use the email for privacy reasons, you can use the "uid" instead.
 
 If you are having a simple form on your website, you can capture the email from the input field and make the request when the submit button is pressed. This code can be put in the `&lt;head&gt;` section of your website right below the main tracking script which you added from above. Below is an example of what your code may look like.
 
-***NB: The below code is an example and needs to be edited to match the contents of your website. The selectors for the email input and submit button may not match what you have on your website and need to be changed. ***
+***NB: The below code is an example and needs to be edited to match the contents of your website. The selectors for the email input and submit button may not match what you have on your website and need to be changed.***
 
 ```html
 &lt;script&gt;
