@@ -27,6 +27,7 @@ If you have a sign-up page or opt in page it will be ideal to track the referral
 ~~~markdown [g1:Paddle Billing]
 1. Find the `Paddle.Checkout.open()` function.
 2. For the best results we suggest setting the `tid` value and the email on the customData object in the `Paddle.Checkout.open()` function. Below is what your code will look like.
+3. The email can be removed/ignored if it is not available. We will use the customer id from paddle instead.
 
 
 ```html 
@@ -64,19 +65,24 @@ Paddle.Initialize({
 ~~~
 
 ~~~markdown [g1:Paddle Classic]
-1. Find the `Paddle.Setup()` function.
-2. For the best results we suggest setting the `tid` value and the email on the customData object in the `Paddle.Setup()` function. Below is what your code will look like.
+1. Find the `Paddle.Checkout.open()` function.
+2. For the best results we suggest setting the `tid` value and the email on the customData object in the `Paddle.Checkout.open()` function. Below is what your code will look like.
+3. The email can be removed/ignored if it is not available. We will use the customer id from paddle instead.
 
 ```html 
 &lt;script&gt;
 function getFPTid() {     
     return window.FPROM && window.FPROM.data.tid;   
 }
-Paddle.Setup({
-    seller: XXXXXX,
+
+Paddle.Checkout.open({
+    settings: {
+        theme: &quot;light&quot;,
+    },
+    product:XXXXXXX,
     customData: {
-        "fp_tid": getFPTid(),
-        "email":"user email goes here"
+        &quot;fp_tid&quot;: getFPTid(),
+        &quot;email&quot;:&quot;user email goes here&quot; 
     }
 });
 &lt;/script&gt;
