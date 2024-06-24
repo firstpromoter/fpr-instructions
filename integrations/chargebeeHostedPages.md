@@ -29,6 +29,7 @@ For most websites, you can simply insert the script on the public `index.html` f
 
 1. Find the pages where you have set up the drop-in script from Chargebee.
 2. Add the below scripts to the page and replace `website.chargebee.com` with your Chargebee subdomain.
+
 ***Make sure the Main tracking script from previous step is also on the page.***
 
 ```html
