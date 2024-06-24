@@ -28,7 +28,7 @@ For most websites, you can simply insert the script on the public `index.html` f
 ## Referral tracking script
 
 1. Find the pages where you have set up the drop-in script from Chargebee.
-2. Add the below scripts to the page.
+2. Add the below scripts to the page and replace `website.chargebee.com` with your Chargebee subdomain.
 ***Make sure the Main tracking script from previous step is also on the page.***
 
 ```html
@@ -40,7 +40,7 @@ For most websites, you can simply insert the script on the public `index.html` f
      function applyReferralLinks(fprom){
         var tid = getFPTid();
         if(!tid) return;
-        var domain=&apos;website.chargebee.com&apos;;
+        var domain=&apos;website.chargebee.com&apos;; // replace with Chargebee subdomain
         var l = document.links;
         for(var i=0; i&lt;l.length; i++) {
             if (l[i].href &amp;&amp; l[i].href.indexOf(domain)&gt;-1){
