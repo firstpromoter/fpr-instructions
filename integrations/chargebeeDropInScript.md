@@ -33,28 +33,30 @@ For most websites, you can simply insert the script on the public `index.html` f
 
 ```html
 &lt;script&gt;
-
   function getFPTid() {
-    return window.FPROM &amp;&amp; window.FPROM.data.tid;
+    return window.FPROM &amp;&amp; window.FPROM.data.tid || (&#39;fp_&#39; + (new Date).getTime());
   }
-
-  var chargebeeTrackFunc=function(fprom) {
+  var chargebeeInstance;
+  var counter = 0;
+  var chargebeeTrackFunc = function () {
     var tid = getFPTid();
-    if(!tid) return;
-    var chargebeeInstance;
-    try{
-      chargebeeInstance = Chargebee.getInstance(); 
+    try {
+      chargebeeInstance = Chargebee.getInstance();
     }
-    catch(err){};
-    if (tid &amp;&amp; chargebeeInstance){ 
-        var cart = chargebeeInstance.getCart();
-        cart.setCustomer({cf_tid:tid}); 
-    }else 
-    if (tid){
-      document.addEventListener(&quot;DOMContentLoaded&quot;,function(){chargebeeTrackFunc(fprom)});
+    catch (err) { };
+    if (tid &amp;&amp; chargebeeInstance) {
+      var cart = chargebeeInstance.getCart();
+      cart.setCustomer({ cf_tid: tid });
     }
   };
-  fpr(&apos;onReady&apos;,chargebeeTrackFunc)
+  var stateCheck = setInterval(function () {
+    if ((document.readyState === &quot;complete&quot; &amp;&amp; chargebeeInstance) || counter === 20) {
+      chargebeeTrackFunc();
+      clearInterval(stateCheck);
+      counter = 0;
+    }
+    counter++;
+  }, 100);
 &lt;/script&gt;
 ```
 
