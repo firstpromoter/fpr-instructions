@@ -1,6 +1,7 @@
 # Adding FirstPromoter when using Stripe payment links
 
 To get the best results for tracking when using Stripe payment links, add the script to all pages where **Stripe payment links** are available.
+**These set of scripts are for links like https://buy.stripe.com/xxxxx that are directly on your page.**
 
 ## Tracking script
 
