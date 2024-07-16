@@ -1,7 +1,7 @@
 # Integrating FirstPromoter with Chargebee Hosted pages
 
 To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages.
-**Please note that this setup is only used when using the hosted pages version of the chargebee setup (not the Drop-In Chargebee script)**
+**Please note that this setup is only used when using the hosted pages version of the Chargebee setup (not the Drop-In Chargebee script)**
 
 This integration requires you to set the webhooks and create a hidden custom field named `tid`. Click [here to check the setup guide](/integration/chargebee?onboarding=true&integrate=true) if you don't have it set already.
 
@@ -38,10 +38,10 @@ For most websites, you can simply insert the script on the public `index.html` f
     function getFPTid() {
             return window.FPROM &amp;&amp; window.FPROM.data.tid;
     }
-     function applyReferralLinks(fprom){
+    function applyReferralLinks(fprom){
         var tid = getFPTid();
         if(!tid) return;
-        var domain=&apos;website.chargebee.com&apos;; // replace with Chargebee subdomain
+        var domain=&apos;website.chargebee.com&apos;; // replace website.chargebee.com with your actual Chargebee subdomain
         var l = document.links;
         for(var i=0; i&lt;l.length; i++) {
             if (l[i].href &amp;&amp; l[i].href.indexOf(domain)&gt;-1){
@@ -50,8 +50,13 @@ For most websites, you can simply insert the script on the public `index.html` f
                 l[i].href=url
             }
           }
-       }
-    fpr(&apos;onReady&apos;,applyReferralLinks)
+    }
+    var stateCheck = setInterval(function () {
+        if (document.readyState === &quot;complete&quot;) {
+            applyReferralLinks();
+            clearInterval(stateCheck);
+        }
+    }, 100);
 &lt;/script&gt;
 ```
 
