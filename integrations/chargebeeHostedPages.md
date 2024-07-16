@@ -41,7 +41,7 @@ For most websites, you can simply insert the script on the public `index.html` f
     function applyReferralLinks(fprom){
         var tid = getFPTid();
         if(!tid) return;
-        var domain=&apos;website.chargebee.com&apos;; // replace with your Chargebee subdomain
+        var domain=&apos;website.chargebee.com&apos;; // replace website.chargebee.com
         var l = document.links;
         for(var i=0; i&lt;l.length; i++) {
             if (l[i].href &amp;&amp; l[i].href.indexOf(domain)&gt;-1){
