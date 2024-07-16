@@ -1,7 +1,7 @@
 # Integrating FirstPromoter with Chargebee Hosted pages
 
 To get the best results for tracking, It is ideal to set this up on all the marketing or landing pages.
-**Please note that this setup is only used when using the Drop-In Chargebee script (the popup not hosted page)**
+**Please note that this setup is only used when using the hosted pages version of the chargebee setup (not the Drop-In Chargebee script)**
 
 This integration requires you to set the webhooks and create a hidden custom field named `tid`. Click [here to check the setup guide](/integration/chargebee?onboarding=true&integrate=true) if you don't have it set already.
 
