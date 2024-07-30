@@ -30,7 +30,7 @@ To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid
 
 **There are several ways of doing this, however, as an example we will cover 2 ways of setting this up:**
 
-***Please note that these are just examples, pasting it directly will not work. You will need to edit your code to get it working following these examples ***
+***Please note that these are just examples, pasting it directly will not work. You will need to edit your code to get it working following these examples***
 
 1. By passing the data from your frontend in a request.
 2. By using cookies on the server side.
