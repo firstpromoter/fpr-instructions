@@ -1,6 +1,6 @@
 # Adding FirstPromoter to your HubSpot form 
 
-This guide is for the [embedded HubSpot forms](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fhubspot-embedded.png/raw?ref=main ""). **Please note that this will not work with HubSpot forms loaded in an iframe**
+This guide is for the [embedded HubSpot forms](https://developers.hubspot.com/docs/cms/building-blocks/forms ""). **Please note that this will not work with HubSpot forms loaded in an iframe**
 
 To get the best results for tracking, it is ideal to set this up on all the marketing or landing pages.
 
@@ -41,5 +41,4 @@ To track referrals using the HubSpot form you can take advantage of the `onFormS
 
   });
 &lt;/script&gt;
-
-~~~
+```
