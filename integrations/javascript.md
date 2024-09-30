@@ -140,7 +140,7 @@ export default function Document() {
 
 ## Referral tracking script
 
-To track referrals, you'll need to make a request to FirstPromoter to capture the lead. This can mainly be done by calling the "fpr" JavaScript function defined in the main tracking script and inserting the email of the user/lead/customer: `fpr("referral", {email: "user-email"})`
+To track referrals, you'll need to make a request to FirstPromoter to capture the lead. This can mainly be done by calling the "fpr" JavaScript function defined by the main tracking script and inserting the email of the user/lead/customer: `fpr("referral", {email: "user-email"})`
 
 If you can't use the email for privacy reasons, you can use the "uid" instead.
 `fpr("referral”,{uid:"user-id-in-database"})`
