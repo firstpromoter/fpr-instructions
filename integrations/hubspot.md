@@ -42,3 +42,5 @@ To track referrals using the HubSpot form you can take advantage of the `onFormS
   });
 &lt;/script&gt;
 ```
+
+@[trackingtest]("referral")
