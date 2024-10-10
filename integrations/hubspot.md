@@ -51,4 +51,79 @@ fpr(&quot;click&quot;);
 
 
 
+## Referral tracking script
+
+~~~markdown [g2:Embedded form in custom website]
+To track referrals using the HubSpot form you can take advantage of the `onFormSubmit` event and use that in making the request to track the referrals. You will need to modify the `hbspt.forms.create` scripts as shown below. 
+
+**Please note that if you will need to edit the `hbspt.forms.create` code on your website. Your developer may be required to assist you if you are not certain on how it was added**
+
+```javascript
+  onFormSubmit: function ($form) {
+        var email = $form.querySelector(&apos;input[name=&quot;email&quot;]&apos;).value;
+        fpr(&quot;referral&quot;, {email});
+    },
+```
+
+Your full code should look like this
+
+```html
+&lt;script charset=&quot;utf-8&quot; type=&quot;text/javascript&quot; src=&quot;//js.hsforms.net/forms/embed/v2.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  hbspt.forms.create({
+    region: &quot;na1&quot;,
+    ...
+
+    onFormSubmit: function ($form) {
+        var email = $form.querySelector(&apos;input[name=&quot;email&quot;]&apos;).value;
+        fpr(&quot;referral&quot;, {email});
+    },
+
+  });
+&lt;/script&gt;
+```
+
+~~~
+
+~~~markdown [g2:HubSpot Website]
+
+To track referrals using the HubSpot form
+1. On your HubSpot Dashboard navigate to your `Website pages` and click on the page you want to add the scripts to.
+2. Select Settings > Click on Advanced in the top menu.
+3. Copy the code below and insert it into the Head HTML section.
+
+**Please note that if this page is different from the one which has the main tracking script You may need to add the main tracking script again before adding this.**
+
+&lt;script&gt;
+
+  function validateEmail(email) {
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    if (email) return emailReg.test(email);
+    return false;
+  }
+
+  function sendLeadToFP(){
+      var emailInput = document.querySelector(&apos;input[type=&quot;email&quot;],input[name=&quot;email&quot;]&apos;);
+      var submitButton = document.querySelector(&quot;button[type=&apos;submit&apos;],input[type=&apos;submit&apos;]&quot;);
+      
+      //use the mousedown or touchstart event to prevent overwriting the default click event.
+      [&quot;mousedown&quot;, &quot;touchstart&quot;].forEach(function (event) {
+        submitButton.addEventListener(event, function () {
+          if (validateEmail(emailInput.value)) {
+            fpr(&quot;referral&quot;, {
+              email: emailInput.value,
+            });
+          }
+        });
+      });
+  }
+
+  if (window.attachEvent) {
+      window.attachEvent(&quot;onload&quot;, sendLeadToFP);
+  } else {
+      window.addEventListener(&quot;load&quot;, sendLeadToFP, false);
+  }
+&lt;/script&gt;
+~~~
+
 @[trackingtest]("referral")
