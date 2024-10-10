@@ -82,7 +82,6 @@ Your full code should look like this
   });
 &lt;/script&gt;
 ```
-
 ~~~
 
 ~~~markdown [g2:HubSpot Website]
@@ -92,7 +91,7 @@ To track referrals using the HubSpot form
 2. Select Settings > Click on Advanced in the top menu.
 3. Copy the code below and insert it into the Head HTML section.
 
-**Please note that if this page is different from the one which has the main tracking script You may need to add the main tracking script again before adding this.**
+**Please note that if this page is different from the one which has the main tracking script, you may need to add the main tracking script again before adding this.**
 
 ```html
 &lt;script&gt;
