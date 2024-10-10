@@ -67,7 +67,7 @@ To track referrals using the HubSpot form you can take advantage of the `onFormS
 
 Your full code should look like this
 
-```html
+```html {noCopy}
 &lt;script charset=&quot;utf-8&quot; type=&quot;text/javascript&quot; src=&quot;//js.hsforms.net/forms/embed/v2.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
   hbspt.forms.create({
@@ -94,6 +94,7 @@ To track referrals using the HubSpot form
 
 **Please note that if this page is different from the one which has the main tracking script You may need to add the main tracking script again before adding this.**
 
+```html
 &lt;script&gt;
 
   function validateEmail(email) {
@@ -124,6 +125,7 @@ To track referrals using the HubSpot form
       window.addEventListener(&quot;load&quot;, sendLeadToFP, false);
   }
 &lt;/script&gt;
+```
 ~~~
 
 @[trackingtest]("referral")
