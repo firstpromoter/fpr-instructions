@@ -21,7 +21,7 @@ tid           no                        visitor tracking id.
 ref_id        no                        default referral id of the promoter.
 ```
 
-**For the full list click [here](https://docs.firstpromoter.com/#tracking-sales-and-commissions)**
+**For the full list click [here](https://docs.firstpromoter.com/api-reference-v1/tracking-api/sales)**
 
 3. The full code will look like this.
 
