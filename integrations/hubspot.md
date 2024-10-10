@@ -25,3 +25,30 @@ fpr(&quot;click&quot;);
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
 ```
 ~~~
+
+~~~markdown [g1:HubSpot Website]
+If your website is hosted on HubSpot directly and you are using HubSpot forms on the page
+
+1. On your HubSpot Dashboard navigate to your `Website pages` and click on the page you want to add the scripts to.
+2. Select Settings > Click on Advanced in the top menu.
+
+![hubspot menu](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fhubspot-settings-advanced.png/raw?ref=main "")
+
+3. Copy the code below and insert it into the Head HTML section.
+
+![hubspot headhtml](https://gitlab.com/api/v4/projects/55002365/repository/files/images%2Fscreenshots%2Fhubspot-head-html.png/raw?ref=main "")
+
+```html
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+```
+~~~
+
+@[trackingtest]("click")
+
+
+
+@[trackingtest]("referral")
