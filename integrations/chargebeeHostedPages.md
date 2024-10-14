@@ -27,8 +27,9 @@ For most websites, you can simply insert the script on the public `index.html` f
 
 ## Referral tracking script
 
-1. Find the pages where you have set up the drop-in script from Chargebee.
+1. Find the page where you have a links to the Chargebee checkout.
 2. Add the below scripts to the page and replace `website.chargebee.com` with your actual Chargebee subdomain.
+3. If you have multiple pages with the checkout link on them you will need to add it to all the the pages.
 
 ***Make sure the Main tracking script from previous step is also on the page.***
 
