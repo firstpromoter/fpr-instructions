@@ -20,9 +20,9 @@ To get started, please follow the below steps:
 
 1. On your left sidebar select Integrations > Webhooks.
 2. Click on Manage Endpoints.
-2. Click on "New Endpoint".
-3. Set the Endpoint Name as `FirstPromoter`.
-4. Copy the Webhook Endpoint URL from the setup form here and paste it into the Endpoint URL field on Recurly.
-5. Leave the format as XML.
-6. Scroll down to the notifications section and enable the following events `closed_invoice`, `paid_charge_invoice`, `canceled_subscription`, `void_payment`, `successful_refund`.
-7. Click "Save Changes".
+3. Click on "New Endpoint".
+4. Set the Endpoint Name as `FirstPromoter`.
+5. Copy the Webhook Endpoint URL from the setup form here and paste it into the Endpoint URL field on Recurly.
+6. Leave the format as XML.
+7. Scroll down to the notifications section and enable the following events `closed_invoice`, `paid_charge_invoice`, `canceled_subscription`, `void_payment`, `successful_refund`.
+8. Click "Save Changes".
