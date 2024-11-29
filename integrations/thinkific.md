@@ -1,4 +1,4 @@
-# Adding FirstPromoter to ThriveCart
+# Adding FirstPromoter to Thinkific
 
 To get the best results for tracking on Thinkific, it is ideal to set this up on all the marketing pages.
 
