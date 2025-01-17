@@ -12,11 +12,11 @@ For most websites, you can simply insert the script on the public `index.html` f
 4. Save your changes and publish.
 
 ```html
-&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
-fpr(&quot;click&quot;);
-&lt;/script&gt;
-&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q =
+w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); fpr(&quot;click&quot;);
+&lt;/script&gt; &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot;
+async&gt;&lt;/script&gt;
 ```
 
 @[trackingtest]("click")
@@ -27,16 +27,15 @@ After setting up the main tracking script on your website, there are two cookies
 
 To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid) to the Stripe checkout session in you app by setting the `fp_tid` parameter in the metadata.
 
-
 **There are several ways of doing this, however, as an example we will cover 2 ways of setting this up:**
 
-***Please note that these are just examples, pasting it directly will not work. You will need to edit your code to get it working following these examples.***
+**_Please note that these are just examples, pasting it directly will not work. You will need to edit your code to get it working following these examples._**
 
 1. By passing the data from your frontend in a request.
 2. By using cookies on the server side.
 
-
-### Option 1: Passing the data from your frontend in a request
+````markdown [g1:Passing the data from your frontend in a request]
+### Option 1:
 
 For this approach we will:
 
@@ -46,11 +45,11 @@ For this approach we will:
 import axios from axios;
 ...
 
-function getFPTid() {     
-    return window.FPROM && window.FPROM.data.tid;   
+function getFPTid() {
+    return window.FPROM &amp;&amp; window.FPROM.data.tid;
 }
 function submitForm(){
-    axios.post("request to backend",{
+    axios.post(&quot;request to backend&quot;,{
         ...
         fp_tid: getFPTid(),
     })
@@ -63,15 +62,15 @@ function submitForm(){
 ```js {noCopy}
     //express js server-side.js
     ...
-    const bodyParser = require("body-parser");
+    const bodyParser = require(&quot;body-parser&quot;);
     app.use(bodyParser.json());
 
-    app.post('/create-checkout-session', async (req, res) => {
+    app.post(&apos;/create-checkout-session&apos;, async (req, res) =&gt; {
     const tid = req.body.fp_tid;
     const session = await stripe.checkout.sessions.create({
         ...
-        success_url: 'https://example.com/success',
-        cancel_url: 'https://example.com/cancel',
+        success_url: &apos;https://example.com/success&apos;,
+        cancel_url: &apos;https://example.com/cancel&apos;,
         metadata: {
             fp_tid: tid
         }
@@ -80,34 +79,94 @@ function submitForm(){
     });
 ```
 
+Alternatively if you are not checking out instantly but creating the customer in stripe. You can pass the tid as part of the customer metadata
 
-### Option 2: Using cookies on the server side
+```js {noCopy}
+    //express js server-side.js
+    ...
+    const bodyParser = require(&quot;body-parser&quot;);
+    app.use(bodyParser.json());
+
+    app.post(&apos;/create-checkout-session&apos;, async (req, res) =&gt; {
+        const tid = req.body.fp_tid;
+        const customer = await stripe.customers.create({
+            email: &apos;customer@example.com&apos;,
+            metadata: {
+                fp_tid: tid,
+            }
+        });
+    });
+```
+````
+
+````markdown [g2:Using cookies on the server side]
+### Option 2:
 
 For this approach we will:
 
 1. Grab the `fprom_tid` cookie on the server side.
 2. Set the `fp_tid` in the metadata on the backend code for Stripe.
 
-*Doing this may vary depending on your setup.* Below is an example for Node.js:
+_Doing this may vary depending on your setup._ Below is an example for Node.js:
 
 ```js {noCopy}
 //express js server-side.js
- 
-const cookieParser = require('cookie-parser'); 
+
+const cookieParser = require(&apos;cookie-parser&apos;);
 app.use(cookieParser());
-app.post('/create-checkout-session', async (req, res) => {
-   const tid = req.cookies['_fprom_tid'];
-   const session = await stripe.checkout.sessions.create({   
+app.post(&apos;/create-checkout-session&apos;, async (req, res) =&gt; {
+   const tid = req.cookies[&apos;_fprom_tid&apos;];
+   const session = await stripe.checkout.sessions.create({
       ...
-      success_url: 'https://example.com/success',
-      cancel_url: 'https://example.com/cancel',
+      success_url: &apos;https://example.com/success&apos;,
+      cancel_url: &apos;https://example.com/cancel&apos;,
       metadata: {
         fp_tid: tid
       }
    })
    res.json({ id: session.id });
 });
+
 ```
 
+Alternatively if you are not checking out instantly but creating the customer in stripe. You can pass the tid as part of the customer metadata
+
+```js {noCopy}
+    //express js server-side.js
+    ...
+    const cookieParser = require(&apos;cookie-parser&apos;);
+    app.use(cookieParser());
+    app.post(&apos;/create-checkout-session&apos;, async (req, res) =&gt; {
+    const tid = req.cookies[&apos;_fprom_tid&apos;];
+    const customer = await stripe.customers.create({
+            email: &apos;customer@example.com&apos;,
+            metadata: {
+                fp_tid: tid,
+            }
+    });
+    res.json({ id: session.id });
+});
+```
+````
+
+If you are not passing the email address but rather using the user id from your database. You will need to pass the user_id as fp_uid in stripe as part of the customer_metadata.
+
+
+```js
+// Create/update customer first, then use in session
+const customer = await stripe.customers.create({
+  email: 'customer@example.com',
+  metadata: {
+    'fp_uid': '<user id from your database goes here>',
+  }
+});
+
+const session = await stripe.checkout.sessions.create({
+  customer: customer.id,
+  line_items: [...],
+  mode: 'payment'
+});
+
+```
 
 @[trackingtest]("referral")

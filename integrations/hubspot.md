@@ -60,7 +60,8 @@ To track referrals using the HubSpot form you can take advantage of the `onFormS
 
 ```javascript
   onFormSubmit: function ($form) {
-        var email = $form.querySelector(&apos;input[name=&quot;email&quot;]&apos;).value;
+        var form= ($form.querySelector(&apos;input[name=&quot;email&quot;]&apos;))?$form:$form[0];
+        var email = form.querySelector(&apos;input[name=&quot;email&quot;]&apos;).value;
         fpr(&quot;referral&quot;, {email});
     },
 ```
