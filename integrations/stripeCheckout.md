@@ -31,10 +31,10 @@ To track referrals from Stripe Checkout, you'll need to pass the visitor id (tid
 
 **_Please note that these are just examples, pasting it directly will not work. You will need to edit your code to get it working following these examples._**
 
-1. By passing the data from your frontend in a request.
+1. By passing the tid from the frontend in a request.
 2. By using cookies on the server side.
 
-~~~~markdown [g1:Passing the data from your frontend in a request]
+~~~~markdown [g1:Passing the tid from the frontend]
 
 For this approach we will:
 
@@ -99,7 +99,7 @@ Alternatively if you are not checking out instantly but creating the customer in
 
 ~~~~
 
-~~~~markdown [g1:Using cookies on the server side]
+~~~~markdown [g1:Using cookies]
 
 For this approach we will:
 
@@ -148,31 +148,5 @@ Alternatively if creating the customer in stripe and not checking out instantly 
 ```
 ~~~~
 
-
-
-
-~~~~markdown [g1: Passing the user id from your database]
-
-If you are using the Javascript integration to send us referral and you are not passing the email address but rather using the user id from your database.
-You will need to pass the user_id as fp_uid in stripe as part of the customer_metadata.
-
-
-```js {noCopy}
-// Create/update customer first, then use in session
-const customer = await stripe.customers.create({
-  email: &apos;customer@example.com&apos;,
-  metadata: {
-    &apos;fp_uid&apos;: &apos;&lt;user id from your database goes here&gt;&apos;,
-  }
-});
-
-const session = await stripe.checkout.sessions.create({
-  customer: customer.id,
-  line_items: [...],
-  mode: &apos;payment&apos;
-});
-
-```
-~~~
 
 @[trackingtest]("referral")
