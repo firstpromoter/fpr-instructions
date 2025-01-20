@@ -99,7 +99,7 @@ Alternatively if you are not checking out instantly but creating the customer in
 ```
 ````
 
-````markdown [g2:Using cookies on the server side]
+````markdown [g1:Using cookies on the server side]
 ### Option 2:
 
 For this approach we will:
