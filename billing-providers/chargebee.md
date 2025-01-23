@@ -7,8 +7,8 @@ FirstPromoter allows you to automatically track sales, refunds, upgrades and can
 To get started, you need to:
 
 1. Login to your Chargebee Dashboard.
-2. Go to Settings > Webhook Settings.
-3. Click the 'Add new webhook' button on the top right (if it's visible).
+2. Go to Settings >Configure Chargebee > Webhooks.
+3. Click the 'Add webhook' button on the top right (if it's visible).
 4. Set the Webhook name as something like 'FirstPromoter'.
 5. Paste the Webhook Endpoint URL value from the FirstPromoter integration setup into the Webhook URL.
 6. Select API version - V2.
