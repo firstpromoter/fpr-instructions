@@ -36,4 +36,4 @@ To get the public key from Paddle, go to Developer tools on the sidebar > Public
 
 Make sure you enter the public key from Paddle in the integration form and confirm the webhook connection.
 
-**PLEASE DO NOT REMOVE ANYTHING** from the public key. Just copy and paste it entirely as it shows on Paddle, including `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----`, otherwise you'll get a 500 error.
+**PLEASE DO NOT REMOVE OR ADD ANYTHING** to the public key. Just copy and paste it entirely as it shows on Paddle, including `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----`, otherwise you'll get a 500 error.
