@@ -19,7 +19,7 @@ To get started, you need to:
 11. Click 'Confirm webhook connection'.
 12. Create a custom `tid` custom field in Chargebee
     If you are using **Chargebee drop-in scripts** or **Chargebee hosted pages**, you will need to create a hidden custom field named `tid`.
-    The following video is a guide showing you how to set it up.
+    The below video is a guide showing you how to set it up.
 
     @[video]({"src":"https://fast.wistia.net/embed/iframe/ufkibyq84z", "title":"Set Chargebee custom fields."})
 
