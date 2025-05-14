@@ -2,7 +2,9 @@
 
 To get the best results for tracking when using Stripe payment links, add the script to all pages where **Stripe payment links** are available.
 
-**Note: These set of scripts are for links like <https://buy.stripe.com/xxxxx> that are directly on your page. If you do not use these stripe payment links directly  on your page this is not ideal for your use case. You can reach out to us using the chat icon in the lower right corner of the page if you are not sure which option to pick.**
+**Note: These set of scripts are for links like <https://buy.stripe.com/xxxxx> that are directly on your page. If you do not use these stripe payment links directly  on your page this is not ideal for your use case.**
+
+**You can reach out to us using the chat icon in the lower right corner of the page if you are not sure which option to pick.**
 
 ## Tracking script
 
