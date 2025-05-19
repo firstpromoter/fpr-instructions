@@ -154,7 +154,7 @@ app.use(cookieParser());
 const tid = req.cookies[&apos;_fprom_tid&apos;];
 ```
 
-3. With the cookie retrieved, make a POST request to the API endpoint `https://firstpromoter.com/api/v1/track/signup`  together with the following parameters.
+3. With the cookie retrieved, make a POST request to the API endpoint `https://v2.firstpromoter.com/api/v2/track/signup`  together with the following parameters.
 
 ```plaintext {noCopy}
 Parameter     Required                  Description
@@ -187,7 +187,7 @@ params.append(&quot;email&quot;, email);
 params.append(&quot;tid&quot;, tid);
 
 axios
-    .post(&quot;https://firstpromoter.com/api/v1/track/signup&quot;, params, {
+    .post(&quot;https://v2.firstpromoter.com/api/v2/track/signup&quot;, params, {
       headers: {
         &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;,
         &quot;x-api-key&quot;: &quot;your api key here&quot;,
