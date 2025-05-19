@@ -143,8 +143,9 @@ export default function Document() {
 
 To track referrals using the API, you'll need to have access to the browser cookies. Once the main tracking script is implemented, two cookies, namely `_fprom_tid` and `_fprom_ref`, are set upon visiting the referral link. Both cookies can be used in making your API requests; however, to prevent multiple tracking, it is recommended to use the `_fprom_tid`. This include a check to determine if a browser session has already been tracked, ensuring that tracking occurs only once.
 
-1. Get your API key from your Settings > Integrations tab.
-2. On your backend, retrieve the `_fprom_tid` cookie.
+1. Get your API key from your Settings > Integrations tab > manage API Keys > create a new key or use the existing key you have.
+2. Get your Account id from the Settings > Integrations tab as well.
+3. On your backend, retrieve the `_fprom_tid` cookie.
 
 ```js {noCopy}
 //backend.js
@@ -154,7 +155,7 @@ app.use(cookieParser());
 const tid = req.cookies[&apos;_fprom_tid&apos;];
 ```
 
-3. With the cookie retrieved, make a POST request to the API endpoint `https://v2.firstpromoter.com/api/v2/track/signup`  together with the following parameters.
+4. With the cookie retrieved, make a POST request to the API endpoint `https://v2.firstpromoter.com/api/v2/track/signup`  together with the following parameters.
 
 ```plaintext {noCopy}
 Parameter     Required                  Description
@@ -169,7 +170,7 @@ ip            no                        IP of the visitor
 
 **Note:** the request content type for our API is not JSON, it's `application/x-www-form-urlencoded`.
 
-4. The full code will look like this.
+5. The full code will look like this.
 
 ```js {noCopy}
 
@@ -179,30 +180,30 @@ const axios = require('axios');
 //this code can go into your sign up flow
 // to make this cleaner you can extract it into a function
 
+
 const email = &apos;example@example.com&apos; //replace with actual email
 const tid = req.cookies[&apos;_fprom_tid&apos;];
 
-const params = new URLSearchParams();
-params.append(&quot;email&quot;, email);
-params.append(&quot;tid&quot;, tid);
+const params = {
+  email: email,
+  tid: tid
+};
 
 axios
-    .post(&quot;https://v2.firstpromoter.com/api/v2/track/signup&quot;, params, {
-      headers: {
-        &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;,
-        &quot;x-api-key&quot;: &quot;your api key here&quot;,
-      },
-    })
-    .then(function (response) {
-      //any action if the request is successful
-      console.log(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-      //any action if the request fails
-      console.log(error);
-    });
+  .post(&quot;https://v2.firstpromoter.com/api/v2/track/signup&quot;, params, {
+    headers: {
+      &quot;Content-Type&quot;: &quot;application/json&quot;,
+      &quot;Authorization&quot;: &quot;Bearer your_token_here&quot;,
+      &quot;Account-ID&quot;: &quot;your_account_id_here&quot;
+    },
+  })
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 
 ```
-
 
 @[trackingtest]("referral")
