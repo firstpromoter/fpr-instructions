@@ -168,8 +168,6 @@ ip            no                        IP of the visitor
 
 ```
 
-**Note:** the request content type for our API is not JSON, it's `application/x-www-form-urlencoded`.
-
 5. The full code will look like this.
 
 ```js {noCopy}
