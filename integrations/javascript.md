@@ -414,4 +414,7 @@ export class SignUpComponent {
 ```
 ~~~
 
+***For Paddle users only: Note that you will need to pass the email address to the paddle checkout as part of the custom data with the key as email. Read more from [here](https://login.firstpromoter.com/?redirect=%2Finstructions%2Fpaddle-checkout)***  
+
+
 @[trackingtest]("referral")
