@@ -156,6 +156,9 @@ If you are having a simple form on your website, you can capture the email from 
 
 ***NB: The below code is an example and needs to be edited to match the contents of your website. The selectors for the email input and submit button may not match what you have on your website and need to be changed.***
 
+***For Paddle users only: Note that you will need to pass the email address to the paddle checkout as part of the custom data with the key as email. Read more from [here](https://login.firstpromoter.com/?redirect=%2Finstructions%2Fpaddle-checkout)***  
+
+
 ```html
 &lt;script&gt;
 
@@ -413,8 +416,6 @@ export class SignUpComponent {
 }
 ```
 ~~~
-
-***For Paddle users only: Note that you will need to pass the email address to the paddle checkout as part of the custom data with the key as email. Read more from [here](https://login.firstpromoter.com/?redirect=%2Finstructions%2Fpaddle-checkout)***  
 
 
 @[trackingtest]("referral")
