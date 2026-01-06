@@ -17,7 +17,7 @@ To get started, you need to:
 9. Click 'Create Webhook'.
 10. In the 'Site' field, enter your Chargebee subdomain **(look at the URL bar, if your URL is <https://mycompany.chargebee.com>, your site is 'mycompany')**.
 11. Click 'Confirm webhook connection'.
-12. Create a custom `tid` custom field in Chargebee
+12. Create a custom field named `tid` in Chargebee
     If you are using **Chargebee drop-in scripts** or **Chargebee hosted pages**, you will need to create a hidden custom field named `tid`.
     The below video is a guide showing you how to set it up.
 
