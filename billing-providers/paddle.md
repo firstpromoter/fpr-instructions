@@ -12,7 +12,7 @@ To set the Webhooks, you will have to:
 
 1. Login to Paddle > Developer tools in the sidebar > Notifications
 2. Click on New Destination
-3. In the popup that comes up, set your description and add in the URL provided from FirstPromoter.
+3. In the popup that comes up, set your description and add the URL provided from FirstPromoter.
 
 The events required by FirstPromoter are **​transaction.completed**, **transaction.cancelled**, **subscription.cancelled**, **subscription.created** and **adjustment.updated**, so please make sure these webhook events are enabled.
 
@@ -26,7 +26,7 @@ To get started, you need to follow the below steps:
 To set the Webhooks, you will have to:
 
 1. Login to Paddle > Developer tools in the sidebar > Events > click on "+ Add new endpoint"
-2. Add the new field named "Webhook Endpoint URL" from FirstPromoter.
+2. Paste the "Webhook Endpoint URL" from FirstPromoter into the new field.
 
 The events required by FirstPromoter are **payment_succeeded**, **payment_refunded**, **subscription_payment_succeeded**, **subscription_payment_refunded** and **subscription_cancelled**, so please make sure these webhook events are enabled.
 

@@ -7,7 +7,7 @@ FirstPromoter allows you to track sales, refunds, upgrades and cancellations thr
 To get started, you will need to first set up an endpoint from which you will receive webhook events from your billing provider. Once you are receiving these events on your server, you can then make a request to FirstPromoter to track sales when these events are received.
 
 1. Get your API key from your Settings > Integrations tab > manage API Keys > create a new key or use the existing key you have.
-2. Get your Account id from the Settings > Integrations tab as well.
+2. Get your Account ID from the Settings > Integrations tab as well.
 3. On your backend, you will need to make a POST request to the `https://v2.firstpromoter.com/api/v2/track/sale` endpoint we provide, together with the following parameters.
 
 ```plaintext {noCopy}
@@ -34,9 +34,9 @@ const axios = require(&apos;axios&apos;);
 //this code can go into your payment flow
 // to make this cleaner you can extract it into a function
 
-const email = &apos;example@example.com&apos;; //replace with actual email
-const amount = 1000 //actual amount from payment $10 *100 to convert it to cents;
-const event_id = &quot;43eb-83e9-374ea4600556&quot;// actual event id from payment;
+const email = &apos;example@example.com&apos; //replace with actual email
+const amount = 1000; //actual amount from payment, e.g., $10.00 is 1000 cents
+const event_id = &quot;43eb-83e9-374ea4600556&quot; // actual event id from payment
 
 const params = {
   email: email,

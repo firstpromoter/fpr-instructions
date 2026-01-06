@@ -84,8 +84,8 @@ For Nuxt you need to use the useHead composable.
 
 ~~~
 
-~~~markdown [g1:Next]
-For NextJS you need to add the script to the `_document.tsx` file.
+~~~markdown [g1:Next.js]
+For Next.js, you need to add the script to the `_document.tsx` file.
 
 1. Create an external file in your public folder with the name `fprmain.js`.
 2. Copy and paste the contents below into `fprmain.js`.
@@ -141,10 +141,10 @@ export default function Document() {
 
 ## Referral tracking script
 
-To track referrals using the API, you'll need to have access to the browser cookies. Once the main tracking script is implemented, two cookies, namely `_fprom_tid` and `_fprom_ref`, are set upon visiting the referral link. Both cookies can be used in making your API requests; however, to prevent multiple tracking, it is recommended to use the `_fprom_tid`. This include a check to determine if a browser session has already been tracked, ensuring that tracking occurs only once.
+To track referrals using the API, you'll need to have access to the browser cookies. Once the main tracking script is implemented, two cookies, namely `_fprom_tid` and `_fprom_ref`, are set upon visiting the referral link. Both cookies can be used in making your API requests; however, to prevent multiple tracking, it is recommended to use the `_fprom_tid`. This includes a check to determine if a browser session has already been tracked, ensuring that tracking occurs only once.
 
 1. Get your API key from your Settings > Integrations tab > manage API Keys > create a new key or use the existing key you have.
-2. Get your Account id from the Settings > Integrations tab as well.
+2. Get your Account ID from the Settings > Integrations tab as well.
 3. On your backend, retrieve the `_fprom_tid` cookie.
 
 ```js {noCopy}

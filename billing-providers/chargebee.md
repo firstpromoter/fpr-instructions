@@ -23,4 +23,4 @@ To get started, you need to:
 
     @[video]({"src":"https://fast.wistia.net/embed/iframe/ufkibyq84z", "title":"Set Chargebee custom fields."})
 
-    This field is mainly used in sending the `tid (tracking id)` to Chargebee, allowing us to track both the lead and sales directly from Chargbee.
+    This field is mainly used in sending the `tid (tracking id)` to Chargebee, allowing us to track both the lead and sales directly from Chargebee.

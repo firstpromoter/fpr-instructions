@@ -84,8 +84,8 @@ For Nuxt you need to use the useHead composable.
 
 ~~~
 
-~~~markdown [g1:Next]
-For NextJS you need to add the script to the `_document.tsx` file.
+~~~markdown [g1:Next.js]
+For Next.js, you need to add the script to the `_document.tsx` file.
 
 1. Create an external file in your public folder with the name `fprmain.js`.
 2. Copy and paste the contents below into `fprmain.js`.
@@ -156,7 +156,7 @@ If you are having a simple form on your website, you can capture the email from 
 
 ***NB: The below code is an example and needs to be edited to match the contents of your website. The selectors for the email input and submit button may not match what you have on your website and need to be changed.***
 
-***For Paddle users only: Note that you will need to pass the email address to the paddle checkout as part of the custom data with the key as email. Read more from [here](https://login.firstpromoter.com/?redirect=%2Finstructions%2Fpaddle-checkout)***  
+***For Paddle users only: Note that you will need to pass the email address to the paddle checkout as part of the custom data with the key as email. Read more from [here](https://docs.firstpromoter.com/docs/paddle-checkout)***  
 
 
 ```html
@@ -196,7 +196,7 @@ If you are having a simple form on your website, you can capture the email from 
 
 ~~~markdown [g2:Capture from Url]
 
-If you&apos;re using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com`, you can grab the email from the url and pass it to the `fpr` function as shown below. This can be added directly into the `&lt;head&gt;` section of your website.
+If you are using a checkout plugin or service that appends the email to the thank-you page like `https://website.com/thank-you?email=user@email.com`, you can grab the email from the URL and pass it to the `fpr` function as shown below. This can be added directly into the `&lt;head&gt;` section of your website.
 
 ```html
 &lt;script&gt;
@@ -234,7 +234,7 @@ For Vue you can make the call on a success callback function or even on a click 
 
 &lt;script setup &gt;
   import {reactive} from &quot;vue&quot;;
-  import axios from &quot;axios&quot;;
+  import axios from &quot;axios&quot;; //for making requests to your backend
 
   const data = reactive({
     firstName:&quot;&quot;,
@@ -273,7 +273,7 @@ In React you can make the call on a success callback function or even on a click
 
 ```js {noCopy}
 import React, { useState } from &apos;react&apos;;
-import axios from &apos;axios&apos;;
+import axios from &apos;axios&apos;; //for making requests to your backend
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -380,7 +380,7 @@ In Angular you can make the call on a success callback function or even on a cli
 ```js {noCopy}
 
 import { Component } from &apos;@angular/core&apos;;
-import axios from &apos;axios&apos;; // Import Axios for HTTP requests (if using)
+import axios from &apos;axios&apos;; // Import Axios for HTTP requests to your backend (if using)
 
 @Component({
   selector: &apos;app-sign-up&apos;,

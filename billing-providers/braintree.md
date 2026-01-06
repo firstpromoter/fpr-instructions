@@ -12,7 +12,7 @@ To get started, please follow the steps below:
 
 For added security, consider creating a new User Role in Braintree that allows only read operations. If this is not a concern or if you are in the Braintree Sandbox environment, you can proceed to Step 2.
 
-1. Log in as admin to your Braintree account and go to Settings > User and Roles > Manage Roles > New.
+1. Log in as admin to your Braintree account and go to Settings > Users and Roles > Manage Roles > New.
 2. Provide a role name such as "Read-Only"
 3. Uncheck all permissions except for: **Download Transactions with Masked Payment Data**, **Download Vault Records with Masked Payment Data**, **Download Subscription Records, Manage Webhooks**.
 4. Click on "Create Role"
@@ -28,7 +28,7 @@ For added security, consider creating a new User Role in Braintree that allows o
 ### Step 3: Add API details to FirstPromoter
 
 1. For the newly generated API key, click "View" in the Private Key column.
-2. Copy-paste the data from that table to corresponding fields in to the setup form.
+2. Copy-paste the data from that table to corresponding fields into the setup form.
 
 ### Step 4: Set up the Webhooks
 
