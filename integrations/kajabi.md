@@ -32,6 +32,12 @@ if (window.attachEvent){
 &lt;/script&gt;
 ```
 
+
+### Test Click Tracking
+
 @[trackingtest]("click")
 
+### Test Referral Tracking
+
 @[trackingtest]("referral")
+

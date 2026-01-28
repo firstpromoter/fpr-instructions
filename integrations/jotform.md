@@ -31,18 +31,9 @@ https://example.com/confirmation?email={email}
 3. Enter the URL built in step 2. For example: `https://example.com/confirmation?email={email}`
 
 
-### Below are the steps required to add/install the tracking scripts
+#### Tracking scripts
 
-
-#### 1. Main tracking script installation
-
-You need to add/install the main tracking script on your landing page and confirmation/thank-you page (*if you don't have a confirmation/thank-you page, then you need to create one*).
-
-
-
-#### 2. Referral Tracking Script Installation
-
-After adding/installing the main tracking script on the confirmation/thank-you page, you also need to add the Referral tracking script provided below after the main tracking script on the confirmation/thank-you page.
+Add the below scripts to your landing page and confirmation/thank-you page on your website. You may need to find the section where the scripts can be added.
 
 
 ```html Tracking scripts
@@ -72,3 +63,12 @@ var stateDocumentCheck = setInterval(function(){
 }, 100);
 &lt;/script&gt;
 ```
+
+
+### Test Click Tracking
+
+@[trackingtest]("click")
+
+### Test Referral Tracking
+
+@[trackingtest]("referral")

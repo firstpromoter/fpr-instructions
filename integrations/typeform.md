@@ -33,33 +33,43 @@ After the confirmation/thank-you page setup, kindly add the tracking scripts to 
 ### Below are the steps required to add/install the tracking scripts.
 
 
-#### 1. Main tracking script installation
-You need to add/install the main tracking script on your landing page and confirmation/thank-you page (*if you don't have a confirmation/thank-you page, then you need to create one*).
+#### Tracking scripts
 
-Kindly follow the main tracking script installation guide here: https://docs.firstpromoter.com/guides/tracking-with-fprjs#installation
-
-
-#### 2. Referral Tracking Script Installation
-After adding/installing the main tracking script on the confirmation/thank-you page, you also need to add the Referral tracking script provided below after the main tracking script on the confirmation/thank-you page.
+Add the below scripts to your landing page and confirmation/thank-you page on your website. You may need to find the section where the scripts can be added.
 
 
-```js Referral tracking script
-<script> 
+```html Tracking scripts
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;});
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+&lt;script&gt;
 function sendReferralToFirstPromoter() {
-  var url = new URL(decodeURI(window.location.href));
-  if( url != null && url.searchParams.has("email")){
-    var emailFromUrl = url.searchParams.get("email");
-    if (window.fpr) {
-       window.fpr("referral", { email: emailFromUrl});
-    }
+  var urlString = decodeURI(window.location.href);
+  var url = new URL(urlString);
+
+  if(url.searchParams.has(&quot;email&quot;)){
+     var emailFromUrl = url.searchParams.get(&quot;email&quot;);
+      if (emailFromUrl){
+         if (window.fpr) window.fpr(&quot;referral&quot;, { email: emailFromUrl });
+      }
   }
 }
 
-var docStateCheck = setInterval(function(){
-    if (document.readyState === "complete") {
-        clearInterval(docStateCheck);
-        sendReferralToFirstPromoter();
+var stateDocumentCheck = setInterval(function(){
+    if (document.readyState === &quot;complete&quot;) {
+       clearInterval(stateDocumentCheck);
+       sendReferralToFirstPromoter();
     }
 }, 100);
-</script>
+&lt;/script&gt;
 ```
+
+### Test Click Tracking
+
+@[trackingtest]("click")
+
+### Test Referral Tracking
+
+@[trackingtest]("referral")
