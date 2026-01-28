@@ -1,42 +1,41 @@
 ## Integration guide
 
-To integrate Firstpromoter with Typeform, you need to set up a redirect to your website's thank-you/confirmation page to enable capture the lead/referral email from the TypeForm.
+To integrate FirstPromoter with Typeform, you need to set up a redirect to your website's thank-you/confirmation page to capture the lead/referral email from the Typeform submission.
 
-To pass the lead/referral email from a TypeForm to the Redirect URL, you need to use the ***Recall Information feature***. Below is how to configure the Recall Information feature:
-
-
-### Set Up the Redirect URL:
-
-In the settings, go to the Redirect URL section. [See example here](https://help.typeform.com/hc/en-us/articles/4414707303700-Use-variables-in-redirect-links)
+For tracking to work, you first need to add the main tracking script to your landing page. Once you have added the script to the landing page, you need to set up a redirect URL to pass the email from Typeform to the confirmation/thank-you page.
 
 
-Use the Recall Information placeholders to include the email in the redirect URL. [See example here](https://help.typeform.com/hc/en-us/articles/4414707303700-Use-variables-in-redirect-links)
+### Steps to pass email data from Typeform to the Confirmation/Thank-you page
 
 
-For instance, if your email field is named **email**, you can use **@email** in the URL. [See example here](https://community.typeform.com/build-your-typeform-7/redirect-to-url-passing-email-address-10100)
+#### 1. Get Email Field Name
+
+In the Typeform editor, note the name of your email field. By default, Typeform names it **email**, but you may have customized it.
 
 
+#### 2. Build the Redirect URL
 
-#### Example Redirect URL Scenario
+Construct the URL of your confirmation page and append the email using Typeform's **Recall Information** feature with the `@` symbol.
 
-If your Redirect URL is https://mywebsite.com/thank-you, you can modify it to include the email query parameter like this: https://mywebsite.com/thank-you?email=@email  
+For example, if your confirmation/thank-you page URL is `https://example.com/confirmation` and your email field is named **email**, the URL would look like this:
 
-[See example here](https://community.typeform.com/build-your-typeform-7/redirect-to-url-passing-email-address-10100)
+```
+https://example.com/confirmation?email=@email
+```
 
-
-When redirect is setup and respondent submits the form, they will be redirected to the thank confirmation/thank-you page URL with their email included in the email query parameter.
-
-
-After the confirmation/thank-you page setup, kindly add the tracking scripts to your website.
+[Learn more about using variables in redirect links](https://help.typeform.com/hc/en-us/articles/4414707303700-Use-variables-in-redirect-links)
 
 
-### Below are the steps required to add/install the tracking scripts.
+#### 3. Set Up Redirect in Typeform
+
+1. In the Typeform editor, go to **Settings > After submit**
+2. Select **Redirect to URL**
+3. Enter the URL built in step 2. For example: `https://example.com/confirmation?email=@email`
 
 
 #### Tracking scripts
 
 Add the below scripts to your landing page and confirmation/thank-you page on your website. You may need to find the section where the scripts can be added.
-
 
 ```html Tracking scripts
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
