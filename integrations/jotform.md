@@ -1,12 +1,13 @@
-# Tracking withFirstPromoter when using JotForm
+# Tracking with FirstPromoter when using JotForm
 
-To integrate FirstPromoter with JotForm, you need to set up a redirect to your** website's thank-you/confirmation page** to capture the lead/referral email from the JotForm submission.
+To integrate FirstPromoter with JotForm, you need to set up a redirect to your **website's thank-you/confirmation page** to capture the lead/referral email from the JotForm submission.
 
-For tracking to work, you first need to add the main tracking script to your landing page. Once you have added the script to the landing page, you need to set up a redirect URL to pass the email from JotForm to the confirmation/thank-you page on your website.
+For tracking to work, you first need to add the tracking script to your landing page and thank you page. Once you have added the script to the landing page, you need to set up a redirect URL to pass the email from JotForm to the confirmation/thank-you page on your website.
+
 
 
 ## Steps to pass email data from JotForm to the Confirmation/Thank-you page
-
+These steps are important in order to capture the referrals from your website when they complete the form.
 
 ### 1. Get Email Field Name
 
