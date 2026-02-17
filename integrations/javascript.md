@@ -81,7 +81,6 @@ For Nuxt you need to use the useHead composable.
   &lt;/script&gt;
   &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
   ```
-
 ~~~
 
 ~~~markdown [g1:Next.js]
