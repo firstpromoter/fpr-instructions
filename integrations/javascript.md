@@ -106,16 +106,33 @@ For Next.js, you need to add the script to the `_document.tsx` file.
 1. Create an external file in your public folder with the name `fprmain.js`.
 2. Copy and paste the contents below into `fprmain.js`.
 
-```js
-// /public/fprmain.js
-(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;}); 
-fpr(&quot;click&quot;);
-```
+  ```js
+  // /public/fprmain.js
+  (function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+  fpr(&quot;init&quot;, {cid:&quot;==cid=here==&quot;});
+  fpr(&quot;click&quot;);
+  ```
 
 3. Add `fprmain.js` as a `&lt;script&gt;` tag inside the Head tag in _document.tsx and then add `&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; /&gt;` as well.
 
+  ```js
+  import { Html, Head, Main, NextScript } from &apos;next/document&apos;
 
+  export default function Document() {
+    return (
+      &lt;Html&gt;
+        &lt;Head&gt;
+          &lt;script src=&quot;/fprmain.js&quot;/&gt;
+          &lt;script async src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; /&gt;
+        &lt;/Head&gt;
+        &lt;body&gt;
+          &lt;Main /&gt;
+          &lt;NextScript /&gt;
+        &lt;/body&gt;
+      &lt;/Html&gt;
+    )
+  }
+  ```
 ~~~
 
 @[trackingtest]("click")
