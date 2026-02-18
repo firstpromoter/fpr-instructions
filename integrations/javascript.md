@@ -100,8 +100,8 @@ For Nuxt you need to use the useHead composable.
 
 ~~~
 
-~~~markdown [g1:Next.js]
-For Next.js, you need to add the script to the `_document.tsx` file.
+~~~markdown [g1:NextJS]
+For NextJS, you need to add the script to the `_document.tsx` file.
 
 1. Create an external file in your public folder with the name `fprmain.js`.
 2. Copy and paste the contents below into `fprmain.js`.
