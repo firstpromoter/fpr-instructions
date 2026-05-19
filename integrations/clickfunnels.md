@@ -24,7 +24,7 @@ Select Sites > Pages > Funnel Pages > click on the page you want to add the scri
          w.fpr.q[arguments[0] == 'set' ? 'unshift' : 'push'](arguments);
       };
    })(window);
-   fpr(&quot;init&quot;, {cid: &quot;==cid=here==&quot;});
+   fpr(&quot;init&quot;, {cid: &quot;{{ company.cid }}&quot;});
    fpr(&quot;click&quot;);
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.clickfunnels.js&quot; async&gt;&lt;/script&gt;
