@@ -19,7 +19,7 @@ For most websites, you can simply insert the script on the public `index.html` f
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
 fpr(&quot;click&quot;);
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
@@ -40,7 +40,7 @@ If your website is hosted on HubSpot directly and you are using HubSpot forms on
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
 fpr(&quot;click&quot;);
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;

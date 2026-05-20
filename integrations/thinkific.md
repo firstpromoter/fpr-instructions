@@ -10,7 +10,7 @@ To get the best results for tracking on Thinkific, it is ideal to set this up on
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
 fpr(&quot;click&quot;);
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
@@ -33,7 +33,7 @@ If you want to track orders, kindly follow the steps below:
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
 fpr(&quot;referral&quot;,{email:&quot;&#123;&#123;billing_email&#125;&#125;&quot;});
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
@@ -50,7 +50,7 @@ If you want to track sign-ups, kindly follow the steps below:
 
 ```html
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
 fpr(&quot;referral&quot;,{email:&quot;&#123;&#123;email&#125;&#125;&quot;});
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;

@@ -39,7 +39,7 @@ Add the below scripts to your landing page and confirmation/thank-you page on yo
 
 ```html Tracking scripts
 &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;});
+fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;});
 fpr(&quot;click&quot;);
 &lt;/script&gt;
 &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;

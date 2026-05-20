@@ -15,7 +15,7 @@ For most websites and JavaScript frameworks, you can simply insert the script on
 
   ```html
   &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-  fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+  fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
   fpr(&quot;click&quot;);
   &lt;/script&gt;
   &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
@@ -30,7 +30,7 @@ For most websites and JavaScript frameworks, you can simply insert the script on
 
   ```html
   &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-  fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+  fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
   fpr(&quot;click&quot;);
   &lt;/script&gt;
   &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
@@ -48,7 +48,7 @@ For Nuxt you need to use the useHead composable.
   ```js
   // /public/fprmain.js
   (function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-  fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+  fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
   fpr(&quot;click&quot;);
   ```
 
@@ -76,7 +76,7 @@ For Nuxt you need to use the useHead composable.
 
   ```html
   &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-  fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+  fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
   fpr(&quot;click&quot;);
   &lt;/script&gt;
   &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
@@ -92,7 +92,7 @@ For Nuxt you need to use the useHead composable.
 
   ```html
   &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-  fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;}); 
+  fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
   fpr(&quot;click&quot;);
   &lt;/script&gt;
   &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
@@ -109,7 +109,7 @@ For NextJS, you need to add the script to the `_document.tsx` file.
   ```js
   // /public/fprmain.js
   (function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-  fpr(&quot;init&quot;, {cid:&quot;{{ company.cid }}&quot;});
+  fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;});
   fpr(&quot;click&quot;);
   ```
 
