@@ -6,6 +6,8 @@ FirstPromoter allows you to track sales, refunds, upgrades and cancellations thr
 
 To get started, you will need to first set up an endpoint from which you will receive webhook events from your billing provider. Once you are receiving these events on your server, you can then make a request to FirstPromoter to track sales when these events are received.
 
+~~~markdown [g1:Manual]
+
 1. Get your API key from your Settings > Integrations tab > manage API Keys > create a new key or use the existing key you have.
 2. Get your Account ID from the Settings > Integrations tab as well.
 3. On your backend, you will need to make a POST request to the `https://v2.firstpromoter.com/api/v2/track/sale` endpoint we provide, together with the following parameters.
@@ -62,3 +64,33 @@ axios
   });
 
 ```
+~~~
+
+~~~markdown [g1:AI Prompt]
+
+If you'd rather not wire this up by hand, copy the prompt below and paste it into an AI coding tool (e.g. Claude Code) working on this project. Before using it, grab your **API key** and **Account ID** from your FirstPromoter dashboard under **Settings > Integrations** (create a new API key if you don't have one yet).
+
+1. Copy the prompt below.
+2. Replace `YOUR_API_KEY` and `YOUR_ACCOUNT_ID` with the values from your dashboard.
+3. Paste it into the AI tool's chat/terminal and send it.
+
+```text
+Add server-side sale tracking for FirstPromoter to this project&apos;s billing/payment webhook handler.
+
+Find (or create) the endpoint that receives webhook events from our billing provider. In the handler for a successful charge/payment event, make a POST request to https://v2.firstpromoter.com/api/v2/track/sale with a JSON body containing:
+
+- email: the customer&apos;s email (use uid instead if email isn&apos;t available)
+- amount: the total sale amount in cents
+- event_id: the transaction or charge ID from the billing provider
+- plan: (optional) the customer&apos;s plan ID from the billing provider
+- tid: (optional) the visitor tracking id, if available
+
+Send these headers with the request:
+
+- Content-Type: application/json
+- Authorization: Bearer YOUR_API_KEY
+- Account-ID: YOUR_ACCOUNT_ID
+
+Make this call only after confirming the payment succeeded, and don&apos;t let a failure of this request break the webhook handler&apos;s normal response.
+```
+~~~
