@@ -6,8 +6,6 @@ FirstPromoter allows you to track sales, refunds, upgrades and cancellations thr
 
 To get started, you will need to first set up an endpoint from which you will receive webhook events from your billing provider. Once you are receiving these events on your server, you can then make a request to FirstPromoter to track sales when these events are received.
 
-~~~markdown [g1:Manual]
-
 1. Get your API key from your Settings > Integrations tab > manage API Keys > create a new key or use the existing key you have.
 2. Get your Account ID from the Settings > Integrations tab as well.
 3. On your backend, you will need to make a POST request to the `https://v2.firstpromoter.com/api/v2/track/sale` endpoint we provide, together with the following parameters.
@@ -64,15 +62,14 @@ axios
   });
 
 ```
-~~~
 
-~~~markdown [g1:AI Prompt]
+### Using an AI coding tool
 
-If you'd rather not wire this up by hand, copy the prompt below and paste it into an AI coding tool (e.g. Claude Code) working on this project. Before using it, grab your **API key** and **Account ID** from your FirstPromoter dashboard under **Settings > Integrations** (create a new API key if you don't have one yet).
+If you&apos;d rather not wire this up by hand, copy the prompt below and paste it into an AI coding tool (e.g. Claude Code) working on this project. Before using it, grab your **API key** and **Account ID** from your FirstPromoter dashboard under **Settings &gt; Integrations** (create a new API key if you don&apos;t have one yet).
 
 1. Copy the prompt below.
 2. Replace `YOUR_API_KEY` and `YOUR_ACCOUNT_ID` with the values from your dashboard.
-3. Paste it into the AI tool's chat/terminal and send it.
+3. Paste it into the AI tool&apos;s chat/terminal and send it.
 
 ```text
 Add server-side sale tracking for FirstPromoter to this project&apos;s billing/payment webhook handler.
@@ -93,4 +90,3 @@ Send these headers with the request:
 
 Make this call only after confirming the payment succeeded, and don&apos;t let a failure of this request break the webhook handler&apos;s normal response.
 ```
-~~~
