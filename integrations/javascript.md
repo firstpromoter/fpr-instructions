@@ -135,6 +135,23 @@ For NextJS, you need to add the script to the `_document.tsx` file.
   ```
 ~~~
 
+~~~markdown [g1:AI Prompt]
+
+If this project was built using an AI coding tool like Lovable or Claude Code, copy the prompt below and paste it into the tool&apos;s chat/terminal — it will find the right entry file and add the script for you. Your tracking ID is already included.
+
+```text
+Add FirstPromoter&apos;s tracking script to this project so we can attribute clicks and signups to referral links.
+
+Find the main HTML entry point for this project (index.html, or the root layout / _document / &lt;head&gt; component, depending on the framework) and insert the snippet below right before the closing &lt;/head&gt; tag. Insert it exactly as written, don&apos;t modify it:
+
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;});
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+```
+~~~
+
 @[trackingtest]("click")
 
 ## Referral tracking script
@@ -413,6 +430,19 @@ export class SignUpComponent {
     window.fpr(&apos;referral&apos;, { email });
   }
 }
+```
+~~~
+
+~~~markdown [g2:AI Prompt]
+
+If this project was built using an AI coding tool like Lovable or Claude Code, copy the prompt below and paste it into the tool&apos;s chat/terminal.
+
+```text
+Find where a new user successfully signs up or registers in this project (e.g. right after the auth/signup call succeeds) and, immediately after the account is created, call:
+
+fpr(&quot;referral&quot;, {email: &quot;actual-user-email@example.com&quot;});
+
+Replace the placeholder with the variable that holds the new user&apos;s actual email address. If email isn&apos;t available for privacy reasons, use the uid instead: fpr(&quot;referral&quot;, {uid: &quot;user-id-in-database&quot;}).
 ```
 ~~~
 

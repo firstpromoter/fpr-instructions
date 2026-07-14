@@ -136,6 +136,23 @@ export default function Document() {
 
 ~~~
 
+~~~markdown [g1:AI Prompt]
+
+If this project was built using an AI coding tool like Lovable or Claude Code, copy the prompt below and paste it into the tool&apos;s chat/terminal — it will find the right entry file and add the script for you. Your tracking ID is already included.
+
+```text
+Add FirstPromoter&apos;s tracking script to this project so we can attribute clicks and signups to referral links.
+
+Find the main HTML entry point for this project (index.html, or the root layout / _document / &lt;head&gt; component, depending on the framework) and insert the snippet below right before the closing &lt;/head&gt; tag. Insert it exactly as written, don&apos;t modify it:
+
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;});
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+```
+~~~
+
 
 @[trackingtest]("click")
 
@@ -202,6 +219,31 @@ axios
     console.log(error);
   });
 
+```
+
+### Using an AI app builder (Lovable, Claude Code)
+
+If this project was built using an AI coding tool, you can hand it the steps above as a prompt instead of writing the code yourself. Before using it, grab your **API key** and **Account ID** from your FirstPromoter dashboard under **Settings > Integrations** (create a new API key if you don't have one yet).
+
+1. Copy the prompt below.
+2. Replace `YOUR_API_KEY` and `YOUR_ACCOUNT_ID` with the values from your dashboard.
+3. Paste it into the AI tool's chat/terminal and send it.
+
+```text
+Add server-side referral tracking for FirstPromoter to this project's signup/account-creation flow.
+
+The main FirstPromoter tracking script (already added to this project) sets a cookie named _fprom_tid in the visitor's browser. In the backend handler where a new user successfully signs up or registers, read the _fprom_tid cookie from the incoming request, then make a POST request to https://v2.firstpromoter.com/api/v2/track/signup with a JSON body containing:
+
+- email: the new user's email address
+- tid: the value of the _fprom_tid cookie
+
+Send these headers with the request:
+
+- Content-Type: application/json
+- Authorization: Bearer YOUR_API_KEY
+- Account-ID: YOUR_ACCOUNT_ID
+
+Make this call right after the account is created, and don't block or fail the signup if this request errors out.
 ```
 
 @[trackingtest]("referral")
