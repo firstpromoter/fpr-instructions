@@ -6,6 +6,22 @@ To get the best results for tracking, it is ideal to set this up on all the mark
 
 For most websites and JavaScript frameworks, you can simply insert the script on the public `index.html` file so it will be available when the website or framework loads.
 
+~~~markdown [g1:AI Prompt]
+If this project was built using an AI coding tool like Lovable or Claude Code, copy the prompt below and paste it into the tool&apos;s chat/terminal — it will find the right entry file and add the script for you. Your tracking ID is already included.
+
+```text
+Add FirstPromoter&apos;s tracking script to this project so we can attribute clicks and signups to referral links.
+
+Find the main HTML entry point for this project (index.html, or the root layout / _document / &lt;head&gt; component, depending on the framework) and insert the snippet below right before the closing &lt;/head&gt; tag. Insert it exactly as written, don&apos;t modify it:
+
+&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;});
+fpr(&quot;click&quot;);
+&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+```
+~~~
+
 ~~~markdown [g1:JavaScript]
 
 1. Find your main index file (index.html, index.php).
@@ -135,24 +151,6 @@ export default function Document() {
   ```
 
 ~~~
-
-~~~markdown [g1:AI Prompt]
-
-If this project was built using an AI coding tool like Lovable or Claude Code, copy the prompt below and paste it into the tool&apos;s chat/terminal — it will find the right entry file and add the script for you. Your tracking ID is already included.
-
-```text
-Add FirstPromoter&apos;s tracking script to this project so we can attribute clicks and signups to referral links.
-
-Find the main HTML entry point for this project (index.html, or the root layout / _document / &lt;head&gt; component, depending on the framework) and insert the snippet below right before the closing &lt;/head&gt; tag. Insert it exactly as written, don&apos;t modify it:
-
-&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;});
-fpr(&quot;click&quot;);
-&lt;/script&gt;
-&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
-```
-~~~
-
 
 @[trackingtest]("click")
 
