@@ -6,6 +6,7 @@ To get the best results for tracking, it is ideal to set this up on all the mark
 
 For most PHP websites, you can simply insert the script on the public index.php file so it will be available when the page loads.
 
+~~~markdown [g1:Manual]
 ### Vanilla PHP
 
 1. Locate the PHP file where you want to add the script. This could be the index.php or any other .php file depending on your project structure
@@ -22,29 +23,30 @@ In Laravel, you typically add scripts in your blade template files.
 3. Add the below code into the head section of your website before. Preferably before the closing head tag `&lt;/head&gt;`.
 4. Save your changes.
 
-```html
-&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
-fpr(&quot;click&quot;);
-&lt;/script&gt;
-&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
-```
+  ```html
+  &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+  fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;}); 
+  fpr(&quot;click&quot;);
+  &lt;/script&gt;
+  &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+  ```
+~~~
 
-### Using an AI coding tool
-
+~~~markdown [g1:AI Prompt]
 If you'd rather not add this by hand, copy the prompt below and paste it into an AI coding tool (e.g. Claude Code) working on this project.
 
-```text
-Add FirstPromoter&apos;s tracking script to this PHP project so we can attribute clicks and signups to referral links.
+  ```text
+  Add FirstPromoter&apos;s tracking script to this PHP project so we can attribute clicks and signups to referral links.
 
-If this is a Laravel project, find the main layout Blade file (e.g. resources/views/layouts/app.blade.php). Otherwise, find the main PHP file that renders the &lt;head&gt; (e.g. index.php). Insert the snippet below right before the closing &lt;/head&gt; tag, exactly as written, don&apos;t modify it:
+  If this is a Laravel project, find the main layout Blade file (e.g. resources/views/layouts/app.blade.php). Otherwise, find the main PHP file that renders the &lt;head&gt; (e.g. index.php). Insert the snippet below right before the closing &lt;/head&gt; tag, exactly as written, don&apos;t modify it:
 
-&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;});
-fpr(&quot;click&quot;);
-&lt;/script&gt;
-&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
-```
+  &lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
+  fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;});
+  fpr(&quot;click&quot;);
+  &lt;/script&gt;
+  &lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
+  ```
+~~~
 
 @[trackingtest]("click")
 
@@ -53,6 +55,7 @@ fpr(&quot;click&quot;);
 Tracking referrals can be easily done by adding this JavaScript code snippet `fpr("referral",{email: "user-email"})` on the view/template rendered after the user signs up or makes the purchase and passing the user's email to it.
 *Make sure it is NOT placed on confirmation or thank you pages where old users can visit again.*
 
+~~~markdown [g2:Manual]
 ### Vanilla PHP
 
 Similar to the main tracking script.
@@ -69,22 +72,22 @@ Similar to the main tracking script
 2. Find the head tag  
 3. Based on how you capture your emails use any of the scripts below
 
-```html
-&lt;!-- // if authenticated user is available you can render the email like this: --&gt;
-&lt;script&gt;
-fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; Auth::user()-&gt;email &#125;&#125;&quot;})
-&lt;/script&gt;
+  ```html
+  &lt;!-- // if authenticated user is available you can render the email like this: --&gt;
+  &lt;script&gt;
+  fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; Auth::user()-&gt;email &#125;&#125;&quot;})
+  &lt;/script&gt;
 
-&lt;!--  if you store the user email on a session variable --&gt;
-&lt;script&gt;
-fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; session(&apos;email&apos;) &#125;&#125;&quot;})
-&lt;/script&gt;
+  &lt;!--  if you store the user email on a session variable --&gt;
+  &lt;script&gt;
+  fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; session(&apos;email&apos;) &#125;&#125;&quot;})
+  &lt;/script&gt;
 
-&lt;!-- if you use the &quot;uid&quot; and don&apos;t want to provide the email, you can skip it entirely: --&gt;
-&lt;script&gt;
-fpr(&quot;referral&quot;,{uid:&quot;&#123;&#123; $user-&gt;id &#125;&#125;&quot;})
-&lt;/script&gt;
-```
+  &lt;!-- if you use the &quot;uid&quot; and don&apos;t want to provide the email, you can skip it entirely: --&gt;
+  &lt;script&gt;
+  fpr(&quot;referral&quot;,{uid:&quot;&#123;&#123; $user-&gt;id &#125;&#125;&quot;})
+  &lt;/script&gt;
+  ```
 
 The tracking of the actual sale will be handled automatically by the billing provider integration or our API (in case you'll use that for sales tracking).
 
@@ -93,30 +96,31 @@ The tracking of the actual sale will be handled automatically by the billing pro
 - If you already log the user in, you can use the currently authenticated user to render the email on the script.
 - If you don't have the user logged in, you can store the email on a session variable and render it on the next page where user gets redirected to.
 - If you're creating the customer on the billing provider via a library/API, on the rendered view/template you can also pass the billing provider customer id (Stripe customer id for ex.) as 'uid' and even skip the email altogether `fpr("referral",{uid:"cus_43gGBdr5hEkh571Hg"})`.
+~~~
 
-### Using an AI coding tool
-
+~~~markdown [g2:AI Prompt]
 Copy the prompt below and paste it into an AI coding tool (e.g. Claude Code) working on this project.
 
-```text
-Find the view/template rendered right after a user signs up or completes checkout in this PHP project, and add the snippet below to it (only if the main tracking script isn&apos;t already loaded on this page). Don&apos;t place it on confirmation or thank-you pages that returning users might revisit.
+  ```text
+  Find the view/template rendered right after a user signs up or completes checkout in this PHP project, and add the snippet below to it (only if the main tracking script isn&apos;t already loaded on this page). Don&apos;t place it on confirmation or thank-you pages that returning users might revisit.
 
-For a Laravel project, use whichever variant matches how the email is available on this page:
+  For a Laravel project, use whichever variant matches how the email is available on this page:
 
-&lt;script&gt;
-fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; Auth::user()-&gt;email &#125;&#125;&quot;})
-&lt;/script&gt;
+  &lt;script&gt;
+  fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; Auth::user()-&gt;email &#125;&#125;&quot;})
+  &lt;/script&gt;
 
-&lt;!-- or, if stored in a session variable: --&gt;
-&lt;script&gt;
-fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; session(&apos;email&apos;) &#125;&#125;&quot;})
-&lt;/script&gt;
+  &lt;!-- or, if stored in a session variable: --&gt;
+  &lt;script&gt;
+  fpr(&quot;referral&quot;,{email:&quot;&#123;&#123; session(&apos;email&apos;) &#125;&#125;&quot;})
+  &lt;/script&gt;
 
-For vanilla PHP, capture the email into a PHP variable and render it directly:
+  For vanilla PHP, capture the email into a PHP variable and render it directly:
 
-&lt;script&gt;fpr(&quot;referral&quot;,{email: &quot;&lt;?php echo $email ?&gt;&quot;})&lt;/script&gt;
+  &lt;script&gt;fpr(&quot;referral&quot;,{email: &quot;&lt;?php echo $email ?&gt;&quot;})&lt;/script&gt;
 
-If email isn&apos;t available, use the billing provider&apos;s customer id as uid instead: fpr(&quot;referral&quot;,{uid:&quot;cus_43gGBdr5hEkh571Hg&quot;})
-```
+  If email isn&apos;t available, use the billing provider&apos;s customer id as uid instead: fpr(&quot;referral&quot;,{uid:&quot;cus_43gGBdr5hEkh571Hg&quot;})
+  ```
+~~~
 
 @[trackingtest]("referral")
