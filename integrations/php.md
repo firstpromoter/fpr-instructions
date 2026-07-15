@@ -39,7 +39,7 @@ fpr(&quot;click&quot;);
 ~~~
 
 ~~~markdown [g1:AI Prompt]
-If you'd rather not add this by hand, copy the prompt below and paste it into an AI coding tool (e.g. Claude Code) working on this project.
+If you&apos;d rather not add this by hand, copy the prompt below and paste it into an AI coding tool (e.g. Claude Code) working on this project.
 
 ```text
 Add FirstPromoter&apos;s tracking script to this PHP project so we can attribute clicks and signups to referral links.
@@ -68,13 +68,13 @@ Similar to the main tracking script.
 2. Find the head tag.
 3. Use a script similar to the below to send the lead details to FirstPromoter. This mainly needs you to capture your email and pass that to the script as a variable  `&lt;script&gt;fpr(&quot;referral&quot;,{email: &quot;&lt;?php echo $email ?&gt;&quot;})&lt;/script&gt;`
 
-The tracking of the actual sale will be handled automatically by the billing provider integration or our API (in case you'll use that for sales tracking).
+The tracking of the actual sale will be handled automatically by the billing provider integration or our API (in case you&apos;ll use that for sales tracking).
 
 Some ideas for the integration:
 
 - If you already log the user in, you can use the currently authenticated user to render the email on the script.
-- If you don't have the user logged in, you can store the email on a session variable and render it on the next page where user gets redirected to.
-- If you're creating the customer on the billing provider via a library/API, on the rendered view/template you can also pass the billing provider customer id (Stripe customer id for ex.) as 'uid' and even skip the email altogether `fpr("referral",{uid:"cus_43gGBdr5hEkh571Hg"})`.
+- If you don&apos;t have the user logged in, you can store the email on a session variable and render it on the next page where user gets redirected to.
+- If you&apos;re creating the customer on the billing provider via a library/API, on the rendered view/template you can also pass the billing provider customer id (Stripe customer id for ex.) as &apos;uid&apos; and even skip the email altogether `fpr("referral",{uid:"cus_43gGBdr5hEkh571Hg"})`.
 ~~~
 
 ~~~markdown [g2:Laravel]
@@ -101,13 +101,13 @@ fpr(&quot;referral&quot;,{uid:&quot;&#123;&#123; $user-&gt;id &#125;&#125;&quot;
 &lt;/script&gt;
 ```
 
-The tracking of the actual sale will be handled automatically by the billing provider integration or our API (in case you'll use that for sales tracking).
+The tracking of the actual sale will be handled automatically by the billing provider integration or our API (in case you&apos;ll use that for sales tracking).
 
 Some ideas for the integration:
 
 - If you already log the user in, you can use the currently authenticated user to render the email on the script.
-- If you don't have the user logged in, you can store the email on a session variable and render it on the next page where user gets redirected to.
-- If you're creating the customer on the billing provider via a library/API, on the rendered view/template you can also pass the billing provider customer id (Stripe customer id for ex.) as 'uid' and even skip the email altogether `fpr("referral",{uid:"cus_43gGBdr5hEkh571Hg"})`.
+- If you don&apos;t have the user logged in, you can store the email on a session variable and render it on the next page where user gets redirected to.
+- If you&apos;re creating the customer on the billing provider via a library/API, on the rendered view/template you can also pass the billing provider customer id (Stripe customer id for ex.) as &apos;uid&apos; and even skip the email altogether `fpr("referral",{uid:"cus_43gGBdr5hEkh571Hg"})`.
 ~~~
 
 ~~~markdown [g2:AI Prompt]
