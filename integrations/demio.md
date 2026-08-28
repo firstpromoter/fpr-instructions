@@ -11,37 +11,6 @@ Pick the matching tab below. In both cases a single script handles click trackin
 
 ## Tracking script
 
-~~~markdown [g1:AI Prompt]
-Use this if you embed the Demio registration form on your own website. Copy the prompt below and paste it into an AI coding tool (e.g. Claude Code) working on this project.
-
-If you use the registration page hosted by Demio instead, there&apos;s no code to change — follow the **Demio Registration Page** tab.
-
-```text
-Add FirstPromoter tracking to this website so we can attribute clicks and webinar registrations to affiliate referral links. This project embeds a Demio registration form (not loaded in an iframe) on one of its pages.
-
-1. Add the snippet below to the &lt;head&gt; of every page (the site&apos;s shared layout/head component, or index.html if there is no shared layout), right before the closing &lt;/head&gt; tag, exactly as written, don&apos;t modify it:
-
-&lt;script&gt;(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]==&apos;set&apos;?&apos;unshift&apos;:&apos;push&apos;](arguments);};})(window);
-fpr(&quot;init&quot;, {cid:&quot;{{ me.company.cid }}&quot;});
-fpr(&quot;click&quot;);
-&lt;/script&gt;
-&lt;script src=&quot;https://cdn.firstpromoter.com/fpr.js&quot; async&gt;&lt;/script&gt;
-
-2. Then find the page that contains the Demio embed snippet, and add the snippet below to that page as well, after the snippet from step 1. It reads the email out of the Demio form when it is submitted and reports it to FirstPromoter as a referral:
-
-&lt;script&gt;
-document.addEventListener(&quot;submit&quot;, function(e){
-  var emailInput = document.getElementById(&quot;email&quot;);
-  if (emailInput &amp;&amp; emailInput.value) {
-    fpr(&quot;referral&quot;, {email: emailInput.value});
-  }
-});
-&lt;/script&gt;
-
-The Demio email field has the id &quot;email&quot; — don&apos;t change that selector unless you have confirmed the embedded form uses a different id.
-```
-~~~
-
 ~~~markdown [g1:Demio Registration Page]
 Use this if visitors register on the registration page hosted by Demio.
 
